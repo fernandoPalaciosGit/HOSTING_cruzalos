@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<!-- fuerza IE a utilizar el motor de renderizado más actual que esté disponible (incluso en intranets) & Chrome Frame (plugin para IE 6, 7 y 8)-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta name="description" content="calcular cuota de minscriptcion en el gimnasio sea para cliente habitual, preferente o vip" />
+	<meta name="author" content="Fernando Palacios Landi" />
+	<title>inscripcion Gim Fit</title>
+
+	<!-- ENLACES EXTERNOS -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/gym_register.css" />
+	<link rel="stylesheet" href="css/icon_fonts.css" />
+</head>
+<body>
+	<section id="contenedor-ppal">
+		<!-- HEADER
+		-------------------------------->
+		<header>
+			<div id="head_blur"></div>
+			<h1 class="texto-3d">gym fit</h1>
+		</header>
+
+		<!-- SELECCION DE TIPO DE CLIENTE
+		-------------------------------->
+		<section id="select_client">
+			<header>
+				<h1>socio de gimmnasio</h1>
+				<p class="subtitles">seleccionar tipo de cliente</p>
+			</header>
+			<ul id="type_client">
+				<li>
+					<div>Usuario Habitual</div>
+					<input data-move-register="next" class="register" type="button" id="habitual" />
+				</li>
+				<li>
+					<div>Usuario Preferente</div>
+					<input data-move-register="next" class="register" type="button" id="preferente" />
+				</li>
+				<li>
+					<div>Usuario VIP</div>
+					<input data-move-register="next" class="register" type="button" id="vip" />
+				</li>
+			</ul>
+		</section>
+
+		<!-- INSCRIPCION Y PAGO DE CUOTAS
+		-------------------------------->
+		<section id="subscription">
+			<header>
+				<h1>Cuota de inscripcion</h1>
+				<p class="subtitles">opciones de subscripcion</p>
+			</header>
+
+			<span data-move-register="prev" class="icon-back register" title="volver a preferencias"></span>
+
+			<form action="http://cruzalosdedos.es" id="form_client_gym">
+				<p>
+					<label for="nombre">Nombre de Cliente :</label>
+					<input type="text" name="nameClient" id="nombre" placeholder="nombre de usuario"
+					pattern="[a-zA-Z]{3,15}" required="required" autofocus="autofocus"/>
+				</p>
+				<p>
+					<label for="apel">Apellidos :</label>
+					<input type="text" name="apelClient" id="apel" placeholder="apellido de usuario"
+					pattern="[a-zA-Z ]{3,20}" required="required"/>
+				</p>
+				<p>
+					<label for="tipo">Trato de Cliente :</label>
+					<input type="text" name="tipoCliente" id="tipo" readOnly="readOnly">
+				</p>
+
+				<div>
+					<input type="number" name="toallaCliente" id="toalla" min="0" max="10"> x
+					<label for="toalla">Toallas</label> =
+					<span class="total"></span> €
+				</div>
+				<div>
+					<input type="number" name="taquillaCliente" id="taquilla" min="0" max="10"> x
+					<label for="taquilla">Taquillas</label> =
+					<span class="total"></span> €
+				</div>
+
+				<ul id="extras">
+					<li>
+						<input type="checkbox" name="saunaCliente" id="sauna">
+						<label for="sauna">Sauna</label>
+					</li>
+					<li>
+						<input type="checkbox" name="parquingCliente" id="parquing">
+						<label for="parquing">Parquing clientes</label>
+					</li>
+					<li>
+						<input type="checkbox" name="monitorCliente" id="monitor">
+						<label for="monitor">Monitor personal</label>
+					</li>
+				</ul>
+
+				<div id="calcular">
+					<input type="button" class="web_button" value="Calcular Porte"/>
+					<span class="total">0€</span>
+				</div>
+
+				<p id="suscribirse">
+					<input type="submit" class="web_button" value="¡¡Incribirse!!">
+				</p>
+
+			</form>
+
+			<footer>
+				<p class="subtitles">
+					<label for="suggestClient">sugerencias</label>
+				</p>
+				<textarea id="suggestClient" form="form_client_gym"></textarea>
+			</footer>
+		</section>
+
+		<!-- REPORTER DE REGISTRO
+		-------------------------------->
+		<section id="datos_cliente">
+			<header>
+				<h1>Bienvenido</h1>
+				<p class="subtitles">datos de inscripcion</p>
+			</header>
+
+			<!-- PROGRAMAR datos del registro de cliente-->
+
+			<footer>disfruta poniendote en forma</footer>
+		</section>
+
+		<!-- POP_UP advertenceias
+		-------------------------------->
+		<aside id="alertas">
+			<h3></h3>
+			<p class="fault1"></p>
+			<p class="fault2"></p>
+		</aside>
+	</section>
+
+	<!-- carga jQuery desde el CDN de google -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- si el CDN falla, se carga desde el servidor cliente -->
+	<script>window.jQuery || document.write('<script src="js/vendors/jquery-2.0.3.min.js"><\/script>')</script>
+	<script src="js/compt_browsers.js"></script>
+	<script src="js/gym_register.js"></script>
+</body>
+</html>

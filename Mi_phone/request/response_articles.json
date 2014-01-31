@@ -1,0 +1,692 @@
+ {
+ 	"iphone" : {
+ 		"id1" : {
+ 			"titulo": "iphone 5 S",
+ 			"img": "img/i5s.jpg",
+ 			"alt": "imagen telefono iphone 5 S",
+ 			"precio": 425,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id2" : {
+ 			"titulo": "iphone 5 C",
+ 			"img": "img/i5c.png",
+ 			"alt": "imagen de telefono iphone 5 C",
+ 			"precio": 400,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id3" : {
+ 			"titulo": "iPhone 4 S",
+ 			"img": "img/i4s.png",
+ 			"alt": "imagen de telefono iphone 4 S",
+ 			"precio": 426,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id4" : {
+ 			"titulo": "iPhone 3G",
+ 			"img": "img/i3g.jpg",
+ 			"alt": "imagen de telefono iphone 3G",
+ 			"precio": 350,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			}
+ 	},
+ 	"ipad" : {
+ 		"id1" : {
+ 			"titulo": "iPad mini",
+ 			"img": "img/imini.png",
+ 			"alt": "imagen de iPad mini",
+ 			"precio": 525,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id2" : {
+ 			"titulo": "iPad air",
+ 			"img": "img/iair.png",
+ 			"alt": "imagen de iPad air",
+ 			"precio": 415,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id3" : {
+ 			"titulo": "iPad 2º Gen",
+ 			"img": "img/ipad2.png",
+ 			"alt": "imagen de iPad 2º Gen",
+ 			"precio": 585,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id4" : {
+ 			"titulo": "iPad 3º Gen",
+ 			"img": "img/ipad3.jpg",
+ 			"alt": "imagen de iPad 3º Gen",
+ 			"precio": 410,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			}
+ 	},
+ 	"acc_apple" : {
+ 		"id1" : {
+ 			"titulo": "Adaptador de corriente",
+ 			"img": "img/icargador.jpg",
+ 			"alt": "imagen de Adaptador de corriente",
+ 			"precio": 45,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "iPad Smart Case",
+ 			"img": "img/smartcase.jpg",
+ 			"alt": "imagen de iPad Smart Case",
+ 			"precio": 60,
+ 			"caract_1": "protege la pantalla por los dos lados",
+ 			"caract_2": "parte trasera de aluminio",
+ 			"caract_3": "Ciérrala y el iPad entrará en modo reposo",
+ 			"caract_4": "suave forro de microfibra",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "Adaptador AV digital",
+ 			"img": "img/interface.jpg",
+ 			"alt": "imagen d Adaptador AV digital",
+ 			"precio": 35,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "Auriculares EarPods",
+ 			"img": "img/airpods.jpg",
+ 			"alt": "imagen de Auriculares EarPods",
+ 			"precio": 29,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"lumia" : {
+ 		"id1" : {
+ 			"titulo": "Nokia Lumia 1320",
+ 			"img": "img/lumia1320.jpg",
+ 			"alt": "imagen telefono Nokia Lumia 1320",
+ 			"precio": 325,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id2" : {
+ 			"titulo": "Nokia Lumia 1520",
+ 			"img": "img/lumia1520.jpg",
+ 			"alt": "imagen de telefono Nokia Lumia 1520",
+ 			"precio": 420,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id3" : {
+ 			"titulo": "Nokia Lumia 925",
+ 			"img": "img/lumia925.jpg",
+ 			"alt": "imagen de telefono Nokia Lumia 925",
+ 			"precio": 326,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id4" : {
+ 			"titulo": "Nokia Lumia 800",
+ 			"img": "img/lumia800.jpg",
+ 			"alt": "imagen de telefono Nokia Lumia 800",
+ 			"precio": 350,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			}
+ 	},
+ 	"asha" : {
+ 		"id1" : {
+ 			"titulo": "Nokia Asha 503",
+ 			"img": "img/asha503.jpg",
+ 			"alt": "imagen de Nokia Asha 503",
+ 			"precio": 545,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id2" : {
+ 			"titulo": "Nokia Asha 303",
+ 			"img": "img/asha303.jpg",
+ 			"alt": "imagen de Nokia Asha 303",
+ 			"precio": 315,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id3" : {
+ 			"titulo": "Nokia Asha 201",
+ 			"img": "img/asha201.jpg",
+ 			"alt": "imagen de Nokia Asha 201",
+ 			"precio": 385,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			},
+ 		"id4" : {
+ 			"titulo": "Nokia Asha 311",
+ 			"img": "img/asha311.jpg",
+ 			"alt": "imagen de Nokia Asha 311",
+ 			"precio": 255,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta movil"
+ 			}
+ 	},
+ 	"acc_nokia" : {
+ 		"id1" : {
+ 			"titulo": "Funda protectora",
+ 			"img": "img/Nokia_Protective.png",
+ 			"alt": "imagen de Funda protectora",
+ 			"precio": 55,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "Coloud Boom para Nokia",
+ 			"img": "img/earnokia.png",
+ 			"alt": "imagen de auriculares nokia",
+ 			"precio": 50,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "Cargador usb",
+ 			"img": "img/cargador.png",
+ 			"alt": "imagen de Cargador usb",
+ 			"precio": 35,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "Camera Grip Lumia 1020",
+ 			"img": "img/cameragrip.png",
+ 			"alt": "imagen de Camera Grip Lumia 1020",
+ 			"precio": 26,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"android" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"droid_iden" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"acc_motorola" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"galaxy" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"ativ" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"wave" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"telefonos" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"acc_sony" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	},
+ 	"tablets" : {
+ 		"id1" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id2" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id3" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 			},
+ 		"id4" : {
+ 			"titulo": "PROXIMA VENTA",
+ 			"img": "img/unknow.png",
+ 			"alt": "imagen de proxima venta",
+ 			"precio": 0,
+ 			"caract_1": "primera caracteristica",
+ 			"caract_2": "segunda caracteristica",
+ 			"caract_3": "tercera caracteristica",
+ 			"caract_4": "cuarta caracteristica",
+ 			"oferta": "oferta accesorio"
+ 		}
+ 	}
+ }

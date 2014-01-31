@@ -1,0 +1,65 @@
+<section class="section_apis" id="geoHTML5">
+	<header>
+		<h2>geo-localización HTML5</h2>
+		<button class="ejm">ejemplo</button>
+	</header>
+	<article class="intro">
+		<header>
+			<h3></h3>
+			<p class="subtitles">API de <em>Google Maps</em></p>
+		</header>
+		<p>combinamos la API nativa de Javascript para la geo-localización, calculando la posición de la máquina del cliente a través de las redes que utiliza, wireless, ethernet, satelital, gps</p>
+		<p>a través de las direcciones de red que ofrecen estas redes (IP), se conoce la posición</p>
+		<p>necesitamos cargar la API de Google Maps<i class="idea">desde el CDN de Google</i>, para poder manipular las propiedades de los mapas, añadiendo las coordenadas obtenidas con <em><code>Navigator</code></em> de Javascript</p>
+		<p>la primera posicion marcada en el mapa es la de <code>navigator.geolocation</code>, la segunda es la posicion hacia donde nos movemos (con vistas a que el mapa almacene los marcadores posteriore a la carga de la página)</p>
+		<p>uil para aplicaciones de moviles para calvulo dedistancias, velocidades....</p>
+		<p>uno de los marcadores se mueve contigo y otro deja constancia de donde iniciastes el trayecto</p>
+	</article>
+
+	<article class="example">
+		<button rel="codeExample">código</button>
+		<div class="codeExample">
+			<pre class="brush: js; gutter: true">
+		var initGeo = function(){
+			/*capa html en el que mostrar el mapa*/
+			var layerMap = $("#gmap_home");
+
+			/*geolocalizacion*/
+			var GEO = { HOME: {}};
+			if( navigator.geolocation )
+			{
+				navigator.geolocation.getCurrentPosition( function(position){
+					GEO.HOME = position;
+					initializeMap(layerMap, GEO.HOME);
+				}, function(error){ console.log("error al reconocer la posicion"); });
+			}
+			else layerMap.text("Este Navegador NO soporta la Geolocalizacion nativa en Javascript");
+		}
+
+		var initializeMap = function(layerMap, geo){
+			var lat = geo.coords.latitude;
+			var long = geo.coords.longitude;
+			var LatLng = new google.maps.LatLng(lat, long);
+			var mapOptions = {
+				center: LatLng,
+				zoom: 15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+		  	var mapa = new google.maps.Map(layerMap[0], mapOptions); //render mapa
+
+		  	//marcador de la posicion geolocation
+		  	var marcador = new google.maps.Marker({
+		  		map: mapa,
+		  		position: LatLng,
+		  		visible: true,
+		  		title: "empzeastes aqui"
+		  	});
+		}</pre>
+		</div>
+		<div id="gmap_home"></div>
+	</article>
+</section>
+<!-- CLAVE DE USUARIO: AIzaSyBH7CfIMgOfU6jLvIKegm7Ee3U10Huvwdg -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBH7CfIMgOfU6jLvIKegm7Ee3U10Huvwdg&amp;sensor=true"></script>
+<script src="include_apis/geo/main.js" defer></script>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<!-- fuerza IE a utilizar el motor de renderizado más actual que esté disponible (incluso en intranets) & Chrome Frame (plugin para IE 6, 7 y 8)-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><!-- eliminar el pinch to zoom -->
+	<meta name="description" content="Mí phone, tienda online de smartphones y accesorios" />
+	<meta name="author" content="Fernando Palacios Landi" />
+	<title>Mí phone</title>
+
+	<!-- ENLACES EXTERNOS -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/normalize.min.css" />
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="stylesheet" href="css/style_icons.css" />
+	<link rel="stylesheet" href="css/main_index.css" />
+	<!--[if lt IE 7]>
+	<link rel="stylesheet" href="css/default.css" />
+		<p class="chromeframe">
+		   You are using an <strong>outdated</strong> browser.<br/>
+		   Please <a href="http://browsehappy.com/">upgrade your browser</a><br/>
+		   or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.
+		</p>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<section id="contenedor_ppal">
+
+		<!-- HEADER
+		-------------------------------->
+		<header id="head_web">
+			<div id="logo">
+				<span>
+					<a id="logo_movil"  href="http://www.cruzalosdedos.es/Mi_phone/index.html" alt="pagina principal Mi_phone"></a>
+					<span id="logo_onda"></span>
+				</span>
+				<h1>my phone</h1><!-- oculto -->
+			</div>
+
+			<section id="clientes">
+				<header>
+					<h2 class="name_user"></h2>
+				</header>
+				<div id="clientes_datos">
+					<form action="#" id="login_new_user" name="login_new_user" onsubmit="return false;">
+						<p class="remove_user"><label for="user_name_cli">Usuario: </label><input type="text" name="user_name_cli" id="user_name_cli" placeholder="nombre de usuario" title="de {3-15} caracteres: a-z, A-Z, 0-9, '_', '-'" pattern="[a-zA-Z0-9_-]{3,15}" required="required" autofocus="autofocus"/></p>
+						<p class="remove_user"><label for="user_pass_cli">Contraseña: </label><input type="text" name="user_pass_cli" id="user_pass_cli" placeholder="contraseña de usuario" required="required"/></p>
+						<p class="remove_user">
+							<input type="submit" value="registrarse">
+						</p>
+					</form>
+				</div>
+			</section>
+
+			<div class="grupo">
+				<div id="titular">
+					<span id="icon-logueado" class="icon-titular"></span>
+					<span class="nombre_titular dato_compra">invitado</span>
+				</div>
+
+				<div class="comprar non_inv"><!-- esta capa se repite en el footer, las tres sub-capas se superpondran -->
+					<span class="icon-comprar"></span>
+					<span class="titulo_comprar">comprar</span>
+					<input type="submit" id="btn_comprar" name="btn_comprar" value="" onclick="event.preventDefault();"/>
+				</div>
+			</div>
+		</header>
+
+		<!-- NAVEGACION
+		-------------------------------->
+		<nav id="nav_web">
+			<ul>
+				<li><a href="#">zona apple</a>
+					<ul>
+						<li><a href="#">iphone</a></li>
+						<li><a href="#">ipad</a></li>
+						<li><a href="#">acc_apple</a></li>
+					</ul>
+				</li>
+				<li><a href="#">zona nokia</a>
+					<ul>
+						<li><a href="#">lumia</a></li>
+						<li><a href="#">asha</a></li>
+						<li><a href="#">acc_nokia</a></li>
+					</ul>
+				</li>
+				<li><a href="#">zona motorola</a>
+					<ul>
+						<li><a href="#">android</a></li>
+						<li><a href="#">droid_iden</a></li>
+						<li><a href="#">acc_motorola</a></li>
+					</ul>
+				</li>
+				<li><a href="#">zona samsung</a>
+					<ul>
+						<li><a href="#">galaxy</a></li>
+						<li><a href="#">ativ</a></li>
+						<li><a href="#">wave</a></li>
+					</ul>
+				</li>
+				<li><a href="#">zona sony</a>
+					<ul>
+						<li><a href="#">telefonos</a></li>
+						<li><a href="#">acc_sony</a></li>
+						<li><a href="#">tablets</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- WRAPPER MOVILES DE VENTA !!!!!!!!diseño FIJO (px), con overflowScroll-Y
+		-------------------------------->
+		<section id="wrap_web"><!-- overflow-x: auto; white-space: nowrap; -->
+			<div id="presentacion"></div>
+		</section>
+
+		<!-- FOOTER carrito de compra
+		-------------------------------->
+		<footer id="foot_web" class="non_inv">
+			<div id="catalogo_compras">
+				<header><h2>Carrito de compra actual</h2></header>
+				<!-- CARRUSEL -->
+				<ul id="carrusel">
+					<!-- añadir dinamicamente el carrusel de compra -->
+				</ul>
+			</div>
+
+			<div class="grupo">
+				<header>
+					<h2>total</h2>
+					<h3><span id="total_compra" class="dato_compra">0</span> €</h3>
+				</header>
+				<div class="comprar">
+					<span class="icon-comprar"></span>
+					<span class="titulo_comprar">comprar</span>
+					<input type="submit" id="btn_comprar" name="btn_comprar" value="" onclick="event.preventDefault();"/>
+				</div>
+			</div>
+		</footer>
+		<!-- POP_UP advertenceias
+		-------------------------------->
+		<aside id="alertas">
+			<h3></h3>
+			<p><small>pop_up 3 segundos</small></p>
+		</aside>
+		<!-- AUTOR Y LICENCIAS
+		-------------------------------->
+		<aside id="footer_autor">
+			<header>
+				<h2>Acerca del Autor</h2>
+			</header>
+			<address>
+				Escrita por: <a rel="author" href="mailto:fernandopalacioslandi@gmail.com">Mail Nando</a><br/>
+				Pagina Web: <a rel="author" href="http://www.cruzalosdedos.es/">Web Nando</a><br/>
+				Repositorio Web: <a rel="author" href="https://github.com/fernandoPalaciosGit/">Github Nando</a><br/>
+			</address>
+		</aside>
+	</section>
+	<section id="pedido">
+		<form action="#" id="form_pedido" name="form_pedido" onsubmit="return false;">
+			<header>
+				<h2>ficha del cliente</h2>
+			</header>
+			<article id="ficha_cliente">
+				<p>
+					<label for="nombre_cliente"><strong>Nombre</strong>: </label>
+					<input type="text" name="nombre_cliente" id="nombre_cliente" value="" readonly="readonly" required="required"/>
+				</p>
+				<p>
+					<label for="tel_cliente"><strong>Teléfono</strong>: </label>
+					<input type="tel" name="tel_cliente" pattern="[0-9]{9}" id="tel_cliente" required="required" placeholder="movil o fijo"/>
+				</p>
+				<p>
+					<label for="mail_cliente"><strong>Email</strong>: </label>
+					<input type="email" name="mail_cliente" id="mail_cliente" required="required" placeholder="correo electronico"/>
+				</p>
+				<p>
+					<label for="dir_cliente"><strong>Dirección</strong>: </label>
+					<input type="text" name="dir_cliente" id="dir_cliente" required="required" placeholder="calle y portal"/>
+				</p>
+				<p>
+					<label for="dni_cliente"><strong>Dni</strong>: </label>
+					<input type="text" name="dni_cliente" id="dni_cliente" pattern="^\d{8}[a-zA-Z]$" required="required" placeholder="dni cliente"/>
+				</p>
+			</article>
+			<article id="pedido_cliente">
+				<p>Total compra: <span id="total"></span> Euros</p>
+				<p id="articulos_compra"></p>
+				<footer>
+					<input type="submit" value="¡¡Comprar!!" form="form_pedido">
+				</footer>
+			</article>
+		</form>
+	</section>
+	<!-- carga jQuery desde el CDN de google -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- si el CDN falla, se carga desde el servidor cliente -->
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+	<script src="js/main.js"></script>
+	<script src="js/objeto.js"></script>
+</body>
+</html>

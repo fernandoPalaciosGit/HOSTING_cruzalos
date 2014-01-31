@@ -1,0 +1,42 @@
+<section class="section_apis" id="dataHTML5">
+	<header>
+		<h2>atributos <code>data</code> HTML5</h2>
+	</header>
+	<article class="intro">
+		<p>se trata de unos atributos en etiquetas HTML, que te permiten almacenar datos que identifican al elemento en cuestión</p>
+		<p>debe tener como minimo un caracter de longitudud, no puede contener letras en mayusculas y debe llevar como prefijo: <code>data-*</code></p>
+		<p>los atributos <code>data-*</code>y su contenido, seran totalmente ignorados por el <i>userAgent</i></p>
+		<pre>
+
+	&lt;ul id="vegetable"&gt;
+	  &lt;li <strong>data-magnitud="10cm"</strong> <strong>data-caducidad="Marzo a Junio</strong>"&gt;Zanahoria&lt;/li&gt;
+	  &lt;li <strong>data-magnitud="13cm"</strong> <strong>data-caducidad="Febrero a Marzo</strong>"&gt;Apio&lt;/li&gt;
+	  &lt;li <strong>data-magnitud="3cm"</strong> <strong>data-caducidad="Marzo a Septiembre</strong>"&gt;Rábanos&lt;/li&gt;
+	&lt;/ul&gt;
+		</pre>
+		<p class="blockCode">
+			<code>var data = "magnitud";</code>
+			<br/>
+
+			<code>var liMagnitud = document.querySelectorAll("li[data-"+magnitud+"]");</code>
+			<span class="comment"> //todos los &lt;li&gt; con data-magnitud</span><br/>
+
+			<code>liMagnitud[0].getAttribut("magnitud");</code>
+			<span class="comment"> //metodo antiguo</span><br/>
+
+			<code>liMagnitud[0].dataset.magnitud;</code>
+			<span class="comment"> //'10cm'</span><br/>
+
+			<code>liMagnitud[0].dataset.caducidad;</code>
+			<span class="comment"> //'Marzo a Junio'</span><br/>
+
+			<code>$(liMagnitud[0]).data("magnitud");</code>
+			<span class="comment"> //'10cm'</span><br/>
+		</p>
+		<p><strong>no se deberia usar...</strong></p>
+		<ul class="list">
+			<li>Cuando tenemos etiquetas cuyo contenido semantico es mas apropiado para atribuir datos del elemento, como &lt;time&gt;, &lt;mark&gt;</li>
+			<li>no estan destinados para completar o susituir los micfroformatos, los atributos data <em>no tendran uso público</em> <i class="idea">software externo, como los surfers, bots de buscadores, no interaccionaran con ellos</i>, </li>
+		</ul>
+	</article>
+</section>

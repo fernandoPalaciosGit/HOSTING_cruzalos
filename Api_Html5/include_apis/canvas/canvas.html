@@ -1,0 +1,75 @@
+<section class="section_apis" id="canvasHTML5">
+	<header>
+		<h2>figuras canvas html5</h2>
+	</header>
+	<article class="intro">
+		<canvas id="myCanvas" class="layerCanvas" width="470" height="250"></canvas>
+	</article>
+
+</section>
+<script>
+	var initCanvas = function(){
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		console.log(ctx); //CanvasRenderingContext2D
+
+		/*Rectangulos*/
+		ctx.fillStyle = "rgb(255, 0, 0)";
+		ctx.fillRect(10, 10, 20, 20);
+
+		ctx.strokeStyle = "rgb(0, 0, 255)";
+		ctx.strokeRect(40, 10, 20, 20);
+
+		/*Arcos*/
+		/*beginPath / stroke-fill son las que dibujan (preceder, anteceder)*/
+		ctx.beginPath();
+		ctx.arc(90, 30, 20, 0, toRad(360));
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.arc(140, 30, 20, 0, toRad(270));
+		ctx.fillStyle = "rgb(0, 0, 255)";
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(190, 25, 15, 0, toRad(200));
+		ctx.fillStyle = "rgb(0, 255, 0)";
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.arc(230, 25, 15, 0, toRad(270));
+		ctx.strokeStyle = "rgb(0, 255, 0)"; //color de linea
+		ctx.lineWidth = 3; //grosor de linea
+		ctx.closePath(); //cierra la figura
+		ctx.stroke();
+
+		/*Poligonos*/
+		ctx.beginPath(); //empuiezas ddibujo
+		ctx.moveTo(10, 100); //mueves el puntero
+		ctx.lineTo(150, 90); //trazas linea
+		ctx.lineTo(110, 120);
+
+		ctx.strokeStyle = "rgb(255, 255, 0)";
+		ctx.lineWidth = 1.5;
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath(); //empuiezas ddibujo
+		ctx.moveTo(200, 100); //mueves el puntero
+		ctx.lineTo(340, 90); //trazas linea
+		ctx.lineTo(310, 120);
+		ctx.fillStyle = "rgb(255, 255, 0)";
+		ctx.fill();
+
+		/*Textos*/
+		ctx.lineWidht = 15; //bordes de las letras
+		ctx.font = "30pt Arial";
+		ctx.strokeText("canvas HTML5", 150, 200);
+
+
+	}
+
+	var toRad = function(grados){
+		return (grados * Math.PI)/180;
+	}
+</script>

@@ -1,0 +1,51 @@
+<section class="section_apis" id="formHTML5">
+	<header>
+		<h2>formularios html5</h2>
+	</header>
+	<article class="intro">
+		<p>todos los nuevos controles de formulario llevan aplicados una vista adecuada al navegador que los renderiza, de manera que llevan implicito <b class="lead">validacion nativa y compatibilidad con navegadores</b></p>
+		<form method="POST" action="http://cruzalosdedos.es" name="foo" onsubmit="return false" id="form_html5">
+			<p>
+				<label for="inpText">Control de texto</label> :
+				<input type='text' id="inpText" name="texto"/> <br/>
+
+				<label for="inpEmail">Correo electronico</label>:
+				<input type="email" id="inpEmail" name="mail"/> <br/>
+
+				<label for="inpUrl">Direccion web</label> :
+				<input type="url" id="inpUrl" name="dirWeb"/> <br/>
+
+				<label for="inpSearch">Busqueda Intradocumental</label> :
+				<input type="search" id="inpSearch" name="busqueda"/> <br/>
+
+				<label for="inpTel">Numero de telefono</label> :
+				<input type="tel" id="inpTel" name="telefono"/> <br/>
+
+				<label for="inpNumber">Casilla numerica</label> :
+				<input type="number" id="inpNumber" name="numero"/> <br/>
+
+				<label for="inpRange">Rango numerico</label> :
+				<input type="range" id="inpRange" name="rango"/> <br/>
+
+				<label for="inpDate">Fecha completa</label> :
+				<input type="date" id="inpDate" name="fecha"/> <br/>
+
+				<label for="inpMes">Fecha - Mes del año</label> :
+				<input type="month" id="inpMes" name="mes"/> <br/>
+
+				<label for="inpSemana">Fecha - Semana del mes</label> :
+				<input type="week" id="inpSemana" name="semana"/> <br/>
+
+				<label for="inpColor">Paleta de colores</label> :
+				<input type="color" id="inpColor" name="color"/> <br/>
+			</p>
+			<p>
+				<input type="submit"  value="enviar formulario">
+				<input type="reset" value="Resetear campos">
+			</p>
+		</form>
+		<p>
+			evitar la validacion nativa de los formularios: <code>&lt;input type="submit" formnovalidate&gt;</code>
+		</p>
+	</article>
+</section>

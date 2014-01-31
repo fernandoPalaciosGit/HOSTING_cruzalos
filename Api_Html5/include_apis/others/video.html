@@ -1,0 +1,100 @@
+<section class="section_apis" id="videoHTML5">
+	<header>
+		<h2>video html5</h2>
+		<button class="ejm toMain">ejemplo</button>
+	</header>
+	<article class="intro">
+		<p>Hasta que no llegó la etiqueta de HTML5 <code>video</code>, NO existia manera de integrar un archivo multiumedia de manera nativa a las paginas web. Se utilizaban sitemas propietarios que daban constantes inconsistencias con los navegadores y estsandares de video.</p>
+		<p>hasta entonces empresas privadas proponian para la web sus propios modelos de reproductores de video, los cuales se integrabn en los navegadores a traves de plugins, los cuales eran incontrolables, sobre todo por la seguridad <i class="idea">podrian ser puntos de acceso a malware</i></p>
+		<p>la etiqueta de video, permite llevar de manera nativa, elementos muñltimedia a la web y elegir sus propios codecs de lectura y formatos, dependiendo del navegador que querramos que se conosuma</p>
+		<p>le acompaña una libreria de javascript para la manipulacion</p>
+		<p><strong>atributos</strong></p>
+		<dl>
+			<dt><code>poster="/url/"</code></dt>
+			<dd>permite añadir una imagen de bakground, mientras esté detenido</dd>
+			<dt>autoplay</dt>
+			<dd>reproduccion automatica al cargar el video</dd>
+			<dt>controls</dt>
+			<dd>añade controles de interacción al video</dd>
+			<dt>loop</dt>
+			<dd>el video se repetirá continuamente al finalizar a reproduccion</dd>
+			<dt>muted</dt>
+			<dd>se iniciará en silencio</dd>
+			<dt>preload</dt>
+			<dd>al cargar la pagina en elnavegador, cargara en su caché el video (rendimiento)</dd>
+		</dl>
+	</article>
+</section>
+
+<script>
+	var VIDEOPARAM = {video: "", volumen: "", progreso: "", tiempo:""};
+	var initVideo = function(){
+		VIDEOPARAM.video = $("#videoInitHTML5")[0];
+		VIDEOPARAM.volumen = $("#volumen")[0];
+		VIDEOPARAM.progreso = $("#progreso")[0];
+		VIDEOPARAM.tiempo = $("#tiempo")[0];
+
+		//eliminamos los controles nativos (attr(controls)), poque vamos a añadirlonosotros
+		$("#play").on("click", ponerPlay);
+		$("#pause").on("click", ponerPausa);
+		$("#stop").on("click", ponerStop);
+
+		//controlamos el volumen con los cambios sobre el rango del input
+		VIDEOPARAM.volumen.addEventListener("change", controlarVolumen, false);
+
+		//se dispara cuendo el playback actual cambia su posicion
+		VIDEOPARAM.video.addEventListener("timeupdate", actualizarTiempo, false);
+
+		//evento que se dispara cuando el video se termina de cargar
+		VIDEOPARAM.video.addEventListener("loadedmetadata", loadVideo, false);
+	}
+
+	var ponerPlay = function(){
+		//hacer desaparecer el backgroun-image css cuando iniciamos el video
+		cambiarBGvideo("none", "rgba(17, 223, 241, 1)");
+		VIDEOPARAM.video.play();
+	}
+
+	var ponerPausa = function(){
+		VIDEOPARAM.video.pause();
+	}
+
+	var ponerStop = function(){
+		VIDEOPARAM.video.load(); //VIDEOPARAM.video.pause();
+										 // VIDEOPARAM.video.currentTime = 0;
+
+		/*aparecer el bg y desaparecer el poster*/
+		cambiarBGvideo("url(videos/BGwhat_is_HTML5.png)", "white");
+	}
+
+	var controlarVolumen = function(){
+		/*regulamos el voñlumen para que sea mas bajo*/
+		VIDEOPARAM.video.volume = VIDEOPARAM.volumen.value;
+	}
+
+	var actualizarTiempo = function(){
+		//devuelve la posicion acgtual del playback en segundos
+		var NOW = event.target.currentTime;
+		var roundNOW = Math.round(NOW * 100) / 100; //redondear con 2 decimales
+		VIDEOPARAM.tiempo.innerText = roundNOW+" seg";
+
+		//actualizamos la linea de progreso con el tiempo actual del video
+		VIDEOPARAM.progreso.setAttribute("value", NOW);
+	}
+
+	var loadVideo = function(){
+		//fijamos la longitud del rango al progress
+		var maxVideoLength = VIDEOPARAM.progreso.max = VIDEOPARAM.video.duration;
+		VIDEOPARAM.progreso.setAttribute("max", maxVideoLength);
+
+		//volumen del video predefinido por el #volumen->range
+		VIDEOPARAM.video.volume = VIDEOPARAM.volumen.value;
+	}
+
+	var cambiarBGvideo = function(bgImg, bgColor){
+		$("#videoInitHTML5").css({
+			"background-image": bgImg,
+			"background-color": bgColor
+		});
+	}
+</script>

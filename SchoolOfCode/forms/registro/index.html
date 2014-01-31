@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<!-- fuerza IE a utilizar el motor de renderizado más actual que esté disponible (incluso en intranets) & Chrome Frame (plugin para IE 6, 7 y 8)-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="description" content="formulario de registro de nuevos usuarios a la plataforma school of code" />
+	<meta name="author" content="Fernando Palacios Landi" />
+	<title>formulario de registro a SchoolOfCode</title>
+
+	<!-- ENLACES EXTERNOS -->
+	<link rel="shortcut icon" href="../../media/img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="../../media/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="../../css/vendors/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/vendors/font-awesome.css">
+	<link rel="stylesheet" href="css/formRegister.css">
+</head>
+<body>
+	<section id="contenedor-web" class="container">
+		<!-- HEADER
+		******************************-->
+		<header id="encabezado" class="page-header">
+			<h1>formulario de registro</h1>
+		</header>
+
+		<!-- FORMULARIO DE REGISTRO
+		******************************-->
+		<section id="wrapForm" class="jumbotron boxLogin">
+			<form action="../../indexCodeSchool.html"
+					method="post" id="formRegister" role="form">
+				<!-- REQUIRED: nombre, dni, username, passwor, repeat_password, email -->
+				<fieldset>
+					<legend>ficha del cliente</legend>
+					<p class="form-group input-group">
+						<label for="firstUserName" class="input-group-addon">nombre</label>
+						<input type="text" id="firstUserName" name="firstUserName"
+						required="required" autofocus="autofocus" placeholder="nombre de usuario"
+						pattern="[a-zA-Z]{3,15}" class="form-control alert alert-warning"/>
+					</p>
+					<p class="form-group input-group">
+						<label for="lastUserName" class="input-group-addon">apellidos</label>
+						<input type="text" id="lastUserName" name="lastUserName"
+						placeholder="apellidos del usuario" pattern="[a-zA-Z ]{3,25}" class="form-control"/>
+					</p>
+					<p class="form-group input-group">
+						<label for="dniUser" class="input-group-addon">
+							<abbr title="documento nacional de identidad">nif</abbr>
+						</label>
+						<input type="text" id="dniUser" name="dniUser" required="required"
+						placeholder="identificacion DNI" class="form-control alert alert-warning"/>
+					</p>
+					<p class="form-group input-group">
+						<label for="sexUser" class="input-group-addon">sexo</label>
+						<select id="sexUser" name="sexUser" required="required">
+							<option selected="selected"></option>
+				  	 		<option>Male</option>
+							<option>Female</option>
+						</select>
+					</p>
+					<p class="form-group input-group">
+						<label for="birthdayUser" class="input-group-addon">fecha nacimiento</label>
+						<input type="date" id="birthdayUser" name="birthdayUser" max=""
+						placeholder="fecha de cumplaeaños" class="form-control">
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>ficha digital</legend>
+					<p class="form-group input-group">
+						<label for="emailUser" class="input-group-addon" title="email">
+							<span class="fa fa-envelope-o fa-lg"></span>
+						</label>
+						<input type="email" id="emailUser" name="emailUser" required="required"
+						placeholder="correo electronico" class="form-control alert alert-warning"/>
+					</p>
+					<p class="form-group input-group">
+						<label for="urlUser" class="input-group-addon" title="pagina web">www</label>
+						<input type="text" id="urlUser" name="urlUser" placeholder="pagina web" pattern="[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)" class="form-control"/>
+					</p>
+					<p class="form-group input-group">
+						<label for="telUser" class="input-group-addon" title="telefono">
+							<span class="fa fa-mobile fa-lg"></span>
+						</label>
+						<input type="tel" id="telUser" name="telUser"
+						placeholder="telefono" class="form-control"/>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>identificacion del cliente</legend>
+					<p class="form-group input-group">
+						<label for="userName" class="input-group-addon" title="usuario">
+							<span class="fa fa-user fa-lg"></span>
+						</label>
+						<input type="text" name="userName" id="userName" required="required"
+						placeholder="nick de usuario" pattern="^[a-zA-Z0-9_]{1,10}$" class="form-control alert alert-warning">
+					</p>
+					<p class="form-group input-group">
+						<label for="userPass" class="input-group-addon" title="contraseña">
+							<span class="fa fa-key fa-lg"></span>
+						</label>
+						<input type="password" name="userPass" id="userPass" required="required"
+						placeholder="contraseña usuario" class="form-control alert alert-warning">
+					</p>
+				</fieldset>
+				<p>
+					<input type="submit" value="Registrarse" class="btn btn-success">
+				</p>
+			</form>
+		</section>
+	</section>
+	<!-- POP_UP advertenceias
+	******************************-->
+	<aside id="alertas">
+		<h3></h3>
+		<p class="info1"></p>
+		<p class="info2"></p>
+	</aside>
+	<!-- carga jQuery desde el CDN de google -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- si el CDN falla, se carga desde el servidor cliente -->
+	<script>window.jQuery || document.write('<script src="../../js/vendors/jquery-2.0.3.min.js"><\/script>')</script>
+	<script src="js/localStorage.js"></script>
+	<script src="js/formValidateRegister.js"></script>
+</body>
+</html>

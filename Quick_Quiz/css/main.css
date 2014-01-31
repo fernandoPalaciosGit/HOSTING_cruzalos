@@ -1,0 +1,367 @@
+@CHARSET "UTF-8";
+/* ==========================================================================
+   ESTILOS POR DEFECTO
+   ========================================================================== */
+html, body, div, span, h1, h2, h3, p,
+blockquote, a, abbr, acronym, address,
+cite, code, em, img, q, small, strong,
+sub, sup, main, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table,
+tbody, tfoot, thead, tr, th, td, article,
+aside, figure, figcaption, footer, header,
+nav, section, time, audio, video
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    background:transparent;
+}
+article, aside, details, figcaption, figure,
+footer, header, nav, section, div, li
+{
+    display:block;
+}
+html, body
+{
+    height: 100%;/*adaptar el diseño al ancho de la ventana del navegador*/
+    max-width:100%;/*nada puede ser mas ancho que la pagina, evitamos el scroll horizontal*/
+    margin:0 auto;
+    padding: 0;
+    zoom: 95%;
+}
+html
+{
+    font: 16px verdana, arial, sans-serif;/*1rem = 16px*/
+    color: #4C4C4C;
+    cursor: auto;
+}
+h1, h2, h3
+{
+    font: oblique bold 32px monospace, roboto;
+    font: oblique bold 2rem monospace, roboto;
+    text-align: center;
+    text-transform: uppercase;
+}
+nav a
+{
+    font-size: 24px;
+    font-size: 1.5rem;
+}
+a, a:link, a:visited, a:hover
+{
+    text-decoration: none;
+    color: rgba(55, 55, 55, 1.0);
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+a:hover
+{
+    color: rgba(200, 200, 200, 1.0);
+}
+input[type="button"], input[type="submit"],
+a, a:link, a:visited, a:hover
+{
+    cursor: pointer;
+}
+li
+{
+    margin: 0 auto;
+    padding: 6px 12px;
+    text-align: center;
+    list-style-type: none;
+}
+img, video
+{
+  max-width: 100%;
+}
+::selection
+{
+    background: #b3d4fc;
+    text-shadow: none;
+}
+strong
+{
+  color: rgb(0, 102, 255);
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+@font-face{
+  font-family: "3d";
+  src:  url("../font/3dumb_regular_macroman/3Dumb-webfont.eot");/*IE*/
+  src:  url("../font/3dumb_regular_macroman/3Dumb-webfont.eot") format("embedded-opentype"),
+      url("../font/3dumb_regular_macroman/3Dumb-webfont.woff") format("woff"),
+      url("../font/3dumb_regular_macroman/3Dumb-webfont.ttf") format("truetype"),
+      url("../font/3dumb_regular_macroman/3Dumb-webfont.svg?#3dumbregular") format("svg");
+}
+@font-face{
+  font-family: "2d";
+  src:  url("../font/2dumb_regular_macroman/2Dumb-webfont.eot");/*IE*/
+  src:  url("../font/2dumb_regular_macroman/2Dumb-webfont.eot") format("embedded-opentype"),
+      url("../font/2dumb_regular_macroman/2Dumb-webfont.woff") format("woff"),
+      url("../font/2dumb_regular_macroman/2Dumb-webfont.ttf") format("truetype"),
+      url("../font/2dumb_regular_macroman/2Dumb-webfont.svg?#2dumbregular") format("svg");
+}
+/* ==========================================================================
+  BOTONES CON DEGRADADO
+   ========================================================================== */
+.btn_quiz {
+  background: #377ad0;
+  background-image: linear-gradient(bottom, #3779D0 0%, #52A7E8 100%);
+  background-image: -o-linear-gradient(bottom, #3779D0 0%, #52A7E8 100%);
+  background-image: -moz-linear-gradient(bottom, #3779D0 0%, #52A7E8 100%);
+  background-image: -webkit-linear-gradient(bottom, #3779D0 0%, #52A7E8 100%);
+  background-image: -ms-linear-gradient(bottom, #3779D0 0%, #52A7E8 100%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #3779D0),color-stop(1, #52A7E8));
+  border-top: 1px solid #4081af;
+  border-right: 1px solid #2e69a3;
+  border-bottom: 1px solid #20559a;
+  border-left: 1px solid #2e69a3;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 3px 3px rgb(0, 0, 0);
+}
+.btn_quiz:hover {
+  background: #206bcb;
+  background-image: linear-gradient(bottom, #206ACB 0%, #3E9DE5 100%);
+  background-image: -o-linear-gradient(bottom, #206ACB 0%, #3E9DE5 100%);
+  background-image: -moz-linear-gradient(bottom, #206ACB 0%, #3E9DE5 100%);
+  background-image: -webkit-linear-gradient(bottom, #206ACB 0%, #3E9DE5 100%);
+  background-image: -ms-linear-gradient(bottom, #206ACB 0%, #3E9DE5 100%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #206ACB),color-stop(1, #3E9DE5));
+  background-clip: padding-box;
+  border-top: 1px solid #2a73a6;
+  border-right: 1px solid #165899;
+  border-bottom: 1px solid #07428f;
+  border-left: 1px solid #165899;
+  box-shadow: inset 0 1px 0 0 #62b1e9;
+  cursor: pointer;
+  text-shadow: 0 -1px 1px #1d62ab;
+  color: #FFF;
+}
+
+.btn_quiz:active {
+  background: #3282d3;
+  background-clip: padding-box;
+  border: 1px solid #154c8c;
+  border-bottom: 1px solid #0e408e;
+  box-shadow: inset 0 0 6px 3px #1657b5, 0 1px 0 0 #fff;
+  text-shadow: 0 -1px 1px #2361a4;
+  color: #FFF;
+}
+/* ==========================================================================
+    ESTILOS DE PAGINA
+   ========================================================================== */
+#contenedor-ppal
+{
+  width: 90%;
+  height: 100%;
+  margin: 0px auto;
+  padding: 0;
+	font-size: 16px;
+	font-size: 1rem;
+}
+/*ENCABEZADO
+------------------------------*/
+#head_quiz
+{
+  position: relative;
+	width: 100%;
+	height: 10%;
+}
+#head_quiz h1
+{
+  text-transform: lowercase;
+  font-family: "2d";
+  word-spacing: 3em;
+}
+#head_quiz h1 a
+{
+  position: absolute;
+  top: -20%;
+  width: 1em;
+  font-size: 2em;
+  font-family: "3d";
+  text-transform: uppercase;
+  color: rgb(0, 102, 255);
+}
+#head_quiz h1 a:hover
+{
+  color: rgb(81, 147, 179);
+  margin-left: -10px;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+}
+#head_quiz h1 span
+{
+  position: absolute;
+  top: 25%;
+  margin-left: 60px;
+}
+#head_quiz h1 a:nth-of-type(1), #head_quiz h1 span:nth-of-type(1)
+{
+  left: 29%;
+}
+#head_quiz h1 a:nth-of-type(2), #head_quiz h1 span:nth-of-type(2)
+{
+  left: 58%;
+}
+/*GRUPOS: FLOTABILIDAD
+------------------------------*/
+/*romper la flotabilidad de elementos contenidos*/
+.groupFloat:before,
+.groupFloat:after
+{
+	content: "";
+	display: table;
+}
+.groupFloat:after
+{
+	clear: both;
+}
+#help_quiz, #foot_quiz
+{
+	float: left;
+}
+#nav_quiz, #alt_web
+{
+	float: right;
+}
+/*GRUPOS: POSICIONAMIENNTO
+------------------------------*/
+#group_main_nav, #group_foot_aside
+{
+  font-size: 14px;
+  font-size: 0.9em;
+  width: 100%;
+}
+#group_main_nav
+{
+  height: 55%;
+
+}
+#group_foot_aside
+{
+  height: 35%;
+}
+#group_foot_aside h2, #group_main_nav h2
+{
+  font-size: 16px;
+  font-size: 1.4em;
+  line-height: 30px;
+  line-height: 1.5em;
+  font-family: "2d";
+}
+/*FOOTER & ASIDE
+------------------------------*/
+#foot_quiz, #alt_web
+{
+	height: 50%;
+}
+#foot_quiz
+{
+	width: 75%;
+  height: 100%;
+}
+#foot_quiz a
+{
+  text-decoration: underline;
+}
+#alt_web
+{
+  position: relative;
+	width: 25%;
+  height: 100%;
+  color: rgb(0, 0, 0)!important;
+}
+#alt_web>article
+{
+  position: absolute;
+  top: 15%;
+  top: calc(50% - 100px);
+  left: 0;
+  height: 200px;
+  margin: 0 auto;
+  /*IMAGEN DE FONDO*/
+  max-width: 100%;
+  width: 100%;
+  background: transparent url(../multimedia/quiz.jpg) no-repeat top left;/*sustituimos el titulo por una imagen*/
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-size: 100% 100%;
+  z-index: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+
+}
+#alt_web>article:hover
+{
+  background: transparent url(../multimedia/quiz_transparent.jpg) no-repeat top left;/*sustituimos el titulo por una imagen*/
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-size: 100% 100%;
+  opacity: 0.9;
+}
+#alt_download header
+{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 50%;/*con esto, el encabezado me permite que el puntero del raton mantenga el hover al salir del areaq de*/
+  z-index: 10;
+}
+#alt_download header ~ nav/*utilizare el hover de su hermano para configurar su estilo*/
+{
+  display: none;
+  position: relative;
+  top: 10%;
+  z-index: 20;
+}
+#alt_download header:hover ~ nav
+{
+  display: block;/*lo hago aparecer cuando su hermano este en hover*/
+}
+#alt_download header ~ nav:hover
+{
+  display: inline-block;/*permito que se respeten los elementos inline (los enlaces), para poder acceder a ellos*/
+  position: absolute;
+  margin-top: 7%;
+  width: 100%;
+  margin: 0 auto;
+  top: 10%;
+}
+#alt_download a
+{
+  color: rgb(24, 79, 148)!important;
+  font-weight: bold;
+}
+#alt_download a:hover
+{
+  outline: rgb(114, 185, 235);
+  outline-style: dotted;
+  outline-width: thick;
+}
+#licence_cc
+{
+	margin-top: 5%;
+	position: relative;
+}
+#licence_cc img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#licence_cc h3
+{
+	text-indent: 80px;
+	text-indent: 4em;
+}

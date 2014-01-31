@@ -1,0 +1,46 @@
+<section class="section_apis" id="hardwareHTML5">
+	<header>
+		<h2>hardware html5</h2>
+		<button class="ejm">ejemplo</button>
+	</header>
+	<article class="intro">
+		<header>
+			<p><b class="lead subtitles">acceder al hardware que genera el contenido media</b></p>
+		</header>
+		<p>se trata de acceder a la camara y al microfono del navegador del cliente que accede a nuestra pagina web</p>
+		<p>Al igual que el objeto <code>speechRecognition</code>, el objeto <code>window.navigator.webkitGetUserMedia</code>, aun está en desarrollo y todavia se en cuantra amparado por prefijos</p>
+		<p>a diferencia de <code>new webkitSpeechRecognition()</code>, en este caso lo usaremos como: <code>window.navigator.getUserMedia</code></p>
+		<aside style="font-size: 0.7em;">
+			<p><a href="https://developer.mozilla.org/es/docs/Web/API/Navigator.getUserMedia">guia mozilla desarrolladores</a></p>
+		</aside>
+	</article>
+
+	<article class="example">
+		<p><strong>capturamos el stream de la camara a traves de &lt;video&gt;</strong></p>
+		<video id="userMedia"></video>
+	</article>
+</section>
+<script>
+	var initUserHardware = function(){
+		//HACK para diferentes vendors
+		navigator.getUserMedia = (
+			navigator.getUserMedia ||
+			navigator.webkitGetUserMedia ||
+			navigator.mozGetUserMedia ||
+			navigator.msGetUserMedia
+		);
+		//navigator.getUserMedia ( constraints, successCallback, errorCallback );
+		if( navigator.getUserMedia ) navigator.getUserMedia({video: true, audio: true}, successHardwareStream, errorHardwareStream );
+		else alert("Tu navegador NO soporta control de hardware");
+	}
+
+	var successHardwareStream = function(e_stream){
+		var video = $("#userMedia")[0];
+		video.src = window.URL.createObjectURL(e_stream);
+		video.play();
+	}
+
+	var errorHardwareStream = function(err_stream){
+		console.log("Error media stream: "+err_stream);
+	}
+</script>

@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+html, body
+{
+    background-color: rgb(97, 82, 9) !important;
+}
+.tono_bgd
+{
+	background-color: rgb(255, 228, 0) !important;/*1*/
+}
+.tono_navegacion
+{
+	background-color: rgb(255, 140, 0) !important;
+}
+.tono_slide
+{
+	color: rgb(255, 187, 0) !important;/*2*/
+}
+#presentacion div[id^="slide"]:hover
+{
+    color: rgb(255, 228, 0) !important;
+}
+#link_ventas li
+{
+	background-color: rgb(255, 187, 0) !important;/*2*/
+	border: 1px solid rgb(166, 122, 0) !important;/*3*/
+	box-shadow: 4px 4px 4px rgb(166, 122, 0) !important;/*3*/
+	color: rgba(255, 255, 255, 0.95) !important;
+}
+.tono_idiomas
+{
+	border-left: 3px solid rgb(166, 122, 0) !important;/*3*/
+	background-color: rgb(166, 122, 0) !important;/*3*/
+}
+.implementar header h2, #settings > li
+{
+	color: rgb(166, 122, 0) !important;/*3*/
+}
+#difuminar_footer h2
+{
+	color: rgb(85, 71, 32) !important;
+}
+input[type='password']:valid:focus,
+input[type='text']:valid:focus,
+input[type='url']:valid:focus,
+input[type='email']:valid:focus{
+    animation: anim_focus 2s linear 0s infinite normal;
+    -webkit-animation: anim_focus 2s linear 0s infinite normal;
+    -moz-animation: anim_focus 2s linear 0s infinite normal;
+    outline-color: rgb(255, 187, 0) !important;/*2*/
+}
+@keyframes anim_focus{
+    from{ background-color: rgb(255, 228, 0); }/*1*/
+    50%{ background-color: rgb(255, 187, 0); }/*2*/
+    to{ background-color: rgb(255, 228, 0); }/*1*/
+}
+@-webkit-keyframes anim_focus{
+    from{ background-color: rgb(255, 228, 0); }/*1*/
+    50%{ background-color: rgb(255, 187, 0); }/*2*/
+    to{ background-color: rgb(255, 228, 0); }/*1*/
+}
+@-moz-keyframes anim_focus{
+    from{ background-color: rgb(255, 228, 0); }/*1*/
+    50%{ background-color: rgb(255, 187, 0); }/*2*/
+    to{ background-color: rgb(255, 228, 0); }/*1*/
+}

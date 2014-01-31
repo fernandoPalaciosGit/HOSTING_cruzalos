@@ -1,0 +1,82 @@
+<section class="section_apis" id="semanticaHTML5">
+	<header>
+		<h2>semantica html5</h2>
+		<button class="ejm">ejemplo</button>
+	</header>
+	<article class="intro">
+		<p>cada etiqueta tiene un contexto, significado semántico, según donde se encuentre el flujo HTML</p>
+		<p>la función de las etiquetas, ahora, son especificar el motivo de cada elemento susceptible de identificación dentro de una web, para que los robots que la lean <i class="idea">BOTS de los buscadores</i>, sepan como clasificar esa información</p>
+		<ul class="list">
+			<li>posicionamiento en buscadores</li>
+			<li>controlar la búsqueda orgánica, de esta manera los <strong>bots</strong> posicionaran a tu pagina de manera consecuente con todo el contenido en Internet</li>
+			<li>compatibilidad con estándares web y navegadores futuros</li>
+		</ul>
+	</article>
+	<article class="example">
+		<header>
+			<h2 class="subtitles">etiquetas de contexto semantico</h2>
+		</header>
+		<ul>
+			<li><code summary="frase q expresa una idea, concepto, un ejemplo">&lt;i&gt;</code></li>
+
+			<li><code summary="frase importante del texto, resumen del contexto">&lt;b&gt;</code></li>
+
+			<li><code summary="se utilizan como texto alternativo, expresa una aclaración que puede ser útil para la información expuesta">&lt;em&gt;</code></li>
+
+			<li><code summary="se utiliza como texto importante, la aclaración se dirige a la atención del lector">&lt;strong&gt;</code></li>
+
+			<li><code summary="elemento de bloque SIN contenido semantico">&lt;div&gt;</code></li>
+
+			<li><code summary="elemento inline SIN contenido semantico">&lt;span&gt;</code></li>
+
+			<li><code summary="contenido HTML que esta relacionada con un contexto determinado">&lt;section&gt;</code></li>
+
+			<li><code summary="grupo introductorio de elementos, h1 - h2(titulos), p(subtitulos)">&lt;header&gt;</code></li>
+
+
+			<li><code summary="contenido extendido de la pagina, que tiene que ver con él como una 'postdata' o el 'autor', o enlaces intradocumentales o extradocumentales con relacion a la semantica de la web, o esponsores - patrocinadores">&lt;footer&gt;</code></li>
+
+			<li><code summary="contenido alternativo de la pagina, que expande el contenido, que no tiene que ver directamente con él, o enlaces extradocumentales">&lt;aside&gt;</code></li>
+
+			<li><code summary="contenedor de enlaces, principalmente se estructura con: ul, ol">&lt;nav&gt;</code></li>
+
+			<li><code summary="contenedor de imagenes">&lt;figure&gt;</code></li>
+
+			<li><code summary="decripcion de la imagen, optimo paa colocar un D-link (acccesibilidad)">&lt;figcaption&gt;</code></li>
+
+			<li><code summary="resalta la interaccion del usuario con la pagina,
+			se debe cmombinar con JS para resaltar la accion del usuario sobre algun elemento,
+			por ejemplo las palabras buscadas en el type='search'">&lt;mark&gt;</code></li>
+
+			<li><code summary="informacion de contacto: correo electronico, website, blogs, redes sociales...">&lt;address&gt;</code></li>
+
+			<li><code summary="attr(datetime) = 'YYYY-MM-DDThh:mm:ssTZD' ; <br/>
+									attr(pubdate) = el valor de datetime, corresponde a la fecha de publicacion del documento">
+									&lt;time&gt;</code>
+			</li>
+			<li><code summary="es un campo que depende de los valores de entrada en otros controles, a traves del atributo 'for', se especifican los inputs que estan involucrados, y atraves de javascript (en un evento de input sobre el formulario), se modifica el valor de el output y este lo recibe automaticamente sin tener que indicarle que cambie su valor">&lt;output&gt;</code></li>
+
+			<li><code summary="marca una barra de progreso a la que indicamos su valor con dos atributos (max, value), y tenemos dos propiedades css: progress::-webkit-progress-bar (para el contenedor de la barra), progress::-webkit-progress-value (para la barra) ">
+			&lt;progress&gt;</code></li>
+
+			<li><code summary="Si un texto es demasiado largo y hemos insertado esta etiqueta, el navegador romperá la lí­nea si lo considera necesario y añadirá un salto de lí­nea, evitando el incómodo scroll horizontal.<br/>Es una tecnica eficiete cuando mostramos una url y la rompemos por varios sitios">&lt;wbr&gt;</code></li>
+		</ul>
+
+		<div class="allSummary"></div>
+	</article>
+</section>
+<script>
+// ahora mismo no tengo cargado jquery, pero llamare a la funcionn despues, en el main.js
+var initSemantica = function(){
+	// que remos extender el significado de nu elemento: summary(attr) / longdec(attr)+ D-link
+	var descCode = $("#semanticaHTML5 .example code[summary]");
+	var allSummary = $("#semanticaHTML5 .allSummary");
+	$.each(descCode, function(index, code){
+		// hover = mouseover + mouseout
+		$(code).hover(function(){
+			var summary = $(this).attr("summary");
+			allSummary[0].innerHTML = ( event.type == "mouseover") ? summary : "";
+		});
+	});
+}
+</script>

@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body
+{
+    background: rgb(255, 255, 255) url("../img/cinta_body.jpg") repeat-y fixed;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+#contenedor-ppal
+{
+    width           : 90%;/*responsive design, fluid layout*/
+    /*height         se adaptara al contenido*/
+    margin          : 0 auto 0;
+    padding         : 50px 25px 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow      : 5px 0 10px rgb(255, 255, 255), -5px 0 10px rgb(255, 255, 255);
+    font-size       : 16px;
+    font-size       : 1rem;
+}
+h1{
+    font-size     : 50px;
+    text-shadow   : 2px 1px 1px rgb(247, 245, 245), 3px 2px 1px rgb(136, 136, 136);
+    letter-spacing: 6px;
+    color         : rgb(79, 72, 72);
+    font-family   : 'DistantGalaxyRegular' !important;
+}
+h1 span
+{
+    color         : rgb(219, 109, 0);
+    letter-spacing: 4px;
+    padding       : 0 7px;
+    font-size     : 57px;
+}
+#addPhotos
+{
+    position: relative;
+    margin: 80px auto 0;
+}
+#addPhotos>*{
+    position: absolute;
+    border: 5px solid rgb(0, 136, 204);
+    bottom: 0;
+    padding: 5px;
+    width: 40%;
+    text-align: center;
+    font-weight: bold;
+    font-family: cursive;
+    letter-spacing: 1px;
+}
+#addPhotos>*:first-child{left: 0;}
+#addPhotos>*:last-child{right: 0;}
+.btnLink
+{
+    width: 20%;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 136, 204);
+    letter-spacing: 2px;
+    font-weight: bold;
+    outline: none;
+    margin: 0 5px 0;
+}
+.btnLink:hover{ background-color: blue;  }
+.btnLink, .btnLink:hover{
+    transition: background-color 0.3s linear 0s;
+}
+h1 + .subtitles
+{
+    color: rgb(0, 0, 255);
+    position: absolute;
+    top: 0;
+    width: 70%;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+    text-align: center;
+    left: 15%;
+    font-size: 1.2em;
+    font-family: 'DistantGalaxyRegular' !important;
+}
+/*IMAGENES*/
+#grid_images
+{
+    position: relative;
+    width: 100%;
+    box-shadow: inset 4px 0 5px rgb(255, 255, 255),
+                inset 8px 0 8px rgb(255, 255, 255),
+                inset -4px 0 5px rgb(255, 255, 255),
+                inset -8px 0 8px rgb(255, 255, 255),
+                inset 0 4px 5px rgb(255, 255, 255),
+                inset 0 8px 8px rgb(255, 255, 255),
+                inset 0 -4px 5px rgb(255, 255, 255),
+                inset 0 -8px 8px rgb(255, 255, 255);
+    margin: 100px auto 0;
+}
+.image_box{
+    width: 174px; /*Total width= 174 + 7*2 + 1* 2 --> (190px)*/
+    padding: 7px;
+    background-color: #fff;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -webkit-transition: top 1s ease, left 1s ease;
+    -moz-transition: top 1s ease, left 1s ease;
+    -o-transition: top 1s ease, left 1s ease;
+    -ms-transition: top 1s ease, left 1s ease;
+    margin-top: 5px;
+}
+.image_box > img{
+    width: 174px;
+    height: 100%;
+}
+/*excepciones img-box*/
+.image_box[data-size] > img{
+    width: 100%;
+}
+.image_box > figcaption{
+    padding-top: 10px;
+    font-weight: bold;
+}
+.image_box > p{
+    font-size: 9pt;
+    margin: 3px 0;
+}
+.image_box > .meta{
+    font-size: 9pt;
+    padding-top: 15px;
+    text-align: left;
+}
+#dropFiles
+{
+     transition: all 0.4s ease-out;
+}
+.classDragover{
+ transform: scale(1.1);
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+}

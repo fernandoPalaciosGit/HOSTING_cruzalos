@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+/*MEDIA QUERY - consultas al estado de nuestro navegador
+------------------------------*/
+@media screen and (max-width: 1024px) {
+  	#nav_quiz
+  	{
+  		font-size: 1em;
+  	}
+  	#nav_quiz li
+  	{
+  		margin-top: 5%;
+  	}
+  	#nav_quiz li:nth-child(1)
+  	{
+  		margin-top: 20%;
+  	}
+  	#reglas_quiz
+	{
+		margin-right: -200px;
+		top: 90%;
+	  -moz-transform-origin: -10% 0;
+	  -webkit-transform-origin: -10% 0;
+	  -o-transform-origin: -10% 0;
+	}
+	#help_quiz li
+	{
+		padding: 0 12px;
+	}
+	#otros_quiz>ul
+	{
+		top: 120% !important;
+	}
+	#quizz_video video
+	{
+		width: 65% !important;
+	}
+	h1, h2, h3
+	{
+		font-size: 1.5em !important;
+	}
+	.pistas_actores h2,
+	.pistas_actores nav
+	{
+		padding-top: 1%;
+	}
+	.content_quizzes form>p label,
+	.content_quizzes form legend
+	{
+		font-size: 1em;
+	}
+	#select_oscar
+	{
+		width: 25%;
+	}
+}

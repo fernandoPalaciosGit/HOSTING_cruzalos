@@ -1,0 +1,903 @@
+@CHARSET "UTF-8";
+/* ==========================================================================
+   ESTILOS POR DEFECTO
+   ========================================================================== */
+@font-face {
+    font-family: 'gondola_sd_-_swashregular';
+    src: url('../font/Gondola_SD-Swash-webfont.eot');
+    src: url('../font/Gondola_SD-Swash-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Gondola_SD-Swash-webfont.woff') format('woff'),
+         url('../font/Gondola_SD-Swash-webfont.ttf') format('truetype'),
+         url('../font/Gondola_SD-Swash-webfont.svg#gondola_sd_-_swashregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body, div, span, h1, h2, h3, h4, p,
+blockquote, pre, a, abbr, acronym, address,
+cite, code, del, em, img, ins, q, small,
+strong, main, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, tbody,
+tfoot, thead, tr, th, td, article, aside,
+figure, figcaption, footer, header, hgroup,
+menu, nav, section, time, mark, audio, video
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+article, aside, figcaption, figure, main, ul, li,
+footer, header, hgroup, menu, nav, section, div
+{
+   display:block;
+}
+html, body
+{
+   height: 100%;/*adaptar el diseño al ancho de la ventana del navegador*/
+   max-width: 100%;/*nada puede ser mas ancho que la pagina, evitamos el scroll horizontal*/
+   margin: 0 auto;
+   padding: 0;
+}
+html
+{
+    font: 16px verdana, arial, sans-serif;/*1rem = 16px*/
+    color: black;
+    cursor: auto;
+}
+body
+{
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll;
+  background-position: center center;
+}
+h1, h2, h3, h4
+{
+    text-align: center;
+    font: bold 18px/60px sans-serif, roboto;
+    font: bold 1.2rem/4rem sans-serif, roboto;
+}
+h2
+{
+  font-family: "gondola_sd_-_swashregular";
+}
+nav a
+{
+    font-size: 24px;
+    font-size: 1.5rem;
+}
+a, a:link, a:visited, a:hover
+{
+    text-decoration: none;
+    color: rgba(55, 55, 55, 1.0);
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+a:hover
+{
+    color: rgba(200, 200, 200, 1.0);
+}
+button, input[type=button], input[type=submit],
+a, a:link, a:visited, a:hover
+{
+    cursor: pointer;
+}
+li
+{
+    display: inline-block;
+    margin: 0 auto;
+    padding: 6px 12px;
+    text-align: center;
+    list-style-type: none;
+}
+img, video
+{
+  max-width: 100%;
+}
+::-moz-selection
+{
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection
+{
+    background: #b3d4fc;
+    text-shadow: none;
+}
+/* ==========================================================================
+   WRAPPER GLOBAL
+   ========================================================================== */
+#wrap_page
+{
+  width: 90%;
+  height: 95%;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  /*posicionamiento vertical y horizontal*/
+  position: absolute;
+  top: 2.5%;
+  left: 5%;
+}
+/* ==========================================================================
+   ENCABEZADO
+   ========================================================================== */
+/*PEDIDO Y CUENTA*/
+#group_pedido_cuenta
+{
+  font-size: 14px;
+  font-size: 0.9em;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(54, 13, 13, 0.5);
+  -webkit-border-radius: 20px 20px 0 0 ;
+   -moz-border-radius: 20px 20px 0 0 ;
+   border-radius: 20px 20px 0 0 ;
+}
+/*flotabilidad de elementos contenidos*/
+.groupFloat:before,
+.groupFloat:after
+{
+  content: "";
+  display: table;
+}
+.groupFloat:after
+{
+  clear: both;
+}
+#pedido, #cuenta
+{
+  height: 100%;
+  width: 50%;
+  position: relative;/*posicionamiento*/
+}
+#pedido>article, #cuenta>article
+{
+  position: absolute;
+  top: 0;
+}
+#pedido>article
+{
+  left: 0;
+}
+#cuenta>article
+{
+  right: 0;
+}
+#pedido
+{
+  float: left;
+}
+#cuenta
+{
+  float: right;
+}
+/*botones del encabezado*/
+#group_pedido_cuenta input[type='button']
+{
+  position: relative;
+  width: 10em;
+  z-index: 50;
+}
+/*articulos del encabezado*/
+#group_pedido_cuenta article, #group_pedido_cuenta article input
+{
+  height: 100% !important;
+}
+#pedido article:nth-of-type(2)
+{
+  background-color: rgba(230, 180, 173, 0.7);
+  left: 135px;
+  left: calc(10em - 10px);/*width - 2xborder, del buton*/
+}
+#cuenta article:nth-of-type(2)
+{
+  display: none;
+  right: 135px;
+  right: calc(10em - 10px);/*width - 2xborder, del buton*/
+  background-color: rgba(230, 180, 173, 0.7);
+}
+#group_pedido_cuenta article:nth-of-type(even)
+{
+  width: 70%;
+}
+#cuenta h2
+{
+  display: none;
+}
+#cuenta h3,
+#cuenta .num,
+#cuenta .price,
+#precios_totales h3
+{
+  position: absolute;
+  top: 10%;
+  width: 35%;
+  height: 20%;
+  line-height: 230%;
+  border-radius: 50%/55%;
+  font-style: italic;
+  font-family: "gondola_sd_-_swashregular";
+  background-color: rgb(81, 231, 22);
+}
+#cuenta h3:nth-of-type(1)
+{
+  left: 25%;
+}
+#cuenta h3:nth-of-type(2)
+{
+  left: 65%;
+}
+#precios_pizzas_individuales,
+#precios_platos_especiales
+{
+  position: relative;
+}
+#precios_pizzas_individuales>p,
+#precios_platos_especiales>p
+{
+  margin-top: 2%;
+}
+#cuenta .num,
+#cuenta .price
+{
+  color: rgb(199, 62, 62);
+  font-family: monospace;
+  background-color: inherit;
+  font-size: 1.5em;
+  font-weight: bold;
+  left: 25%;
+}
+#cuenta .price
+{
+  left: 75%;
+}
+#cuenta p[rel='pequeña'] span
+{
+  margin-top: -6%;
+}
+#cuenta p[rel='mediana'] span
+{
+  margin-top: 0%;
+
+}
+#cuenta p[rel='familiar'] span
+{
+  margin-top: -2.5%;
+}
+#cuenta p[rel='especial'] span
+{
+  margin-top: 5%;
+}
+#precios_totales h3
+{
+  left: 65% !important;
+  background-color: rgb(81, 231, 22);
+}
+/* ==========================================================================
+   CONTENIDO PRINCIPAL
+   ========================================================================== */
+#group_header_platos
+{
+  width: 100%;
+  height: 65%;
+  background-color: rgba(54, 13, 13, 0.5);
+}
+/* ==========================================================================
+   PIE DE PAGINA
+   ========================================================================== */
+#group_foot_sugerencias
+{
+  width: 100%;
+  height: 15%;
+  position: relative;
+  background-color: rgba(54, 13, 13, 0.5);
+  -webkit-border-radius: 0 0 20px 20px;
+   -moz-border-radius: 0 0 20px 20px;
+   border-radius: 0 0 20px 20px;
+}
+/*posicionamiento*/
+#group_foot_sugerencias>p
+{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 7em;
+}
+#group_foot_sugerencias>p:first-of-type
+{
+  left: 0;
+}
+#group_foot_sugerencias>p:last-of-type
+{
+  right: 0;
+}
+#group_foot_sugerencias>p>input
+{
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 1.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+#group_foot_sugerencias>p:nth-of-type(2)>input
+{
+  font-size: 0.9em;
+}
+#foot_pizza, #sugerencias
+{
+  position: relative;
+  height: 100%;
+  width: 75%;
+  margin: 0 auto;
+}
+#foot_pizza
+{
+  visibility: visible;/*va primero*//*!!!CONTROLAR CON VISIBILIDAD*/
+  background-color: rgba(230, 180, 173, 0.7);
+}
+#sugerencias
+{
+  visibility: hidden;/*!!!CONTROLAR CON VISIBILIDAD*/
+  top: -100%;
+  background-color: rgba(230, 180, 173, 0.7);
+}
+address
+{
+  margin-top: -3%;
+  margin-left: 6%;
+}
+#sugerencias
+{
+  position: relative;
+}
+#sugerencias>p
+{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+#sugerencias>p:nth-child(2)
+{
+  left: 41%;
+}
+/* ==========================================================================
+   PESTAÑAS DEL CONTENIDO PRINCIPAL
+   ========================================================================== */
+#contenedor-carpeta
+{
+  /*position: relative;*/
+  top: 10%;
+  width: 95%;
+  height: 80%;
+  margin: 0 auto;
+}
+.tab .T-E
+{
+  background: #d5d5d5;
+  float: left;
+  width: 20%;
+  height: 1.5em;
+  margin-top: -1rem;
+  margin-right: 3px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  border-radius: 5px 5px 0 0;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+}
+#contenedor-carpeta .tab:last-of-type .T-E
+{
+  position: fixed;
+  top: 50%;
+  left: -10%;
+  height: 5%;
+  line-height: 55px;
+  -webkit-transform: rotate(-90deg);
+  border-radius: 0px 0px 10px 10px;
+  word-spacing: 15px;
+  letter-spacing: 5px;
+  font-style: italic;
+  font-family: cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.panel
+{
+  width: 100%;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  padding: 1rem;
+  z-index: 5;
+  opacity:0;
+  border-radius: 0 5px 5px;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+}
+.diana:target + .tab .T-E
+{
+  background: #8AA9B8;
+  color: #f5f5f5;
+  z-index: 2;
+}
+.diana:target + .tab .panel
+{
+  opacity: 1;
+  color: #fff;
+  height: 85%;
+  width: 97%;
+  z-index: 200;/*para que el panel a quien señala el span:target, tenga maxima prioridad*/
+}
+/*ENCABEZADO*/
+#encabezado
+{
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  width: 15%;
+  height: 55%;
+}
+#encabezado #logo
+{
+  background-image: url(../img/logo.png);
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#encabezado h1
+{
+position: fixed;
+top: 7%;
+width: 7em;
+height: auto;
+left: 53%;
+font-size: 3em;
+font-family: cursive;
+font-style: oblique;
+font-weight: bold;
+letter-spacing: 5px;
+color: rgb(255, 44, 44);
+text-shadow:  1px -1px 0 rgb(220, 220, 220),
+              2px -2px 0 rgb(210, 210, 210),
+              3px -3px 0 rgb(200, 200, 200),
+              4px -4px 0 rgb(190, 190, 190),
+              5px -5px 0 rgb(180, 180, 180),
+              6px -6px 0 rgb(170, 170, 170),
+              7px -7px 0 rgb(160, 160, 160),
+              8px -8px 0 rgb(150, 150, 150),
+              9px -9px 0 rgb(140, 140, 140),
+              10px -10px 0 rgb(0, 0, 0),
+              13px -13px 20px rgba(0, 0, 0, 0.5);
+}
+/* ==========================================================================
+   ANIMACIONES IMAGENES CONTENIDO PRINCIPAL
+   ========================================================================== */
+#contenedor-carpeta
+{
+  position: relative;/*referencia de cada trozo de pizza*/
+  -webkit-box-shadow: 0px 35px 35px rgba(165, 32, 32, 0.65);
+  box-shadow: 0px 35px 35px rgba(165, 32, 32, 0.65);
+  background-color: rgba(230, 180, 173, 0.7);
+  border-radius: 0 0 10% 10%;
+}
+#pizza_individual article/*todas las pizzas*/
+{
+  position: absolute;
+  width: 45%;
+  height: 50%;
+  /*los posicionamos en el centro y con margin los colocamos en orbita*/
+  top: 20%;
+  right: 36%;
+}
+#pizza_individual article:nth-child(1)/*aceituna*/
+{
+  margin-top: 18%;
+  margin-right: 14%;
+  -webkit-transform: rotate(240deg);
+}
+#pizza_individual article:nth-child(2)/*jamon*/
+{
+  margin-top: 1%;
+  margin-right: 15%;
+  -webkit-transform: rotate(-14deg);
+}
+#pizza_individual article:nth-child(3)/*peperoni*/
+{
+  margin-top: -16%;
+  margin-right: 2%;
+  -webkit-transform: rotate(59deg);
+}
+#pizza_individual article:nth-child(4)/*cebolla*/
+{
+  margin-top: 30%;
+  margin-right: -17%;
+  -webkit-transform: rotate(227deg);
+}
+#pizza_individual article:nth-child(5)/*pimiento*/
+{
+  margin-top: 26%;
+  margin-right: -32%;
+  -webkit-transform: rotate(204deg);
+}
+#pizza_individual article:nth-child(6)/*queso*/
+{
+  margin-top: 0%;
+  margin-right: -35%;
+  -webkit-transform: rotate(100deg);
+}
+#pizza_individual article:nth-child(7)/*tomate*/
+{
+  margin-top: -17%;
+  margin-right: -41%;
+  -webkit-transform: rotate(334deg);
+}
+/*ANIMACIONES - MOVIMIENTO DE ROTACION RESPECTO A SU PROPIO EJE*/
+#pizza_individual div.panel.rotacion
+{
+  border-radius: 50%;
+  border: 0.2em solid #8FE7AF;
+  background-color: rgba(230, 149, 29, 0.53);
+  width: 35%;
+  height: 100%;
+  margin-left: 60%;
+  /*ANIMACION*/
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 40s;
+  -webkit-animation-name: orbitPizza;
+}
+@-webkit-keyframes orbitPizza {
+  from { -webkit-transform:rotate(360deg) }
+  to { -webkit-transform:rotate(0deg) }
+}
+#pizza_individual article figcaption
+{
+  display: none;
+}
+.panel.rotacion>article
+{
+  position: relative;
+}
+/*NO se pueden seleccionar los PSEUDOELEMENTOS con jQuery o javascript, porque no pertenecen al DOM*/
+.panel.rotacion>article.pseudo:before {/*es una clase que al añadirsela a los articulos, tambien lleva su pseidoelemento*/
+  content: "";
+  position: absolute;
+  display: block;
+  width: 57%;
+  height: 20%;
+  border-radius: 50%;
+  border-top: 1em solid rgb(255, 0, 0);
+}
+.panel.rotacion>article[id='aceituna'].pseudo:before
+{
+  left: 20%;
+  top: -7%;
+  -webkit-transform: rotate(4deg);
+}
+.panel.rotacion>article[id='jamon'].pseudo:before
+{
+  left: -3%;
+  top: -3%;
+  -webkit-transform: rotate(-29deg);
+}
+.panel.rotacion>article[id='peperoni'].pseudo:before
+{
+  left: -19%;
+  top: 17%;
+  -webkit-transform: rotate(-80deg);
+}
+.panel.rotacion>article[id='cebolla'].pseudo:before
+{
+  left: 5%;
+  top: -4%;
+  -webkit-transform: rotate(-17deg);
+}
+.panel.rotacion>article[id='pimiento'].pseudo:before
+{
+  left: -11%;
+  top: 6%;
+  -webkit-transform: rotate(-60deg);
+}
+.panel.rotacion>article[id='queso'].pseudo:before
+{
+  left: 27%;
+  top: -9%;
+  -webkit-transform: rotate(-2deg);
+}
+.panel.rotacion>article[id='tomate'].pseudo:before
+{
+  left: 37%;
+  top: 0%;
+  -webkit-transform: rotate(25deg);
+}
+/* ==========================================================================
+   MAPA WEB
+   ========================================================================== */
+#google-map
+{
+  height: 90%;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  margin-right: 5%;
+}
+#google-map #map-canvas
+{
+  width: 100%;
+  height: 100%;
+  margin-left: 2%;
+  overflow: hidden;
+  border: 0.5em solid #eee;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+#google-map #mostrarRuta
+{
+  display: none;
+}
+#google-map input
+{
+  display: block;
+  width: 103%;
+  width: calc(100% + 0.75em);
+  height: 11%;
+  margin: 0 0 0 2%;
+  padding: 0em 1em;
+  font-size: 1.3em;
+  border: none;
+  background-color: rgba(247, 247, 247, 0.5);
+  color: #3E87CC;
+  text-align: center;
+  transition: background-color 0.3s linear 0s,
+              color 0.3s linear 0s;
+  font-weight: bold;
+}
+#google-map input:hover
+{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #36383A;
+}
+#google-map input:active
+{
+  border: 0.2em solid #F76D6D;
+  border-radius: 0.5em/0.7em;
+}
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+.btn_grad {
+   border-top: 1px solid #e6debd;
+   background: #ed5c23;
+   background: -webkit-gradient(linear, left top, left bottom, from(#de7194), to(#ed5c23));
+   background: -webkit-linear-gradient(top, #de7194, #ed5c23);
+   background: -moz-linear-gradient(top, #de7194, #ed5c23);
+   background: -ms-linear-gradient(top, #de7194, #ed5c23);
+   background: -o-linear-gradient(top, #de7194, #ed5c23);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #000000;
+   }
+.btn_grad:hover {
+   border-top-color: #d66e61;
+   background: #d66e61;
+   color: #cccccc;
+   }
+.btn_grad:active {
+   border-top-color: #d9d968;
+   background: #F5360B;
+   }
+#group_pedido_cuenta .btn_grad:hover
+{
+   opacity: 0.5;/*para que se vea el icon-font*/
+   z-index: 150;/*por delante del icon-font*/
+}
+.button
+{
+  zoom: 1.5;
+  margin-top: 5%;
+  vertical-align: baseline;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.red
+{
+  color: rgb(250, 221, 222);
+  border: solid 1px rgb(152, 12, 16);
+  background: rgb(216, 27, 33);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(237, 28, 36)), to(rgb(170, 19, 23)));
+  background: -moz-linear-gradient(top, #ed1c24, #aa1317);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+.red:hover
+{
+  background: rgb(182, 19, 24);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(201, 21, 27)), to(rgb(161, 17, 21)));
+  background: -moz-linear-gradient(top, #c9151b, #a11115);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115');
+}
+.button:hover {
+text-decoration: none;
+}
+.red:active {
+color: rgb(222, 137, 140);
+background: -webkit-gradient(linear, left top, left bottom, from(rgb(170, 19, 23)), to(rgb(237, 28, 36)));
+background: -moz-linear-gradient(top, #aa1317, #ed1c24);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');
+}
+.button:active {
+position: relative;
+top: 1px;
+}
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+#form_individuales
+{
+  top: 3rem;
+  left: 12rem;
+}
+#form_individuales p
+{
+  position: relative;
+  margin-top: 15px;
+  width: 25%;
+}
+#form_individuales p:nth-of-type(1)
+{
+  margin-top: 0;
+}
+#form_individuales input
+{
+  position: absolute;
+  left: 200px;
+  width: 50px;
+}
+#form_individuales h2
+{
+  width: 110px;
+  height: 35px;
+  color: rgb(0, 0, 0);
+  margin-left: 225px;
+  border-bottom: 2px solid rgb(255, 0, 0);
+}
+select[name="tamaño_pizza"]
+{
+  position: absolute;
+  left: 255px;
+}
+#form_individuales p:hover
+{
+  border-bottom: 2px dashed red;
+}
+#pizza_especial
+{
+  position: relative;
+}
+#pizza_especial header
+{
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  width: 40%;
+}
+#pizza_especial figure
+{
+  position: absolute;
+  width: 13%;
+  top: 0;
+  left: 0;
+  margin-top: 7%;
+  margin-left: 17%;
+}
+#pizza_especial figure:nth-of-type(2)
+{
+  margin-left: 31%;
+}
+#pizza_especial figure:nth-of-type(3)
+{
+  margin-left: 45%;
+}
+#pizza_especial figure:nth-of-type(4)
+{
+  margin-left: 59%;
+}
+#pizza_especial figure:nth-of-type(5)
+{
+  margin-left: 73%;
+}
+#group_pedido_cuenta header
+{
+  height: 38%;
+}
+#form_pedido>p
+{
+  margin-top: 1%
+}
+#form_pedido>p
+{
+  position: relative;
+  height: 1.2em;
+}
+#form_pedido input
+{
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  left: 25%;
+  width: 70%;
+}
+#form_pedido input[type="submit"]
+{
+  left: 80%;
+  width: 20%;
+}
+#form_pedido>p:last-child
+{
+  height: 5em;
+  margin-top: -4.5em;
+}
+.precio
+{
+  color: rgb(199, 62, 62);
+  font-weight: bold;
+}
+#group_pedido_cuenta input[type='submit']
+{
+  position: absolute;
+  width: 20%;
+  top: 0;
+  height: 100%;
+  font-size: 1.5em;
+  font-style: oblique;
+}
+/* ==========================================================================
+   CAPA DE CONFIRMACION DE PEDIDO
+   ========================================================================== */
+#output_pedido,
+#output_confirmar
+{
+  position: relative;
+  display: none;
+  width: 50%;
+  height: 80%;
+  margin: 0 auto;
+  top: 10%;
+  color: rgb(216, 198, 107);
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+#output_pedido article,
+#output_confirmar article
+{
+  background-color: rgba(255, 165, 0, 0.8);
+  height: 23%;
+  padding: 1% 2%;
+  padding-bottom: 6%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.8em !important;
+  color: rgb(42, 82, 26) !important;
+}

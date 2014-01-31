@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+html, body
+{
+    background-color: rgb(67, 92, 19) !important;
+}
+.tono_bgd
+{
+    background-color: #5DE100 !important;/*1*/
+}
+.tono_navegacion
+{
+    background-color: #00C12B !important;
+}
+.tono_slide
+{
+    color: #9FEE00 !important;/*2*/
+}
+#presentacion div[id^="slide"]:hover
+{
+    color: #5DE100 !important;
+}
+#link_ventas li
+{
+    background-color: #9FEE00 !important; /*2*/
+    border: 1px solid #3D9200 !important; /*3*/
+    box-shadow: 4px 4px 4px #3D9200 !important; /*3*/
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+.tono_idiomas
+{
+    border-left: 3px solid #3D9200 !important; /*3*/
+    background-color: #3D9200 !important;/*3*/
+}
+.implementar header h2, #settings > li
+{
+    color: #3D9200 !important;/*3*/
+}
+#difuminar_footer h2
+{
+    color: rgb(51, 77, 33) !important;
+}
+input[type='password']:valid:focus,
+input[type='text']:valid:focus,
+input[type='url']:valid:focus,
+input[type='email']:valid:focus{
+    animation: anim_focus 2s linear 0s infinite normal;
+    -webkit-animation: anim_focus 2s linear 0s infinite normal;
+    -moz-animation: anim_focus 2s linear 0s infinite normal;
+    outline-color: #9FEE00 !important;/*2*/
+}
+@keyframes anim_focus{
+    from{ background-color: #5DE100 ; }/*1*/
+    50%{ background-color: #9FEE00 ; }/*2*/
+    to{ background-color: #5DE100 ; }/*1*/
+}
+@-webkit-keyframes anim_focus{
+    from{ background-color: #5DE100 ; }/*1*/
+    50%{ background-color: #9FEE00 ; }/*2*/
+    to{ background-color: #5DE100 ; }/*1*/
+}
+@-moz-keyframes anim_focus{
+    from{ background-color: #5DE100 ; }/*1*/
+    50%{ background-color: #9FEE00 ; }/*2*/
+    to{ background-color: #5DE100 ; }/*1*/
+}

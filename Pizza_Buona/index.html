@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content="pizzeria a domicilio, carta de presentacion y ventas" />
+	<meta name="author" content="Fernando Palacios Landi" />
+	<title>Pizza Buonna</title>
+
+	<!-- ENLACES EXTERNOS -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<link type="text/css" rel="stylesheet" href="css/main.css" />
+	<link type="text/css" rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+	<section id="wrap_page">
+		<!-- PEDIDO Y CUENTA
+		-------------------------------->
+		<div id="group_pedido_cuenta" class="groupFloat">
+			<section id="pedido">
+				<article>
+					<span class="icon-cart"></span>
+					<input type="button" class="btn_grad" id="show_pedido" value=""/>
+				</article>
+				<article rel="pedido">
+					<header>
+						<h2>pedido de la compra</h2>
+					</header>
+					<form action="" method="GET" id="form_pedido" name="form_pedido">
+						<p>
+						<label for=""><strong style="color:rgb(179, 0, 0);">Cliente: </strong></label>
+						<input class="val_input" rel="char" type="text" name="nom_cliente" placeholder="Nombre y Apellido" required="true"/>
+						</p>
+						<p>
+							<label for=""><strong style="color:rgb(179, 0, 0);">Telefono: </strong></label>
+							<input class="val_input" rel="num" type="tel" name="tel_cliente" placeholder="movil o fijo" required="true"/>
+						</p>
+						<p>
+							<label for=""><strong style="color:rgb(179, 0, 0);">Dirección: </strong></label>
+							<input class="val_input" rel="num_char" type="text" name="dir_cliente" placeholder="calle y portal" required="true"/>
+						</p>
+						<p></p>
+					</form>
+				</article>
+			</section>
+			<section id="cuenta">
+				<article>
+					<span class="icon-banknote"></span>
+					<input type="button" class="btn_grad" id="static_cuenta" value=""/>
+				</article>
+				<article rel="cuenta">
+					<header>
+						<h2>cuenta actual</h2>
+						<h3>total</h3>
+					</header>
+					<div id="precios_pizzas_individuales">
+						<p rel="familiar">
+							<span class="num">0</span>
+							<span class="price">0</span>
+						</p>
+					</div>
+					<div id="precios_platos_especiales">
+						<p rel="especial">
+							<span class="num">0</span>
+							<span class="price">0</span>
+						</p>
+					</div>
+					<div id="precios_totales">
+						<h3>0</h3>
+					</div>
+					<div>
+						<input type="submit" form="form_pedido">
+					</div>
+				</article>
+			</section>
+		</div>
+		<!-- ENCABEZADO Y CARPETA DE PLATOS
+		-------------------------------->
+		<div id="group_header_platos">
+
+			<!-- CPESTAÑAS carta pizzas / menus / especialidades / mapa web
+			-------------------------------->
+			<section id="contenedor-carpeta">
+
+					<!-- PIZZAS INDIVIDUALES -->
+					<span class="diana" id="D-1"></span>
+					<section id="pizza_individual" class="tab">
+						<a href="#D-1" class="T-E">individuales</a>
+						<!-- HEADER / LOGO -->
+						<header id="encabezado">
+							<figure id="logo"></figure>
+							<h1>Pizza~Buona</h1>
+						</header>
+
+						<section id="form_individuales" class="panel">
+							<header>
+								<h2>tamaños</h2>
+							</header>
+							<p rel="aceituna">
+								<label for="">Old Big Daddy</label>
+								<input rel="num4" name="num_pizza" class="val_input" type="number" min="1" max="4"/>
+								<select name="tamaño_pizza">
+									<option value="0"></option>
+									<option value="5" rel="S">pequeña</option>
+									<option value="10" rel="M">mediana</option>
+									<option value="13" rel="G">familiar</option>
+								</select>
+								<span>--&gt; <span class="precio">0</span>€</span>
+							</p>
+							<p rel="jamon">
+								<label for="">New Yorker</label>
+								<input rel="num4" name="num_pizza" class="val_input" type="number" min="1" max="4"/>
+								<select name="tamaño_pizza">
+									<option value="0"></option>
+									<option value="5" rel="S">pequeña</option>
+									<option value="10" rel="M">mediana</option>
+									<option value="13" rel="G">familiar</option>
+								</select>
+								<span>--&gt; <span class="precio">0</span>€</span>
+							</p>
+							<p rel="peperoni">
+								<label for="">The Sailor</label>
+								<input rel="num4" name="num_pizza" class="val_input" type="number" min="1" max="4"/>
+								<select name="tamaño_pizza">
+									<option value="0"></option>
+									<option value="5" rel="S">pequeña</option>
+									<option value="10" rel="M">mediana</option>
+									<option value="13" rel="G">familiar</option>
+								</select>
+								<span>--&gt; <span class="precio">0</span>€</span>
+							</p>
+							<p rel="cebolla">
+								<label for="">Tramuntana</label>
+								<input rel="num4" name="num_pizza" class="val_input" type="number" min="1" max="4"/>
+								<select name="tamaño_pizza">
+									<option value="0"></option>
+									<option value="5" rel="S">pequeña</option>
+									<option value="10" rel="M">mediana</option>
+									<option value="13" rel="G">familiar</option>
+								</select>
+								<span>--&gt; <span class="precio">0</span>€</span>
+							</p>
+							<p rel="pimiento">
+								<label for="">Pappa Logan</label>
+								<input rel="num4" name="num_pizza" class="val_input" type="number" min="1" max="4"/>
+								<select name="tamaño_pizza">
+									<option value="0"></option>
+									<option value="5" rel="S">pequeña</option>
+									<option value="10" rel="M">mediana</option>
+									<option value="13" rel="G">familiar</option>
+								</select>
+								<span>--&gt; <span class="precio">0</span>€</span>
+							</p>
+							<p rel="queso">
+								<label for="">Buena Idea</label>
+								<input rel="num4" name="num_pizza" class="val_input" type="number" min="1" max="4"/>
+								<select name="tamaño_pizza">
+									<option value="0"></option>
+									<option value="5" rel="S">pequeña</option>
+									<option value="10" rel="M">mediana</option>
+									<option value="13" rel="G">familiar</option>
+								</select>
+								<span>--&gt; <span class="precio">0</span>€</span>
+							</p>
+							<p rel="tomate">
+								<label for="">The Sting</label>
+								<input rel="num4" name="num_pizza" class="val_input" type="number" min="1" max="4"/>
+								<select name="tamaño_pizza">
+									<option value="0"></option>
+									<option value="5" rel="S">pequeña</option>
+									<option value="10" rel="M">mediana</option>
+									<option value="13" rel="G">familiar</option>
+								</select>
+								<span>--&gt; <span class="precio">0</span>€</span>
+							</p>
+						</section>
+						<div class="panel rotacion">
+							<article id="aceituna">
+								<figure>
+									<img alt="porcion de pizza de aceituna" src="img/pieza_pizza_aceituna.gif">
+									<figcaption>pizza Old Big Daddy</figcaption>
+								</figure>
+							</article>
+
+							<article id="jamon">
+								<figure>
+									<img alt="porcion de pizza de jamon" src="img/pieza_pizza_jamon.gif">
+									<figcaption>pizza New Yorker</figcaption>
+								</figure>
+							</article>
+
+							<article id="peperoni">
+								<figure>
+									<img alt="porcion de pizza de peperoni" src="img/pieza_pizza_peperoni.gif">
+									<figcaption>pizza The Sailor</figcaption>
+								</figure>
+							</article>
+
+							<article id="cebolla">
+								<figure>
+									<img alt="porcion de pizza de cebolla" src="img/pieza_pizza_cebolla.gif">
+									<figcaption>pizza Tramuntana</figcaption>
+								</figure>
+							</article>
+
+							<article id="pimiento">
+								<figure>
+									<img alt="porcion de pizza de pimiento" src="img/pieza_pizza_pimiento.gif">
+									<figcaption>pizza Pappa Logan</figcaption>
+								</figure>
+							</article>
+
+							<article id="queso">
+								<figure>
+									<img alt="porcion de pizza de queso" src="img/pieza_pizza_queso.gif">
+									<figcaption>pizza Una Buena Idea</figcaption>
+								</figure>
+							</article>
+
+							<article id="tomate">
+								<figure>
+									<img alt="porcion de pizza de tomate" src="img/pieza_pizza_tomate.gif">
+									<figcaption>pizza The Sting</figcaption>
+								</figure>
+							</article>
+						</div>
+					</section>
+
+					<!-- PIZZAS ESPECIALIDADES -->
+					<span class="diana" id="D-3"></span>
+					<section id="pizza_especial" class="tab">
+						<a href="#D-3" class="T-E">especialidades</a>
+						<div class="panel">
+							<header>
+								<h2>especialidades a la carta</h2>
+							</header>
+							<figure>
+								<input rel="num4" name="num_esp" class="val_input" type="number" min="1" max="4"/>
+								<p style="display: inline;">--&gt; <span class="precio">0</span>€</p>
+								<img alt="especial de canapes" src="img/canape.jpg">
+								<figcaption><input type="checkbox" value="3.25" name="especial"/>Tostadas de Burrata</figcaption>
+							</figure>
+							<figure>
+								<input rel="num4" name="num_esp" class="val_input" type="number" min="1" max="4"/>
+								<p style="display: inline;">--&gt; <span class="precio">0</span>€</p>
+								<img alt="especial de ensalada" src="img/ensalada.jpg">
+								<figcaption><input type="checkbox" value="5.75" name="especial"/>Ensalada Diablito</figcaption>
+							</figure>
+							<figure>
+								<input rel="num4" name="num_esp" class="val_input" type="number" min="1" max="4"/>
+								<p style="display: inline;">--&gt; <span class="precio">0</span>€</p>
+								<img alt="especial de nachos" src="img/nachos.jpg">
+								<figcaption><input type="checkbox" value="5.25" name="especial"/>Green Devil Nachos</figcaption>
+							</figure>
+							<figure>
+								<input rel="num4" name="num_esp" class="val_input" type="number" min="1" max="4"/>
+								<p style="display: inline;">--&gt; <span class="precio">0</span>€</p>
+								<img alt="especial de ricotta" src="img/ricotta.jpg">
+								<figcaption><input type="checkbox" value="4.80" name="especial"/>Pan de Ajo y Ricotta</figcaption>
+							</figure>
+							<figure>
+								<input rel="num4" name="num_esp" class="val_input" type="number" min="1" max="4"/>
+								<p style="display: inline;">--&gt; <span class="precio">0</span>€</p>
+								<img alt="especial de ensalada" src="img/ensalada2.jpg">
+								<figcaption><input type="checkbox" value="5.5" name="especial"/>Ensalada Camembert</figcaption>
+							</figure>
+						</div>
+					</section>
+
+					<!-- MAPA WEB -->
+					<span class="diana" id="D-4"></span>
+					<section id="map_web" class="tab">
+						<a href="#D-4" class="T-E">mapa web</a>
+						<div class="panel">
+							<article id="google-map">
+			                <input type="button" id="miDireccion" value="Localizame !!" />
+			                <input type="button" id="mostrarRuta" value="mostrar ruta" />
+			                <div id="map-canvas"></div>
+			            </article>
+						</div>
+					</section>
+			</section>
+		</div>
+
+
+		<div id="group_foot_sugerencias">
+			<!-- BOTONES DE ACCESO
+			-------------------------------->
+			<p>
+				<input type="button" id="show_foot" class="btn_grad" value="el autor">
+			</p>
+			<p>
+				<input type="button" id="show_sugerencias" class="btn_grad" value="sugerencias">
+			</p>
+
+			<!-- AUTOR Y LICENCIAS
+			-------------------------------->
+			<footer id="foot_pizza">
+				<header>
+					<h2>Acerca del Autor</h2>
+				</header>
+				<address>
+					Escrita por: <a rel="author" href="mailto:fernandopalacioslandi@gmail.com">Mail Nando</a><br/>
+					Pagina Web: <a rel="author" href="http://www.cruzalosdedos.es/">Web Nando</a><br/>
+					Repositorio Web: <a rel="author" href="https://github.com/fernandoPalaciosGit/">Github Nando</a><br/>
+				</address>
+			</footer>
+
+			<!-- SUGERENCIAS CLIENTES
+			-------------------------------->
+			<section id="sugerencias">
+				<p>
+					caracteres permitidos: <span id="num_char">100</span><br/>
+					<label for="area_form">solo 100 caracteres</label><br/>
+				</p>
+				<p>
+					<!-- IMP: se debe devolver el valor true/false de la funcion stop_area -->
+					<textarea name="free_text" id="area_form" rows="4" cols="50"
+					onkeypress="return stop_area(this, 100, event)"></textarea>
+				</p>
+			</section>
+		</div>
+	</section>
+	<section id="output_confirmar">
+		<div id="cliente_output">
+		</div>
+		<article id="pedido_definitivo">
+			<p>
+				<label for="">Cambiar la direccion de envio: </label>
+				<input type="text" id="new_direccion"/>
+				<input type="button" id="confirm_direccion" value="nueva direccion"/><!-- utilizare el setter del objeto creado con el constructor del 'cliente' -->
+			</p>
+			<p>
+				<input type="button" id="confirm_compra" class="button red" value="a Comer!!!"/>
+			</p>
+		</article>
+	</section>
+	<section id="output_pedido">
+	</section>
+
+	<!-- carga jQuery desde el CDN de google o desde localhost -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="script/jquery-1.10.2.min.js"><\/script>')</script>
+	<script type="text/javascript" src="script/main.js"></script>
+	<!-- api de google maps: el initMap() se ejecuta dede aqui-->
+	 <script type="text/javascript"
+	   src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDyZdH1B33aDCFhEdpwzSwhh7pKu11qMKo&amp;sensor=false&callback=initMap">
+	 </script>
+   <script type="text/javascript" src="script/map.js"></script>
+   <script type="text/javascript" src="script/objeto.js"></script>
+</body>
+</html>

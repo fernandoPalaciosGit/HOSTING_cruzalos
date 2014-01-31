@@ -1,0 +1,119 @@
+<section class="section_apis" id="dragDropHTML5">
+	<header>
+		<h2>Drag &amp; Drop html5</h2>
+		<button class="ejm">ejemplo</button>
+	</header>
+	<article class="intro">
+		<header>
+			<h3>eventos</h3><p class="subtitles">api de <i>drag&amp;drop</i></p>
+		</header>
+		<dl>
+			<dt><strong class="dragHtml">dragstar</strong></dt>
+			<dd>se ejecuta al instante en el que empazamos a arrastrarlo</dd>
+
+			<dt><strong class="dragHtml">dragend</strong></dt>
+			<dd>se ejecuta en el instante en el que el puntero (del raton) suelta el elemento</dd>
+
+			<dt><strong class="contentHtm">dragover</strong></dt>
+			<dd>se ejecuta en el elemento contenedor, en el instante en el que se abandona sobre él, el elemento que se arrastra <em>sin soltarlo (con el raton)</em>.</dd>
+
+			<dt><strong class="contentHtm">dragleave</strong></dt>
+			<dd>se ejecuta en el elemento contenedor, en el instante en el que el elemento que se arrastra abandona el espacio que lo ocupa, <em>sin soltarlo (con el raton)</em></dd>
+
+			<dt><strong class="contentHtm">drop</strong></dt>
+			<dd>se ejecuta en el elemento contenedor, cuando el elemento arrastrado <em>se suelta (con el raton)</em></dd>
+		</dl>
+		<hr/>
+		<p>Añadir el atributo <code>draggable="true"</code> a los elementos sobre los que se le aplica el evento</p>
+		<p>Hay que utilizar lapropiedad de <strong>dtaTransfer</strong> del evento que arrastra el elemento (dragInit) y recibirla (la informacion transferida)  a traves del evento que recibe este elemento (drop)</p>
+	</article>
+
+	<article class="example">
+		<button rel="codeExample">código</button>
+		<div class="codeExample">
+			<pre class="brush: js; gutter: true">
+		var initDragDrop = function(){
+			/*elementtos de DRAG - se arrastran con el teclado*/
+			var circulos = $(".circulo");
+			$.each(circulos, function(index, circulo){
+				circulo.addEventListener("dragstart", dragIniciado, false);
+			});
+
+			/*elementos de DROP - contenedores que los reciben*/
+			$(".containerCircles")[0].addEventListener("dragover", dragSobreContainer,false);
+			$(".containerCircles")[0].addEventListener("dragleave", dragSalioContainer,false);
+			$(".containerCircles")[0].addEventListener("drop", recibioContainer,false);
+		}
+
+		/*dragstart - instante en el que se arrastra*/
+		var dragIniciado = function(event){
+			//identificamos el elemntto que se arrastra
+			var dataClass = {
+				this.clase = "transfer";
+				this.drag = event.target.getAttribute("rel");
+			};
+			event.target.classList.add(dataClass.clase);
+
+			//datatransfer solo me permite enviar texto, strings, entonces parseo el json
+			var jsonData = JSON.stringify(dataClass);
+			//le transfieres el jsonData con el nombre de
+			event.dataTransfer.setData("dataClass", jsonData);
+		}
+
+		/*dragover - instante en el que el contenedor lo recibe*/
+		var dragSobreContainer = function(event){
+			para evitar ejecutar otros eventos sobre el elemento contenedor
+			event.preventDefault();
+			event.target.classList.add("dropInit");
+			return false;
+		}
+
+		/*dragleave - instante en el que abandona el contenedor*/
+		var dragSalioContainer = function(event){
+			event.target.classList.remove("dropInit");
+		}
+
+		/*drop: soltamos sobre el contenedor el arrastrado*/
+		var recibioContainer = function(event){
+			event.target.classList.remove("dropInit");
+
+			var dataClass = JSON.parse(event.dataTransfer.getData("dataClass"));
+			var transfer = document.getElementsByClassName(dataClass.clase);
+
+			if(dataClass.drag == "drag")
+				transfContainer($(this), transfer, dataClass);
+			else
+				transCopy($(this), transfer, dataClass);
+
+			//eliminamos la clase de los elementos que ya se han transferido
+			var cl = "."+dataClass.clase;
+			$(cl).removeClass(dataClass.clase);
+		}
+
+		// elementos de drag que queremos transpasar al contendor
+		var transfContainer = function(cont, el, dataClass){
+			cont.append(el);
+		}
+
+		// elementos de drag que quermos duplicar
+		var transCopy = function(cont, el, dataClass){
+			var copy = el[0].cloneNode(true);
+			el[0].classList.remove(dataClass.clase);
+			copy.style.opacity = "1.0";
+			cont.append(copy);
+		}</pre>
+		</div>
+		<div class="circulos">
+			<div class="circulo" rel="drag" draggable="true"></div>
+			<div class="circulo" rel="drag" draggable="true"></div>
+			<div class="circulo" rel="drag" draggable="true"></div>
+			<div class="circulo" rel="drag" draggable="true"></div>
+			<div class="circulo" rel="clone" draggable="true"></div>
+			<div class="circulo" rel="clone" draggable="true"></div>
+			<div class="circulo" rel="clone" draggable="true"></div>
+			<div class="circulo" rel="clone" draggable="true"></div>
+		</div>
+		<div class="containerCircles"></div>
+	</article>
+</section>
+<script src="include_apis/drag&amp;drop/main.js" defer onload="initDragDrop()"></script>

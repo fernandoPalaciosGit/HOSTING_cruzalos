@@ -1,0 +1,447 @@
+@CHARSET "UTF-8";
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section, summary,
+time, mark, audio, video
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, div, li
+{
+    display:block;
+}
+html
+{
+	width:100%;
+	height: 100%;/*eventualmente hay que quitarlo?*/
+	font-size: 16px;
+	font-family: verdana, helvetica, arial, sans-serif;
+	color: white;
+}
+body
+{
+	width:100%;
+	height: 100%;/*eventualmente hay que quitarlo?*/
+	margin:0px auto;
+	background: #EFEFEF;
+	padding: 0px auto;
+	cursor: auto;
+}
+h1, h2, h3, h4
+{
+	text-align: center;
+	font-family: 'Wallpoet', sans-serif;
+	text-transform: uppercase;
+}
+/*WRAPPER
+------------------------------*/
+#contenedor-ppal
+{
+	position: relative;
+	width:900px;/*RESPONSIVE DESIGN*/
+	height: 100%;
+	margin: 0px auto;
+	background: #757575;
+	box-shadow:5px 5px 10px rgba(0,0,0,0.5);
+	font: 1rem "PT Sans", Arial;
+}
+a, a:link, a:visited, a:hover
+{
+	text-decoration: none;
+	color: #E69076;
+	-webkit-transition: 0.3s ease-out 0s;
+	transition: 0.3s ease-out 0s;
+}
+a:hover
+{
+	color: rgba(200, 200, 200, 1.0);
+	border-bottom: 1px dotted rgba(140,140,140,1.0);
+}
+li
+{
+	display: inline-block;
+	margin: 0px auto;
+	padding: 6px 12px;
+	text-align: center;
+	list-style-type: none;
+}
+#encabezado
+{
+	padding: 20px;
+}
+#encabezado a
+{
+	border: 0;
+}
+#encabezado #avatar
+{
+	float: left;
+}
+#encabezado #avatar .logoTube
+{
+	display: block;
+	text-indent: -99999px;
+	width: 100px;
+	height: 40px;
+	margin: 20px 0 0 10px;
+}
+#encabezado #logo
+{
+	float: right;
+	margin-right: 155px;
+}
+#encabezado #logo a
+{
+	position: relative;
+	display: block;
+	width: 80px;
+	height: 80px;
+	text-indent: -99999px;
+	/*overflow: hidden;*//*cuando cargue el ajax*/
+	border-radius: 50%;
+	background: #DD4F24 url("../img/logo.png") no-repeat center center;
+	background-size: 100%;
+}
+#encabezado #logo a:hover
+{
+	-webkit-animation: palacios 2s infinite alternate ease-in-out;
+	-moz-animation: palacios 2s infinite alternate ease-in-out;
+	animation: palacios 2s infinite alternate ease-in-out;
+}
+#encabezado #logo a:before
+{
+	position: absolute;
+	content: "alacios";
+	font: 1.5rem/5px "Wallpoet";
+	bottom: 15px;
+	left: 85px;
+	color: white;
+	letter-spacing: 3px;
+	text-indent: 0;
+	-webkit-transition: all 0.5s linear 0s;
+	-moz-transition: all 0.5s linear 0s;
+	transition: all 0.5s linear 0s;
+}
+#encabezado #logo a:hover:before
+{
+	color: #DD4F24;
+	font: 2rem/5px "Wallpoet";
+}
+#encabezado hgroup
+{
+	font-family: 'Wallpoet', sans-serif;
+	text-transform: uppercase;
+	float: left;
+	line-height: 30px;
+	margin: 10px 0 0 20px;
+	font-size: 1.5rem;
+}
+#encabezado hgroup:first-line
+{
+	color: red;
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 1.8rem;
+	text-shadow:
+		1px -1px 0 rgba(220,220,220,1),
+		2px -2px 0 rgba(210,210,210,1),
+		3px -3px 0 rgba(200,200,200,1),
+		4px -4px 0 rgba(190,190,190,1),
+		5px -5px 0 rgba(180,180,180,1),
+		6px -6px 0 rgba(170,170,170,1),
+		7px -7px 0 rgba(160,160,160,1),
+		8px -8px 0 rgba(150,150,150,1),
+		9px -9px 0 rgba(140,140,140,1),
+		10px -10px 0 rgba(0,0,0,1),
+		13px -13px 20px rgba(0,0,0,0.5);
+}
+#search
+{
+	background: #434343;
+	color: white;
+	height: 35px;
+	margin-bottom: 1em;
+	width: 100%;
+}
+#search #search_query
+{
+	background: #878787;
+	border: 0;
+	color: white;
+	float: left;
+	font-family: "PT Sans", Arial;
+	font-size: 16px;
+	height: 15px;
+	margin: 0;
+	padding: 10px 25px;
+	width: 90%;
+}
+#search #search_button
+{
+	position: absolute;
+	right: 0;
+	background: #DD4F24;
+	color: #fff;
+	border: 0px;
+	height: 35px;
+	margin: 0;
+	padding: 0;
+	width: 100px;
+	cursor: crosshair;
+}
+#search-wizard
+{
+	display: inline-block;
+	position: absolute;
+	width: 25%;
+	right: 0;
+	margin-right: 2%;
+	vertical-align: top;
+	height: 480px;
+}
+/*CALLBACK YOUTUBE*/
+#result-youtube
+{
+	display: inline-block;
+	margin: 0 1%;
+	vertical-align: top;
+	width: 98%;
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+}
+#result-youtube .item
+{
+	background-color: white;
+	border-bottom: 3px #22BCE0 solid;
+	position: relative;
+	margin-bottom: 1em;
+	padding-left: 180px;
+/*	le ponemos un alto minomo igual a la imagen
+	para que el borde de la caja este siempre por encima de la imagen*/
+	min-height: 128px;
+}
+#result-youtube .item p
+{
+	color: #7A7A7A;
+	font-size: 0.9em;
+	margin-top: 15px;
+}
+#result-youtube .item .datos-item
+{
+	text-align: right;
+	margin-top: 30px;
+}
+#result-youtube .item:first-child .autor-item
+{
+	margin-top: 10px;
+}
+#result-youtube .item .datos-item .tag-item
+{
+	background-color: #22BCE0;
+	border-radius: 0.5em;
+	color: white;
+	padding: 0.2em 0.5em;
+	text-decoration: none;
+	float: left;
+	position: relative;
+	top: -20px;
+}
+#result-youtube .item:first-child .autor-item
+{
+	margin: 10px 0 0 185px;
+}
+#result-youtube .item .datos-item .fecha-item
+{
+	display: block;
+	float: left;
+	margin: -17px 0 0 30px;
+}
+#result-youtube .item .imagen-item
+{
+
+	margin: 0;
+	position: absolute;
+	left: 0;
+}
+#result-youtube .item .imagen-item img
+{
+	width: 170px;
+	height: 128px;
+}
+#result-youtube .item .titulo-item
+{
+	font-size: 1em;
+	padding: 1.5em 0.5em 0;
+	font-style: italic;
+}
+#result-youtube .item .titulo-item a
+{
+	color: #444;
+	text-decoration: none;
+}
+/*FLOATAR ELEMENTOS DE UN CONTENEDOR*/
+.groupFloat:before,
+.groupFloat:after
+{
+	content: "";
+	display: table;
+}
+.groupFloat:after
+{
+	clear: both;
+}
+/*ANIMACION APELLIDO*/
+@-webkit-keyframes palacios {
+	0% {
+		-webkit-box-shadow: 0 0 25px 3px rgba(34, 188, 224, 0.6);
+		background: #DD4F24 url("../img/logo.png") no-repeat center center;
+	}
+	25%
+	{
+		background: #DD4F24 url("../img/avatar.jpg") no-repeat center center;
+		background-size: 100%;
+	}
+	75%
+	{
+		background: #DD4F24 url("../img/avatar.jpg") no-repeat center center;
+		background-size: 100%;
+	}
+	100% {
+		-webkit-box-shadow: 0 0 25px 3px rgba(224, 85, 38, 0.8),
+		0 0 25px 5px rgba(224, 85, 38, 0.5);
+		background: #DD4F24 url("../img/logo.png") no-repeat center center;
+	}
+}
+@-moz-keyframes palacios {
+	0% {
+		-webkit-box-shadow: 0 0 25px 3px rgba(34, 188, 224, 0.6);
+		background: #DD4F24 url("../img/logo.png") no-repeat center center;
+	}
+	25%
+	{
+		background: #DD4F24 url("../img/avatar.jpg") no-repeat center center;
+		background-size: 100%;
+	}
+	75%
+	{
+		background: #DD4F24 url("../img/avatar.jpg") no-repeat center center;
+		background-size: 100%;
+	}
+	100% {
+		-webkit-box-shadow: 0 0 25px 3px rgba(224, 85, 38, 0.8),
+		0 0 25px 5px rgba(224, 85, 38, 0.5);
+		background: #DD4F24 url("../img/logo.png") no-repeat center center;
+	}
+}
+@keyframes palacios {
+	0% {
+		-webkit-box-shadow: 0 0 25px 3px rgba(34, 188, 224, 0.6);
+		background: #DD4F24 url("../img/logo.png") no-repeat center center;
+	}
+	25%
+	{
+		background: #DD4F24 url("../img/avatar.jpg") no-repeat center center;
+		background-size: 100%;
+	}
+	75%
+	{
+		background: #DD4F24 url("../img/avatar.jpg") no-repeat center center;
+		background-size: 100%;
+	}
+	100% {
+		-webkit-box-shadow: 0 0 25px 3px rgba(224, 85, 38, 0.8),
+		0 0 25px 5px rgba(224, 85, 38, 0.5);
+		background: #DD4F24 url("../img/logo.png") no-repeat center center;
+	}
+}
+#footer
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #434343;
+	color: #A7A7A7;
+	padding: 20px 0;
+	text-align: center;
+}
+#sinBusqueda
+{
+	width: 0;
+	height: 0;
+	position: fixed;
+	top: -20px;
+	left: -66px;
+	-webkit-transform: rotate(-52deg);
+	border-bottom: 94px solid rgba(255, 119, 85, 0.69);
+	border-right: 75px solid transparent;
+	border-left: 70px solid transparent;
+	display: none;
+	text-indent: -999999px;
+}
+#sinBusqueda:after
+{
+	display: block;
+	position: relative;
+	top: 42px;
+	left: -23px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font: bold 1.4rem monospace;
+	content: "nein";
+	text-indent: 0;
+	color: white;
+	-webkit-animation: error 1s infinite alternate ease-in-out;
+	-moz-animation: error 1s infinite alternate ease-in-out;
+	animation: error 1s infinite alternate ease-in-out;
+}
+@-webkit-keyframes error{
+	from{
+		color: white;
+		left: -23px;
+		font-size: 1.4rem;
+	}
+	to{
+		color: red;
+		left: -37px;
+		font-size: 2rem;
+	}
+}
+@-moz-keyframes error{
+	from{
+		color: white;
+		left: -23px;
+		font-size: 1.4rem;
+	}
+	to{
+		color: red;
+		left: -37px;
+		font-size: 2rem;
+	}
+}
+@keyframes error{
+	from{
+		color: white;
+		left: -23px;
+		font-size: 1.4rem;
+	}
+	to{
+		color: red;
+		left: -37px;
+		font-size: 2rem;
+	}
+}

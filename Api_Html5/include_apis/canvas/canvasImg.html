@@ -1,0 +1,147 @@
+<section class="section_apis" id="canvasImgHTML5">
+	<header>
+		<h2>canvas imagenes html5</h2>
+	</header>
+	<article class="intro">
+		<b class="lead subtitles">imagenes tomadas con la camara web y recuperadas con un leyer de canvas</b>
+		<div id="videoCam">
+			<video id="videoImgframe" src=""></video>
+			<button id="tomarFoto">Tomar foto</button>
+		</div>
+
+		<canvas id="canvasImgframe" class="layerCanvas" width="470" height="250"></canvas>
+		<ul id="controlImg">
+			<li><input type="radio" id="aBlancoNegro" name="btnSelImg">
+				<label for="aBlancoNegro">Blanco y Negro</label></li>
+			<li><input type="radio" id="invertirColores" name="btnSelImg">
+				<label for="invertirColores">invertir Colores</label></li>
+			<li><input type="radio" id="aSepia" name="btnSelImg">
+				<label for="aSepia">Sepia</label></li>
+		</ul>
+
+		<ul id="listImgCam">
+			<!-- prpgramar imagenes -->
+		</ul>
+	</article>
+
+</section>
+<script>
+	window.layers = {};
+	var initCanvasImgFrame = function(){
+		layers.video = document.getElementById("videoImgframe");
+		layers.ctx = document.getElementById("canvasImgframe").getContext("2d");
+		layers.ImpedirCam = false;
+		layers.cambioImg = "";
+
+		//antes hemos comprobado que existe el objeto 'getUserMedia'
+		//controla camarA WEB
+		if( navigator.getUserMedia ) navigator.getUserMedia({video: true}, successStream, errorStream );
+		else alert("Tu navegador NO soporta control de hardware");
+
+		//video
+		layers.video.addEventListener('loadedmetadata',function(){
+			//igualamos las medidas de la camara y el canvas
+			layers.ctx.canvas.width = layers.video.videoWidth;
+			layers.ctx.canvas.height = layers.video.videoHeight;
+
+			//comprobamos que tenemos acceso a la camara
+			layers.permitirCam = true;
+			//imorimimos en el canvas la imagen de la camara
+			drawVideoInCanvas();
+		},false);
+
+		$("input[name='btnSelImg']").on("change", function(event){
+			var cambio = event.target.id;
+			layers.cambioImg = cambio;
+		});
+
+		var boton = document.getElementById('tomarFoto');
+		boton.addEventListener('click',tomarFoto);
+
+	}
+
+	var successStream = function(e_stream){
+		layers.video.src = window.URL.createObjectURL(e_stream);
+		layers.video.play();
+	}
+
+	var errorStream = function(err_stream){
+		console.log("Error media stream: "+err_stream);
+	}
+
+	var drawVideoInCanvas = function(){
+		//pasar el streming del video, al canvas a traves de una imagen, y volverlo a recuperar como un frame
+		layers.ctx.drawImage(layers.video, 0, 0);
+		switch(layers.cambioImg)
+		{
+		case "invertirColores":
+		  invertirColores(layers.ctx);
+		  break;
+		case "aBlancoNegro":
+		  aBlancoNegro(layers.ctx);
+		  break;
+		case "aSepia":
+		  aSepia(layers.ctx);
+		  break;
+		}
+		requestAnimationFrame(drawVideoInCanvas);
+	}
+
+	var tomarFoto = function(){
+		if( !layers.permitirCam ) {
+			alert("No has permitido tomar fotos con la camara web");
+			return;
+		}
+		//imprimimos imagen
+		var li = document.createElement("li");
+
+		//metodo de canvas que permite recuperar una imagen a  traves de una URL,
+		//como ya tenemos cargado en el canvas la imagen del video (drawVideoInCanvas()), lo convertimos en bytes (png)
+		var imgData = layers.ctx.canvas.toDataURL("image/png");
+		var img = document.createElement("img");
+		img.alt = "imagen tomada con la camara web";
+		img.src = imgData;
+		img.classList.add("imgCam");
+		li.appendChild(img);
+		$("#listImgCam").prepend(li);
+	}
+	//canvas.toDataURL("image/png") = transformar lo que hay en el canvas en una imagen, pasada por una URL
+
+	var invertirColores = function(ctx){
+		var datosDeLaImagen = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+		var datos = datosDeLaImagen.data;
+		for(var i=0; i<datos.length; i+=4)
+		{
+			datos[i] = 255 - datos[i];
+			datos[i+1] = 255 - datos[i+1];
+			datos[i+2] = 255 - datos[i+2];
+		}
+		ctx.putImageData(datosDeLaImagen,0,0);
+	}
+
+	var aBlancoNegro = function(ctx){
+		var datosDeLaImagen = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+		var datos = datosDeLaImagen.data;
+		for(var i=0; i<datos.length; i+=4)
+		{
+			var auxiliar = 0.34 * datos[i] + 0.5 * datos[i+1] + 0.16 * datos[i+2];
+			datos[i] = auxiliar;
+			datos[i+1] = auxiliar;
+			datos[i+2] = auxiliar;
+		}
+		ctx.putImageData(datosDeLaImagen,0,0);
+	}
+
+	var aSepia = function(ctx){
+		var datosDeLaImagen = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+		var datos = datosDeLaImagen.data;
+		for(var i=0; i<datos.length; i+=4)
+		{
+			datos[i] = datos[i] *0.393 + datos[i+1] * 0.769 + datos[i+2] *0.189;
+			datos[i+1] = datos[i] * 0.393 + datos[i+1] *0.686 + datos[i+2] * 0.168;
+			datos[i+2] = datos[i] * 0.272 + datos[i+1] *0.534 + datos[i+2] * 0.131;
+		}
+		ctx.putImageData(datosDeLaImagen,0,0);
+	}
+
+</script>

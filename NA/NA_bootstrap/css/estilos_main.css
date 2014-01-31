@@ -1,0 +1,198 @@
+@CHARSET "UTF-8";
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body
+{
+    background-color: rgba(0, 143, 213, 0.9);
+}
+a{color: white;}
+#contenedor-ppal
+{
+	position: relative;
+	width: 900px;
+	height: 1455px;
+	font-size: 16px;
+	font-size: 1rem;
+	background-repeat: no-repeat;
+	background-image: url(../../img/bgd4.png), url(../../img/bgd1.png), url(../../img/bgd2.png), url(../../img/bgd3.png);
+	background-position: 10% 50%, 90% 32%, 91% 49%, 90% 67%;
+	background-size: 45%, 35%, 35%, 35%;
+	box-shadow: 5px 0px 12px rgb(255, 255, 255),
+	 5px 0px 12px rgb(136, 134, 134),
+	 -5px 0px 12px rgb(255, 255, 255),
+	 -5px 0px 12px rgb(136, 134, 134);
+}
+.wrapImages{
+	position: relative;
+}
+.wrapImages>div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 70px;
+	width: 100%;
+}
+[class*='Logo'] {
+	position: absolute;
+	width: 90%;
+	height: 100%;
+}
+.imgLogo1 {
+	top: -3px;
+	left: -10px;
+	width: 110%;
+}
+.imgLogo2{
+	top: -17px;
+	left: 50px;
+	width: 80%;
+}
+.imgExit{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	left: 0;
+	top: 25px;
+}
+.listaAcceso>li{
+position: absolute;
+font-size: 1.3em;
+font-weight: bold;
+font-family: serif;
+letter-spacing: 2px;
+}
+.listaAcceso>li:last-child{
+right: -4px;
+top: 75px;
+}
+.listaAcceso>li:first-child{
+	left: 20px;
+}
+#login{
+	margin-left: 65%;
+}
+.label_login{
+	margin: 5px 0 0;
+}
+#link_ventas li{
+width: 109px;
+height: 25px;
+vertical-align: top;
+}
+#link_ventas li a{
+line-height: 2em;
+font-size: 1.1em;
+}
+.flag {
+	width: 25px;
+	height: 15px;
+	background:url(flags.png) no-repeat
+}
+
+.flag.flag-ch {background-position: -25px 0}
+.flag.flag-es {background-position: -50px 0}
+.flag.flag-gb {background-position: 0 -15px}
+.flag.flag-it {background-position: -25px -15px}
+.link_banderas{
+width: 72px;
+margin-left: -17px;
+}
+.link_banderas li{
+	float: left;
+margin-left: 9px;
+margin-top: 3px;
+}
+.carousel{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.tono_navegacion, .tituloWrap{
+	position: absolute;
+	z-index: 2;
+}
+.tono_navegacion{
+	top: 348px;
+}
+.wrapAnuncios1{
+position: absolute;
+top: 460px;
+left: 4%;
+width: 95%;
+}
+.wrapAnuncios1>div{
+	height: 270px;
+	background-color: rgba(255, 255, 255, 0.6)
+}
+.wrapAnuncios1>div:first-child{
+	margin-left: 4.5%;
+}
+
+.wrapAnuncios2{
+position: absolute;
+top: 810px;
+left: 4%;
+width: 95%;
+}
+.wrapAnuncios2>div{
+	height: 300px;
+	background-color: rgba(255, 255, 255, 0.6)
+}
+.wrapAnuncios3{
+position: absolute;
+bottom: 0;
+left: 1.7%;
+width: 100%;
+}
+.wrapAnuncios3>div{
+	height: 200px;
+	background-color: rgba(255, 255, 255, 0.6)
+}
+#estilos {
+position: fixed;
+z-index: 1;
+left: 0;
+top: 40%;
+width: 30px;
+height: 20%;
+}
+#estilos input:first-of-type {
+top: -60px;
+background-color: rgb(121, 205, 238);
+color: rgb(121, 205, 238);
+}
+#estilos input {
+display: block;
+position: absolute;
+top: 0;
+left: 5px;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+border: 1px solid rgb(0, 0, 0);
+outline: none;
+box-shadow: 0px 2px 6px rgb(255, 255, 255), 0px -2px 6px rgb(255, 255, 255),
+ 2px 0px 6px rgb(255, 255, 255), -2px 0px 6px rgb(255, 255, 255);
+}
+#estilos input:nth-of-type(2) {
+top: 20px;
+background-color: rgb(255, 228, 0);
+color: rgb(255, 228, 0);
+}
+#estilos input:last-of-type {
+top: 100px;
+background-color: rgb(93, 225, 0);
+color: rgb(93, 225, 0);
+}
+.icon-image {
+display: block;
+position: absolute;
+top: 175px;
+left: 3px;
+}
+
+header h3{
+	color: rgb(189, 69, 69) !important;
+}

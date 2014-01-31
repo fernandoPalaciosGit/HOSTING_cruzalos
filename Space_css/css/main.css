@@ -1,0 +1,322 @@
+@CHARSET "UTF-8";
+/*PREDETERMINADO
+------------------------------*/
+article,aside,section,footer,header,div,figcaption,
+figure,hgroup,nav, li
+{
+    display:block;
+}
+html
+{
+	width:100%;
+	/*height: 100%;*//*eventualmente hay que quitarlo?*/
+	font-size: 16px;
+	font-family: verdana, helvetica, arial, sans-serif;
+	color: rgba(240,240,240,1.0);
+}
+body
+{
+	width:100%;
+	height: 100%;/*eventualmente hay que quitarlo?*/
+	margin:0px auto;
+	padding: 0px auto;
+	background-color: #414141;
+	cursor: auto;
+}
+h1, h2, h3
+{
+	margin: 0;
+	padding:0;
+	text-align: center;
+	font-family: 'Wallpoet', sans-serif;
+	text-transform: uppercase;
+	color: #cfcfcf;
+}
+a, a:LINK, a:VISITED, a:HOVER
+{
+	text-decoration: none;
+	color: #4C4C4C;
+	-webkit-transition: 0.3s ease-out 0s;
+	transition: 0.3s ease-out 0s;
+}
+a:HOVER
+{
+	color: rgba(200, 200, 200, 1.0);
+	border-bottom: 1px dotted rgba(140,140,140,1.0);
+}
+ul
+{
+	margin: 0 0;
+	padding: 0 0;
+}
+li
+{
+	display: block;
+	margin: 0px auto;
+	padding: 0;
+	text-align: center;
+	list-style-type: none;
+}
+/*WRAPPER
+------------------------------*/
+#contenedor-ppal
+{
+	width:100%;/*RESPONSIVE DESIGN*/
+	height: 100%;
+	margin: 0px auto;
+	padding-top: 15px;
+	background: url(../img/containerbg.jpg) no-repeat center center;
+}
+#encabezado h1
+{
+	width:		910px;
+	margin: 0 auto;
+	padding:		10px;
+	margin-bottom: 20px;
+	background:		#1a1a1a;
+	border-top:		2px solid #999;
+	border-bottom:	2px solid #999;
+	text-shadow:	2px 2px 0px #666;
+	-webkit-box-shadow:		0px 0px 30px #000;
+	-moz-box-shadow:		0px 0px 30px #000;
+	box-shadow:		0px 0px 30px #000;
+	font-size: 2rem;
+}
+#encabezado h2
+{
+	width:		910px;
+	margin: 0 auto;
+	font-size: 1.5rem;
+}
+#footer
+{
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
+}
+#footer #autor-footer h3
+{
+	text-align: left;
+}
+#sist-solar
+{
+	position: relative;/*referencia de cada planeta*/
+	width: 1000px;
+	height: 1000px;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 0;
+	border-radius: 50%;
+	border: 3px solid #999;
+	-webkit-box-shadow: 0px 0px 30px #000;
+	box-shadow: 0px 0px 30px #000;
+	background: #000 url(../img/starfield.jpg) no-repeat top left;
+}
+/*PLANETAS*/
+#sist-solar ol li
+{
+	position: absolute;
+	border-radius: 50%;
+	display: block;
+	top: 500px;/*los posicionamos en el centro y con margin los colocamos en orbita*/
+	left:500px;
+	text-indent:-9999px;/*desaparecemos el texto y lo sustituimos por una imagen de l planeta*/
+	-webkit-animation-iteration-count:infinite;
+ 	-webkit-animation-timing-function:linear;
+ 	-webkit-animation-name:orbitsun;/*excepto LUNA*/
+ 	animation-iteration-count:infinite;
+ 	animation-timing-function:linear;
+ 	animation-name:orbitsun;
+}
+#sist-solar ol li:nth-child(1) /*SOL*/
+{
+	width: 100px;
+	height: 100px;
+	background: red url(../img/sun.jpg) no-repeat top left;
+	margin-left: -50px;
+	margin-top: -50px;
+	-webkit-box-shadow: 0px 0px 20px #fc9d34;/*tambien ocurriria ,para la luna --> anularla*/
+	box-shadow: 0px 0px 20px #fc9d34;
+	-webkit-animation-duration:300s;
+	-moz-animation-duration: 300s;
+	animation-duration:300s;
+}
+#sist-solar ol li:nth-child(2) /*MERCURIO*/
+{
+	width: 10px;
+	height: 10px;
+	background: green url(../img/mercury.jpg) no-repeat top left;
+	margin-left: -80px;
+	margin-top: -5px;
+	-webkit-animation-duration:15s;
+	-moz-animation-duration: 15s;
+	animation-duration:15s;
+	-webkit-transform-origin: 80px 5px;
+	-moz-transform-origin: 80px 5px;
+	transform-origin: 80px 5px;
+}
+#sist-solar ol li:nth-child(3) /*VENUS*/
+{
+	width: 16px;
+	height: 16px;
+	background: orange url(../img/venus.jpg) no-repeat top left;
+	margin-left: -110px;
+	margin-top: -8px;
+	-webkit-animation-duration:20s;
+	-moz-animation-duration: 20s;
+	animation-duration:20s;
+	-webkit-transform-origin: 110px 8px;
+	-moz-transform-origin: 110px 8px;
+	transform-origin: 110px 8px;
+}
+#sist-solar ol li:nth-child(4) /*LA TIERRA*/
+{
+	width: 20px;
+	height: 20px;
+	background: blue url(../img/earth.jpg) no-repeat top left;
+	margin-left: -150px;
+	margin-top: -10px;
+	-webkit-animation-duration:24s;
+	-moz-animation-duration: 24s;
+	animation-duration:24s;
+	-webkit-transform-origin: 150px 10px;
+	-moz-transform-origin: 150px 10px;
+	transform-origin: 150px 10px;
+}
+#sist-solar ol li:nth-child(4) li /*LA LUNA*/
+{
+	width: 10px;
+	height: 10px;
+	background: grey url(../img/moon.jpg) no-repeat top left;
+	-webkit-box-shadow: 0px 0px 0px #fc9d34;
+	margin-left: -30px;
+	margin-top: -5px;
+	top: 10px;
+	left: 10px;
+	-webkit-animation-name:reverseorbitsun;
+	-moz-animation-name:reverseorbitsun;
+	animation-name:reverseorbitsun;
+	-webkit-animation-duration:2s;
+	-moz-animation-duration: 2s;
+	animation-duration:2s;
+	-webkit-transform-origin: 30px 5px;
+	-moz-transform-origin: 30px 5px;
+	transform-origin: 30px 5px;
+}
+#sist-solar ol li:nth-child(5) /*MARTE*/
+{
+	width: 14px;
+	height: 14px;
+	background: red url(../img/mars.jpg) no-repeat top left;
+	margin-left: -185px;
+	margin-top: -7px;
+	-webkit-animation-duration:30s;
+	-moz-animation-duration: 30s;
+	animation-duration:30s;
+	-webkit-transform-origin: 185px 7px;
+	-moz-transform-origin: 185px 7px;
+	transform-origin: 185px 7px;
+}
+#sist-solar ol li:nth-child(6) /*JUPITER*/
+{
+	width: 40px;
+	height: 40px;
+	background: tan url(../img/jupiter.jpg) no-repeat top left;
+	margin-left: -240px;
+	margin-top: -20px;
+	-webkit-animation-duration:45s;
+	-moz-animation-duration: 45s;
+	animation-duration:45s;
+	-webkit-transform-origin: 240px 20px;
+	-moz-transform-origin: 240px 20px;
+	transform-origin: 240px 20px;
+}
+#sist-solar ol li:nth-child(7) /*SATURNO*/
+{
+	width: 36px;
+	height: 36px;
+	background: green url(../img/saturn.jpg) no-repeat top left;
+	margin-left: -300px;
+	margin-top: -18px;
+	-webkit-animation-duration:70s;
+	-moz-animation-duration: 70s;
+	animation-duration:70s;
+	-webkit-transform-origin: 300px 18px;
+	-moz-transform-origin: 300px 18px;
+	transform-origin: 300px 18px;
+}
+#sist-solar ol li:nth-child(8) /*URANO*/
+{
+	width: 32px;
+	height: 32px;
+	background: orange url(../img/uranus.jpg) no-repeat top left;
+	margin-left: -360px;
+	margin-top: -16px;
+	-webkit-animation-duration:100s;
+	-moz-animation-duration: 100s;
+	animation-duration:100s;
+	-webkit-transform-origin: 360px 16px;
+	-moz-transform-origin: 360px 16px;
+	transform-origin: 360px 16px;
+}
+#sist-solar ol li:nth-child(9) /*NEPTUNO*/
+{
+	width: 30px;
+	height: 30px;
+	background: transparent url(../img/neptune.jpg) no-repeat top left;
+	margin-left: -420px;
+	margin-top: -15px;
+	-webkit-animation-duration:130s;
+	-moz-animation-duration:130s;
+	animation-duration:130s;
+	-webkit-transform-origin: 420px 15px;
+	-moz-transform-origin: 420px 15px;
+	transform-origin: 420px 15px;
+}
+#sist-solar ol li:nth-child(10) /*PLUTON*/
+{
+	width: 6px;
+	height: 6px;
+	background: grey url(../img/pluto.jpg) no-repeat top left;
+	margin-left: -480px;
+	margin-top: -3px;
+	-webkit-animation-duration:170s;
+	-moz-animation-duration:170s;
+	animation-duration:170s;
+	-webkit-transform-origin: 480px 3px;
+	-moz-transform-origin: 480px 3px;
+	transform-origin: 480px 3px;
+}
+/*ANIMACIONES - MOVIMIENTO DE ROTACION RESPECTO A SU PROPIO EJE*/
+@-webkit-keyframes orbitsun {
+	from { -webkit-transform:rotate(0deg) }
+	to { -webkit-transform:rotate(-360deg) }
+}
+@-moz-keyframes orbitsun {
+	from { -moz-transform:rotate(0deg) }
+	to { -moz-transform:rotate(-360deg) }
+}
+@keyframes orbitsun {
+	from { transform:rotate(0deg) }
+	to { transform:rotate(-360deg) }
+}
+/*la LUNA tienes movimientos de rotacion en sentido de las agujas del reloj*/
+@-webkit-keyframes reverseorbitsun {
+	from { -webkit-transform:rotate(0deg) }
+	to { -webkit-transform:rotate(360deg) }
+}
+@-moz-keyframes reverseorbitsun {
+	from { -moz-transform:rotate(0deg) }
+	to { -moz-transform:rotate(360deg) }
+}
+@keyframes reverseorbitsun {
+	from { transform:rotate(0deg) }
+	to { transform:rotate(360deg) }
+}
+/*ANIMACIONES - MOVIMIENTO DE TRASLACION - orbita respecto al sol*/
+/*
+se consigue con: 'transform-origin: xpx ypx;'
+compensamos el desplazamiento de cada planeta con respecto al sol,
+poniendo el origen de la animacion (TRANSFORM-ORIGIN)
+a una distancia igual a los margenes negativos de cada planeta (MARGIN)
+*/

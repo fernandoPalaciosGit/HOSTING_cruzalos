@@ -1,0 +1,271 @@
+@CHARSET "UTF-8";
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*@-font-face: "titles", "heads"*/
+html, body
+{
+    width: 100%;
+    height: auto;
+    margin:0 auto;
+    padding: 0;
+}
+#titulo h1{display: none;}
+#contenedor-ppal
+{
+
+position: relative;
+width: 900px;
+height: 1455px;
+margin: 0 auto;
+padding: 0;
+font-size: 16px;
+font-size: 1rem;
+background-repeat: no-repeat;
+background-image: url(../img/bgd4.png), url(../img/bgd1.png), url(../img/bgd2.png), url(../img/bgd3.png);
+background-position: 10% 50%, 90% 32%, 91% 49%, 90% 67%;
+background-size: 45%, 35%, 35%, 35%;
+box-shadow: 5px 0px 12px rgb(255, 255, 255),
+ 5px 0px 12px rgb(136, 134, 134),
+ -5px 0px 12px rgb(255, 255, 255),
+ -5px 0px 12px rgb(136, 134, 134);
+}
+#difuminar
+{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+#presentacion, #nav_venta, #anuncios, #buscador, #bdg_footer
+{
+    position: absolute;
+    z-index: 1;
+}
+#footer, #bdg_footer
+{
+    height: 300px;/*altura estatica footer*/
+    background-color: green !important;
+}
+#footer
+{z-index: 2;}
+#presentacion
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-image: url(../img/yate.png);
+    background-size: 100% 100%;
+}
+#logo
+{
+    /*background comjpuesto, repetir de la pagina de cventas*/
+    position: absolute;
+    width: 30%;
+    height: 16%;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.5) url() no-repeat top left;
+    background-clip: content-box;
+    background-image: url(../img/logo.png), url(../img/logo_letras.png);
+    background-size: 105% 110%, 80% 80%;
+    background-position: 75% 50%, 90% -35%;
+    top: 0;
+    left: 0;
+}
+#presentacion #login
+{
+    position: absolute;
+    width: 30%;
+    height: 20%;
+    top: 0;
+    right: 0;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.5);
+    background-clip: content-box;
+}
+#login #acceso
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75%;
+}
+#acceso label {display: none;}
+#login #settings
+{
+    position: absolute;
+    clear: left;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    padding-bottom: 4px;
+}
+#login #acceso>p
+{
+    float: left;
+}
+#login #acceso>p:first-child
+{
+    width: 65%;
+    height: 60%;
+    margin-left: 3%;
+}
+#login #acceso>p:first-child input
+{
+    width: 105%;
+    height: 50%;
+    margin-top: 2%;
+    border-radius: 4%/30%;
+    text-indent: 15px;
+}
+#login #acceso>p:last-child{
+width: 20%;
+height: 90%;
+margin-left: 8%;
+}
+#login #acceso>p:last-child input
+{
+    width: 103%;
+    height: 105%;
+    margin-top: 6%;
+    /*CARGAR IMAGEN DE PUERTA*/
+    border: none;
+    background: transparent url(../img/enter_login.png) no-repeat top left;
+    background-size: 100% 100%;
+}
+#settings > li
+{
+    display: inline-block;
+    font-size: 0.7em;
+    padding: 0 0 0 25px;
+    font-weight: bolder;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#settings > li:last-child{
+    padding-left: 46px;
+}
+#presentacion div[id^="slide"]
+{
+position: absolute;
+width: 5%;
+height: 30%;
+top: 40%;
+font-size: 5em;
+cursor: pointer;
+}
+#slide_left{left: 1%;}
+#slide_right{right: 5%;}
+
+#presentacion nav
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 14%;
+}#presentacion nav>ul{position: absolute; height: 100%;}
+#presentacion nav>ul li
+{
+font-size: 1em;
+font-weight: bolder;
+padding: 0;
+font-family: "titles";
+letter-spacing: 1px;
+text-shadow: 2px 2px 4px rgb(0, 0, 0), 1px 1px 4px rgb(0, 0, 0);
+}
+#link_ventas li
+{
+display: inline-block;
+margin: 1.1% 0 0 1.3%;
+padding: 0.4% 0.7% !important;
+cursor: pointer;
+}
+#presentacion #link_ventas
+{
+    width: 93%;
+    left: 0;
+}
+#presentacion #idiomas
+{
+    right: 0;
+    width: 7%;
+}
+#idiomas li
+{
+position: absolute;
+padding: 0 !important;
+margin: 0 !important;
+display: block;
+width: 40%;
+height: 45%;
+top: 0;
+left: 0;
+cursor: pointer;
+}
+#esp, #fra{left: 5% !important;}
+#eng, #ita{left: 54% !important;}
+#esp, #eng{top: 2% !important;}
+#fra, #ita{top: 51% !important;}
+#esp, #fra, #eng, #ita{background-size: 100% 100%}
+#esp{ background-image: url(../img/esp.png);}
+#fra{ background-image: url(../img/fr.png);}
+#eng{ background-image: url(../img/eng.png);}
+#ita{ background-image: url(../img/it.png);}
+#nav_venta, #anuncios, #buscador, footer
+{position: absolute; background-color: rgba(255, 255, 255, 0.6);}
+#nav_venta, #anuncios{top: 405px;}
+#nav_venta
+{
+width: 370px;
+height: 300px;
+left: 30px;
+}
+#anuncios
+{
+width: 380px;
+height: 285px;
+right: 35px;
+}
+#buscador
+{
+    top: 800px;
+height: 300px;
+width: 835px;
+left: 30px;
+}
+.implementar header
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: black;
+    font-weight: bolder;
+}
+.implementar h2
+{
+    font-size: 1.4em;
+    margin-top: 3%;
+    width: 100%;
+    font-family: "titles";
+}
+footer{
+    background: transparent url(../img/bgd_wood.jpg) no-repeat top left;
+    background-size: 100% 100%;
+}
+footer, #difuminar_footer
+{
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 240px;
+}
+#difuminar_footer
+{
+    z-index: 2;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+}

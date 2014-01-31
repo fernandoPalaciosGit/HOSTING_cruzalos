@@ -1,0 +1,61 @@
+Entrega_exercici_HTML5
+fernando palacios landi / daw-2º
+
+L’adreça del teu web (la del hosting
+http://www.cruzalosdedos.es/Quick_Quiz/index.php
+
+Els menús que tenen submenú
+1- #otros_quiz nav: capa que conte le pagines extra-documentals.
+2- nav#nav_quiz: capa que conte les pagines intradocumentals.
+3- #alt_download>nav: capa que conte les pagines de descarga.
+
+El nom de la capa que té ombra y cantons arrodonits
+#nav_quiz li: 	els botons d'aquesta capa conte :
+			ombra, cantons arrodonits y fons degradat.
+
+La capa o les capes amb fons degradat
+#nav_quiz li: 	els botons d'aquesta capa conte :
+			ombra, cantons arrodonits y fons degradat.
+
+Els fons transparent
+#alt_web>article:hover
+{
+	opacity: 0,9;
+}
+
+Els rètols amb font de lletra nova
+la majoria d'etiquetes h1, h2
+@font-face{
+  font-family: "3d";
+  src:  url("../font/3dumb_regular_macroman/3Dumb-webfont.eot") format("embedded-opentype"),
+      url("../font/3dumb_regular_macroman/3Dumb-webfont.woff") format("woff"),
+      url("../font/3dumb_regular_macroman/3Dumb-webfont.ttf") format("truetype"),
+      url("../font/3dumb_regular_macroman/3Dumb-webfont.svg?#3dumbregular") format("svg");
+}
+@font-face{
+  font-family: "2d";
+  src:  url("../font/2dumb_regular_macroman/2Dumb-webfont.eot") format("embedded-opentype"),
+      url("../font/2dumb_regular_macroman/2Dumb-webfont.woff") format("woff"),
+      url("../font/2dumb_regular_macroman/2Dumb-webfont.ttf") format("truetype"),
+      url("../font/2dumb_regular_macroman/2Dumb-webfont.svg?#2dumbregular") format("svg");
+}
+
+Les teves aportacions i millores diferents a les anteriors que has incorporat.
+
++imatge de fons dun element: #contenedor_quizzes
+
++icons escalables en selectors, els importo com a fonts implementades: #icons (http://icomoon.io/)
+
++ noves propietast css3
+transform-origin: me permite tomar el origen de coordenades de la rotacion que propicia ‘transform: rotate(xdeg)’
+zoom: sobre le elemento ‘html / body’ me rectifica levemente la sobredimension (nomes de 1-5 graus)
+
++ nous pseudo-selectores css3: 
+~ (proper germà adevora)
+nth-of-type(x)
+
++metodo css3 de  calculo de dimenmensones: calc( % + px)
+
++llenguatget per aportar un poc de interaccion (javascript)
+	-formulari; les dades de fetches y paraules es trobes 			limitades,
+	-seleccio de menus de navegacio interactius

@@ -1,0 +1,48 @@
+<section class="section_apis" id="webWorkersHTML5">
+	<header>
+		<h2>web workers</h2>
+	</header>
+
+	<article class="intro">
+		<header>
+			<p><b class="lead subtitles">permitir procesos paralelos a la ejecucion del codigo</b></p>
+		</header>
+		<p>se trata de aislar un fragmento de nuestro código en un proceso exclusivo y diferente de el que se ejecuta en primer plano en el navegador,</p>
+		<p>Esto evitaria interrumpir la ejecucion de la web, con lo que evitariamos que se <em>congele la página</em></p>
+		<p>Se plica en codigo que al ejecutarse provocaria mucha carga en primer plano</p>
+		<p> For example, a worker could process a large JSON structure to extract valuable information to display in the UI</p>
+		<p>cada documento script apunta a un nuevo <em>web worker</em></p>
+		<hr/>
+			<p><strong>pon un numero largo y continua tu navegacion</strong></p>
+			<label for="requestNums">Numero entero</label>
+			<input id="requestNums" type="number"/>
+			<input type="button" id="calculaPrimos" value="Calcular primos">
+			<p id="resultNums" ></p>
+		<hr/>
+		<footer>
+			<p><a href="http://caniuse.com/webworkers">compatibilidad de webWorkers en clientes</a></p>
+			<p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-web-workers/">Tutorial</a></p>
+			<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Performance/Using_web_workers?redirectlocale=en-US&amp;redirectslug=DOM%2FUsing_web_workers">Mozilla Develo`pers</a></p>
+		</footer>
+	</article>
+</section>
+<script>
+	var initWebWorkers = function(){
+		var workerPrimos = new Worker("include_apis/others/workers/workerPrimos.js"); //URL del escript donde abrimos un nuevo proceso
+			//callback que recibe el cliente de la respuesta del servidor, se ejecuta DESPUES de enviar el proceso: worker.onmessage
+		workerPrimos.onmessage = function(req_success){
+			var response = req_success.data; //el objeto que recibimos del proceso del worker
+			document.getElementById("resultNums").innerText = response.join(" - ");
+		}
+		workerPrimos.onerror = function(req_error){
+			alert("error al calcular los numeros primos en un nuevo hilo, proceso: CONSOLA");
+			console.log(req_error);
+		}
+
+		document.getElementById("calculaPrimos").addEventListener("click", function(e_click){
+				var num = document.getElementById("requestNums").value;
+				//ejecutamos el nuevo hilo (PETICION ASINCRONA)
+				workerPrimos.postMessage(num);
+			},false);
+	}
+</script>

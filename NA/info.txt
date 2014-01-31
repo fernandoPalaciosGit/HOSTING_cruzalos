@@ -1,0 +1,13 @@
+DISEÑO DE WEB ESTATICA
+
+- Web Nautica Amiga
+	Pagina ppal: 'cruzalosdedos.es/NA/index.html'
+	Pagina de ventas: 'cruzalosdedos.es/NA/ventas/index.html'
+
+- Paleta de colores: 
+	tonalidad en Azul /*tono_azul.css*/
+	tonalidad en Verde /*tono_verde.css*/
+	tonalidad em Amarillo /*tono_amarillo.css*/
+
+- Aplicacion web pra la eleccion de colores:
+	Color Scheme Designer: http://colorschemedesigner.com/

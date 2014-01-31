@@ -1,0 +1,86 @@
+<section class="section_apis" id="pageVisibleHTML5">
+	<header>
+		<h2>Eventos de pagina</h2>
+	</header>
+	<article class="intro">
+		<p>Se trata de un conjunto de eventos que controlan el foco de la pagina</p>
+		<p>El evento en cuestion es <strong><code>visibilitychange</code></strong>, y el objeto que lo lanza es <code>document</code></p>
+		<p>funciones</p>
+		<ul class="list">
+			<li>puedes pausar el video que se esta reproduciendo cuando el usuario se dirige a otra pestaña o ahacia otro navegador, y cuando regrese al foco de la pagina donde esta el video, vuelva  a reproducirlo</li>
+			<li>puedes detener el render (frameAnimation) de un grafico/stream, mientras el user no observe ese fragmento de la página <i class="idea">podrias estar favoreciendo el rendimiento del navegador del usuario y con ello su experiencia de usuario</i></li>
+			<li>un slider que no avanza hasta que el usuario vea las imagenes</li>
+		</ul>
+
+		<p><button id="btnPerm2">Solicitar permisos de Notificación</button></p>
+		<aside style="font-size: 0.7em;">
+			<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/User_experience/Using_the_Page_Visibility_API">guia mozilla desarrolladores</a></p>
+			<p><a href="http://caniuse.com/pagevisibility">Compatibilidad</a></p>
+		</aside>
+	</article>
+</section>
+<script>
+
+var exampleNotify = window.webkitNotifications.createNotification('videos/html5-badge-h-solo.png', 'Eventos de pagina', 'Acabas de cambiar de pestaña, o has minimizado el navegador');
+
+var initPageVisibility = function(){
+	var btnPerm2 = document.querySelector("#btnPerm2");
+
+	//COMPATIBILIDAD API NOTIFICACIONES
+	if( !window.webkitNotifications ){
+		btnPerm2.innerText = "Tu Navegador no soporta Notificaciones";
+		btnPerm2.disabled;
+		return;
+	}
+
+	//COMPATIBILIDAD API PAGE-VISIBIILITY
+	var arr_prefijos = getHidden();
+	if( arr_prefijos !== null ){
+		var hidden = arr_prefijos[0], visibilitychange = arr_prefijos[1];
+	} else{
+		alert("Tu navegador NO soporta Visibility change");
+		return;
+	}
+
+	//Solicitamos permisos de notificaciones, en caso de que aun NO las tengamos
+	btnPerm2.addEventListener("click", function(){
+		if( window.webkitNotifications.checkPermission() !== 0 )
+			window.webkitNotificacions.requestPermission();
+	}, false);
+
+
+	document.addEventListener(visibilitychange, function(){
+		visibilidadPagina(hidden); //solo nos interesa controlar este evento
+	}, false);
+}
+
+//creamos el evento de document: eventVisibleChange
+//y la propiedad que controla su estado: propHide
+var getHidden = function(){
+	var prefijos = ["webkit", "moz", "ms"];
+	//soportara de manera nativapage visibility
+	if( "hidden" in document ) return ["hidden", "visibilitychange"];
+
+	//sino, iteramos en prefijos especificos de navegadores
+	for( var i in prefijos ){
+		var prefijo = prefijos[i];
+		var propHide = prefijo+"Hidden"; //webkitHidden || mozHidden || msHidden
+		var eventVisibleChange = prefijo+"visibilitychange";
+		if ( propHide in document ) return [propHide, eventVisibleChange];
+	}
+
+	//sino devolvemos nada
+	return null;
+}
+
+var crearNotificacion = function(open){
+	if ( open ) exampleNotify.show();
+	else exampleNotify.cancel();
+}
+
+function visibilidadPagina(hidden) {
+	if (document[hidden]) crearNotificacion(true);
+	else crearNotificacion(false);
+}
+
+</script>

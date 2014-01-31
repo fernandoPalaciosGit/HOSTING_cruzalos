@@ -1,0 +1,519 @@
+@CHARSET "UTF-8";
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html, body
+{
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    padding: 0;
+    min-width: 1280px;
+    min-height: 720px;
+}
+#contenedor-ppal
+{
+    position: relative;
+    /*adaptar el diseño al ancho de la ventana del navegador*/
+    width: 100%;
+    height: 100%;
+    /*como minimo la pantalla debe tener la resolucion del diseño*/
+    padding: 0;
+    font-size: 16px;
+    font-size: 1rem;
+    /*background-degradado marino*/
+    /*background de fondo marino*/
+    /*background: transparent url() no-repeat top left;
+    background-image: url(../img/Under-Sea-View.png);*/
+background-position: 121% 0;
+}
+#difuminar
+{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+h1{display: none;}
+#vista_barco,
+#vista_web,
+#encabezado
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+	height: 100%;
+}
+#vista_barco
+{
+    z-index: 2;
+    width: 40%;
+    background: transparent url(../img/UR1035.png) no-repeat top left;
+    background-size: 110% 110%;
+    background-position: 33% 65%;
+}
+#vista_web
+{
+    z-index: 1;
+    width: 60%;
+    left: 40%;
+}
+#encabezado
+{
+    z-index            : 3;
+    width              : 30%;
+    height             : 13%;
+    background         : transparent url() no-repeat top left;
+    background-image   : url(../img/logo.png), url(../img/logo_letras.png);
+    background-size    : 110% 110%, 80% 80%;
+    background-position: 40% 0, 104% 5%;
+    top                : 2%;
+    left               : 3%;
+    cursor: pointer;
+}
+#slider_barco
+{
+    position: absolute;
+    width: 70%;
+    height: 47%;
+    top: 18%;
+    left: 12%;
+}
+/*CAPA FRONTAL DEL SLIDER*/
+#slider_barco #marco
+{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: transparent url(../img/cierren-escotillas.PNG) no-repeat top left;
+    background-size: 100% 100%;
+}
+/*CAPA TRASERA DEL SLIDER*/
+/*seleccionarlos de manera dinamica para soportar la posterior projgramacion*/
+#slider_barco figure
+{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+#slider_barco figure img
+{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: transparent url(../img/yate.png) no-repeat top left;
+    background-position: -9% -71%;
+    background-size: 90% 97%;
+    top: 5%;
+    left: 4%;
+}
+#slider_barco figure figcaption
+{
+    position: absolute;
+    top: 68%;
+    left: 39%;
+    width: 17%;
+    height: 5%;
+    text-align: center;
+    padding-top: 1%;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+#features_barco
+{
+    position: absolute;
+    width: 70%;
+    height: 31%;
+    bottom: 3%;
+    left: 12%;
+    border-radius: 5%/10%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#features_barco>* /*todos los contenedores (hijos directos) de esta capa*/
+{
+    position: absolute;
+    width: 92%;
+    height: 100%;
+    top: 0;
+    left: 4%;
+}
+#features_barco>header
+{
+    top: 3%;
+    height: 11%;
+}
+#features_barco>header>h2
+{
+    font-size: 1.4em;
+    font-family: "titles";
+}
+#features_barco>.features
+{
+    top: 17%;
+    height: 46%;
+}
+#features_barco>.features>ul
+{
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    text-align: center;
+}
+.features li
+{
+    font-weight: bolder;
+    font-family: "heads";
+    font-size: 1.1em;
+}
+.features .feat_1
+{
+    font-size: 0.8em;
+}
+.features .feat_1>li
+{
+    padding: 2% 6%;
+}
+.features .feat_1 .dato:before
+{
+    content: ":";
+}
+.features .dato
+{
+    font-size: 0.9em;
+
+    color: black;
+    font-family: inherit;
+}
+#features_barco>.features>ul:first-child
+{
+    left: 0;
+}
+#features_barco>.features>ul:last-child
+{
+    right: 0;
+}
+#features_barco>#nav_slider
+{
+    position: absolute;
+    top: 65%;
+    height: 15%;
+}
+#nav_slider>div
+{
+    position: absolute;
+}
+#nav_slider .num_pictures
+{
+    position: absolute;
+    width: 21%;
+    text-align: center;
+    height: 60%;
+    top: 15%;
+    left: 37%;
+    line-height: 1.5em;
+    font-size: 0.9em;
+    padding: 0 4px;
+    font-weight: bold;
+}
+#nav_slider>div[id^="btn"]
+{
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    left: 17%;
+    background: transparent url(../img/Ancla.PNG) no-repeat top left;
+    background-size: 100% 98%;
+    cursor: pointer;
+}
+#nav_slider>div[id^="btn"]:first-child
+{transform:  rotate(180deg);
+-webkit-transform:  rotate(180deg);}
+#nav_slider>div[id^="btn"]:last-child
+{
+    left: 67%;
+}
+#features_barco>#opt_slider
+{
+    top: 85%;
+    padding-left: 3%;
+    height: 13%;
+}
+#features_barco>#opt_slider input
+{
+    height: 90%;
+    width: 45%;
+}
+#vista_web #group_art,
+#vista_web footer
+{
+    position: absolute;
+    width: 94%;
+    left: 3%;
+}
+#vista_web #group_art
+{
+    top: 5%;
+    height: 63%;
+}
+#group_art>div
+{
+    position: absolute;
+    top: -4%;
+    height: 100%;
+    width: 50%;
+}
+#group_art>div:first-child
+{left: 0;}
+#group_art>div:last-child
+{right: 0;}
+#nav_select ul{width: 90%; margin-top: 10%;}
+#nav_select ul li
+{
+    position: relative;
+    width: 100%;
+    text-indent: -15%;
+    margin: 5% 0;
+    font-weight: bolder;
+    font-family: "heads";
+    font-size: 1.1em;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0), 1px 1px 4px rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.95);
+}
+#nav_select li>span[class^="nudo"]
+{
+position: absolute;
+top: -35%;
+display: inline-block;
+width: 20%;
+height: 175%;
+right: 5%;
+background-size: 100% 100%;
+}
+#nav_select li:nth-child(1)>span[class^="nudo"]
+{background-image: url(../img/cueerda3.png);
+transform:  rotate(-22deg);
+-webkit-transform:  rotate(-22deg);}
+#nav_select li:nth-child(2)>span[class^="nudo"]
+{background-image: url(../img/cuerda4.png);
+transform:  rotate(-12deg);
+-webkit-transform:  rotate(-12deg);}
+#nav_select li:nth-child(3)>span[class^="nudo"]
+{background-image: url(../img/cuerda1.png);}
+#nav_select li:nth-child(4)>span[class^="nudo"]
+{background-image: url(../img/cuerda5.png);
+transform:  rotate(12deg);
+-webkit-transform:  rotate(12deg);}
+#nav_select li:nth-child(5)>span[class^="nudo"]
+{background-image: url(../img/cuerda2.png);
+transform:  rotate(25deg);
+-webkit-transform:  rotate(25deg);}
+#nav_select li:nth-child(6)>span[class^="nudo"]
+{background-image: url(../img/cuerda1.png);
+transform:  rotate(180deg);
+-webkit-transform:  rotate(180deg);}
+#nav_barcos h2{
+    font-size: 1.5em;
+    font-family: "titles";}
+#group_barcos
+{
+    position: absolute;
+    right: -5%;
+    width: 100%;
+    height: 85%;
+    margin-top: 5%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    direction: rtl;
+}
+#group_barcos>article
+{
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0), 1px 1px 4px rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.95);
+}
+#group_barcos>article:nth-child(2){top: 25%;}
+#group_barcos>article:nth-child(3){top: 50%; left: 5%;}
+#group_barcos>article:nth-child(4){top: 75%;}
+#group_barcos>article:nth-child(5){top: 100%;}
+#group_barcos>article:nth-child(6){top: 125%;}
+#group_barcos>article:nth-child(7){top: 150%;}
+#group_barcos>article:nth-child(8){top: 175%;}
+#group_barcos .image_barco,
+#group_barcos .feat_barco
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 91%;
+}
+#group_barcos .image_barco
+{
+width: 40%;
+left: 5%;
+cursor: pointer;
+}
+#group_barcos .feat_barco
+{
+width: 50%;
+left: 48%;
+}
+#group_barcos .feat_barco>p:nth-of-type(1){
+margin: 0 0 5% 0;
+font-size: 0.8em;
+}
+#group_barcos .feat_barco>*
+{
+    margin-top: 6%;
+    text-align: center;
+}
+#group_barcos .feat_barco .tipo:before{content: "|";}
+#group_barcos .feat_barco .tipo:after{content: "|";}
+#group_barcos .feat_barco .fotos, #group_barcos .feat_barco .precio
+{
+border-radius: 10%/20%;
+font-size: 0.8em;
+padding: 0 4px;
+font-weight: bold;
+}
+#group_barcos .feat_barco h3
+{
+    font-size: 1em;
+    font-family: "heads";
+}
+#group_barcos .image_barco{background-size: 100% 100%;}
+#group_barcos article:nth-of-type(1) .image_barco, #group_barcos article:nth-of-type(6) .image_barco
+{background-image: url(../img/menores.jpg);}
+#group_barcos article:nth-of-type(3)
+{
+    height: 22.5%;
+    width: 91%;
+}
+#group_barcos article:nth-of-type(3) .image_barco
+{
+    background-image: url(../img/yate.png);
+    background-size: 100%, 100%;
+    background-position: 50%;
+    border: 0 !important;
+    left: 0;
+    height: 100%;
+    width: 45%;
+}
+#group_barcos article:nth-of-type(2) .image_barco, #group_barcos article:nth-of-type(7) .image_barco
+{background-image: url(../img/veleros.jpg);}
+#group_barcos article:nth-of-type(4) .image_barco, #group_barcos article:nth-of-type(8) .image_barco
+{background-image: url(../img/astromar.jpg);}
+#group_barcos article:nth-of-type(5) .image_barco, #group_barcos article:nth-of-type(9) .image_barco
+{background-image: url(../img/solei.jpg);}
+/*FOOTER*/
+#vista_web footer
+{
+bottom: 0;
+height: 30%;
+width: 110%;
+left: -10%;
+background-image: url(../img/bgd_footer.png);
+background-position: 100% 100%;
+}
+#difuminar_footer
+{
+    z-index: 0;
+    top: 0;
+    background-color: rgba(2355, 255, 255, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#menu_aqui{
+position: absolute;
+z-index: 1;
+width: 54%;
+font-size: 0.9em;
+top: 5%;
+left: 11%;
+}
+#menu_aqui li{
+    display: inline-block;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+}
+#menu_aqui li.actual
+{
+margin: 0 !important;
+padding-top: 0% !important;
+font-size: 1.1em !important;
+}
+#menu_web{
+position: absolute;
+z-index: 1;
+bottom: 10%;
+left: 12%;
+height: 70%;
+width: 40%;
+font-weight: bold;
+}
+#menu_web li
+{
+    display: block;
+    background-clip: padding;
+    word-spacing: 5px;
+    font-size: 0.9em;
+    font-family: "heads";
+    padding: 4px 12px !important;
+    cursor: pointer;
+}
+#publi
+{
+background-image: url(../img/publi.png);
+background-size: 103% 102%;
+z-index: 1;
+position: absolute;
+width: 43%;
+height: 85%;
+right: 3%;
+margin-top: 0%;
+cursor: pointer;
+bottom: 8%;
+}
+.home:after, .after:after
+{content: " >"; margin-left: 10px;}
+.actual{
+    font-size: 1.5em !important;
+    height: 20px !important;
+    margin: 7% 0 4% 0 !important;
+    letter-spacing: 4px ;
+}
+.button_example{
+border:1px solid #616261; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 5px 10px 5px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+ background-color: #7d7e7d; background-image: -webkit-gradient(linear, left top, left bottom, from(#7d7e7d), to(#0e0e0e));
+ background-image: -webkit-linear-gradient(top, #7d7e7d, #0e0e0e);
+ background-image: -moz-linear-gradient(top, #7d7e7d, #0e0e0e);
+ background-image: -ms-linear-gradient(top, #7d7e7d, #0e0e0e);
+ background-image: -o-linear-gradient(top, #7d7e7d, #0e0e0e);
+ background-image: linear-gradient(to bottom, #7d7e7d, #0e0e0e);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#7d7e7d, endColorstr=#0e0e0e);
+}
+
+.button_example:hover{
+ border:1px solid #4a4b4a;
+ background-color: #646464; background-image: -webkit-gradient(linear, left top, left bottom, from(#646464), to(#282828));
+ background-image: -webkit-linear-gradient(top, #646464, #282828);
+ background-image: -moz-linear-gradient(top, #646464, #282828);
+ background-image: -ms-linear-gradient(top, #646464, #282828);
+ background-image: -o-linear-gradient(top, #646464, #282828);
+ background-image: linear-gradient(to bottom, #646464, #282828);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#646464, endColorstr=#282828);
+}
+#estilos{z-index: 2;}
+.icon-image:before {
+    color: red;
+}
+.icon-image:hover:before {
+    color: rgb(250, 62, 62);
+}

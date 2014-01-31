@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<!-- fuerza IE a utilizar el motor de renderizado más actual que esté disponible (incluso en intranets) & Chrome Frame (plugin para IE 6, 7 y 8)-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="description" content="formulario de adquisicion de cursos en la plataforma school of code" />
+	<meta name="author" content="Fernando Palacios Landi" />
+	<title>formulario de compra en SchoolOfCode</title>
+
+	<!-- ENLACES EXTERNOS -->
+	<link rel="shortcut icon" href="../../media/img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="../../media/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="../../css/vendors/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/vendors/font-awesome.css">
+	<link rel="stylesheet" href="css/formCompras.css">
+</head>
+<body>
+	<div id="contenedor-web" class="container">
+		<!-- HEADER
+		******************************-->
+		<header id="encabezado" class="page-header row">
+			<div class="col-lg-12">
+				<h1>formulario de compra</h1>
+			</div>
+		</header>
+		<!-- CONTENEDOR DE DATOS DEL USUARIO
+		******************************-->
+		<section id="contenedor-user" class="row">
+			<div class="col-xs-9 col-xs-offset-1 col-lg-5 col-lg-offset-2">
+				<header>
+					<h2>
+						<span id="userName"></span>
+						<span id="sexUser" class="fa fa-lg"></span>
+					</h2>
+				</header>
+				<dl class="dl-horizontal">
+					<dt>nombre usuario</dt>
+					<dd><span id="firstUserName"></span> <span id="lastUserName"></span></dd>
+
+					<dt>dni</dt>
+					<dd id="dniUser"></dd>
+
+					<dt>nacimiento</dt>
+					<dd id="birthdayUser"></dd>
+
+					<dt>email</dt>
+					<dd id="emailUser"></dd>
+
+					<dt>website</dt>
+					<dd id="urlUser"></dd>
+
+					<dt>telefono</dt>
+					<dd id="telUser"></dd>
+				</dl>
+			</div>
+		</section>
+
+		<!-- CONTENEDOR DE ARTICULOS
+		******************************-->
+		<section id="contenedor-articulos" class="jumbotron boxLogin">
+			<form action="../../indexCodeSchool.html"
+					method="post" id="formCompras" role="form">
+				<div class="row">
+					<fieldset class="col-lg-6" id="cursosBack">
+						<legend>cursos de Back-End</legend>
+						<p class="input-group">
+							<input type="text" class="form-control" disabled="disabled" value="programacion del lado del servidor">
+							<span class="input-group-addon">
+								<label class="checkbox-inline">
+									<input type="checkbox" data-precio="30" value="asp" name="serverCourses[]">ASP
+									<span class="priceCourse">30€</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" value="jsp" data-precio="45" name="serverCourses[]">JSP
+									<span class="priceCourse">45€</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" value="php" data-precio="50" name="serverCourses[]">PHP
+									<span class="priceCourse">50€</span>
+								</label>
+							</span>
+						</p>
+					</fieldset>
+
+					<fieldset class="col-lg-6" id="cursosFront">
+						<legend>cursos de Front-End</legend>
+						<p class="input-group">
+							<input type="text" class="form-control" disabled="disabled" value="programacion del lado del cliente">
+							<span class="input-group-addon">
+								<label class="checkbox-inline">
+									<input type="checkbox" value="js" data-precio="25" name="serverCourses[]">javascript
+									<span class="priceCourse">25€</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" value="css3" data-precio="15" name="serverCourses[]">css3
+									<span class="priceCourse">15€</span>
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" value="html5" data-precio="20" name="serverCourses[]">html5
+									<span class="priceCourse">20€</span>
+								</label>
+							</span>
+						</p>
+					</fieldset>
+				</div>
+
+				<fieldset>
+					<legend>Datos de dirección</legend>
+					<div class="row">
+						<div class="col-sm-12 col-md-6 col-lg-6">
+							<p class="form-group input-group">
+								<label for="clientStreet" class="control-label input-group-addon">calle</label>
+								<input type="text" id="clientStreet" class="form-control alert alert-warning" name="clientStreet" required="required"/>
+							</p>
+						</div>
+
+						<div class="col-sm-12 col-md-6 col-lg-6">
+							<p class="form-group input-group">
+								<label for="clientStreetNum" class="control-label input-group-addon">portal</label>
+								<input type="text" id="clientStreetNum" class="form-control alert alert-warning" name="clientStreetNum" required="required"/>
+							</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12 col-md-6 col-lg-6">
+							<p class="form-group input-group">
+								<label for="typeCountry" class="control-label input-group-addon">país</label>
+								<select id="typeCountry" name="typeCountry" class="form-control alert alert-warning">
+									<option value="ES" selected="selected">España</option>
+								</select>
+							</p>
+						</div>
+
+						<div class="col-sm-12 col-md-6 col-lg-6">
+							<p class="form-group input-group">
+								<label for="typeCity" class="control-label input-group-addon">región</label>
+								<select id="typeCity" name="typeCity" class="form-control alert alert-warning">
+									<option value="VI">Álava (Vitoria)</option>
+									<option value="AB">Albacete</option>
+									<option value="A">Alicante</option>
+									<option value="AL">Almería</option>
+									<option value="AV">Ávila</option>
+									<option value="PM">Baleares (Palma de Mallorca)</option>
+									<option value="B">Barcelona</option>
+									<option value="BU">Burgos</option>
+									<option value="CA">Cádiz</option>
+									<option value="CS">Castellón</option>
+									<option value="CR">Ciudad Real</option>
+									<option value="CO">Córdoba</option>
+									<option value="C">Coruña</option>
+									<option value="LU">Lugo</option>
+									<option value="M" selected="selected">Madrid</option>
+									<option value="MA">Málaga</option>
+									<option value="MU">Murcia</option>
+									<option value="NA">Navarra</option>
+									<option value="SG">Segovia</option>
+									<option value="SE">Sevilla</option>
+								</select>
+							</p>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Datos de pago</legend>
+					<p class="form-group input-group">
+						<label for="typeCard" class="control-label input-group-addon">forma de pago</label>
+						<select id="typeCard" name="typeCard" class="form-control alert alert-warning">
+							<option>Visa</option>
+							<option>MasterCard</option>
+							<option>American Express</option>
+							<option>Discover</option>
+							<option>JCB</option>
+							<option>Diners Club</option>
+							<option>Maestro</option>
+							<option>Laster</option>
+							<option>UnionPay</option>
+						</select>
+					</p>
+
+					<p class="form-group input-group">
+						<label for="numCard" class="control-label input-group-addon">credit card</label>
+						<input type="text" id="numCard" name="numCard"
+						placeholder="numero de targeta de credito" required="required"
+						autocomplete="off" class="form-control alert alert-warning">
+					</p>
+
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<p class="form-group input-group">
+								<label for="expMonthCard" class="control-label input-group-addon">Month</label>
+								<input type="number" id="expMonthCard" pattern="\d*" required="required" maxlength="2" name="expMonthCard" min="01" max="12" value="01" class="alert alert-warning form-control"/>
+							</p>
+						</div>
+
+						<div id="wrapYearCard" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<p class="form-group input-group">
+								<label for="expYearCard" class="control-label input-group-addon">Year</label>
+								<input type="number" id="expYearCard" pattern="\d*" required="required" maxlength="2" name="expYearCard" min="" max="" value="14" class="alert alert-warning form-control"/>
+							</p>
+						</div>
+					</div>
+
+					<p class="form-group input-group">
+				   	<label for="cvcCard" class="control-label input-group-addon">CVC</label>
+				   	<input type="text" id="cvcCard" name="cvcCard"
+				   	placeholder="codigo seguridad" required="required"
+				   	autocomplete="off" class="form-control alert alert-warning">
+					</p>
+				</fieldset>
+
+				<div class="row" id="infoCompra">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<input type="submit" value="Comprar" class="btn btn-success btn-lg btn-block"/>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<aside disabled="disabled" class="precioTotal btn btn-success btn-lg btn-block">0 Euros</aside>
+					</div>
+				</div>
+			</form>
+
+			<button onclick="document.location.href = '../../indexCodeSchool.html';" type="button" class="linkHome btn btn-warning btn-sm btn-block">revisar cursos</button>
+		</section>
+
+		<!-- CONTENEDOR DE COMPRA
+		******************************-->
+		<section id="contenedor-compras" class="jumbotron boxLogin">
+			<header>
+				<h2>
+					ESTUDIANTE: <span id="nickCliente"></span><br/>
+					<span id="nomCliente"></span>
+				</h2>
+			</header>
+			<dl class="dl-horizontal">
+				<dt>direccion de contacto</dt>
+				<dd id="direccion"></dd>
+
+				<dt>correo electronico</dt>
+				<dd id="mailCliente"></dd>
+
+				<dt>pago con targeta</dt>
+				<dd id="credito"></dd>
+			</dl>
+			<footer>
+				<p class="lead text-danger"><span class="metaNoneMobile">cursos de </span>Front-End: <span id="cursoFront"></span></p>
+				<p class="lead text-danger"><span class="metaNoneMobile">cursos de </span>Back-End: <span id="cursoBack"></span></p>
+			</footer>
+			<aside class="precioTotal">0 Euros</aside>
+			<button onclick="document.location.href = '../../indexCodeSchool.html';" type="button" class="linkHome btn btn-warning btn-sm btn-block">revisar cursos</button>
+		</section>
+	</div>
+	<!-- POP_UP advertenceias
+	******************************-->
+	<aside id="alertas">
+		<h3></h3>
+		<p class="info1"></p>
+		<p class="info2"></p>
+	</aside>
+	<!-- carga jQuery desde el CDN de google -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- si el CDN falla, se carga desde el servidor cliente -->
+	<script>window.jQuery || document.write('<script src="../../js/vendors/jquery-2.0.3.min.js"><\/script>')</script>
+	<script src="js/prototipoCompra.js"></script>
+	<script src="js/formValidateCompras.js"></script>
+</body>
+</html>

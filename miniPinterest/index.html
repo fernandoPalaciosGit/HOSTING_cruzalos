@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="layout imagenes, book de fotos, imitando el formato de Pinterest. A traves del plugin Javascript BlocksIt" />
+    <meta name="author" content="Fernando Palacios Landi" />
+    <title>Pinterest, layout de imagenes, javascript, jQuery, css</title>
+
+    <!-- ENLACES EXTERNOS -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!--[if lt IE 7]>
+        <p class="chromeframe">
+           You are using an <strong>outdated</strong> browser.<br/>
+           Please <a href="http://browsehappy.com/">upgrade your browser</a><br/>
+           or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.
+        </p>
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+</head>
+<body>
+    <main id="contenedor-ppal">
+        <!-- HEADER
+        ******************************-->
+        <header>
+            <button class="btnLink"
+            data-url="http://www.inwebson.com/jquery/blocksit-js-dynamic-grid-layout-jquery-plugin">Teoria</button>
+            <button class="btnLink"
+            data-url="http://www.widget-101.com/web/pinterest-grid-dinamico-usando-js-css/"
+            title="Como funciona el plugin BlocksIt.js"
+            title="Ejemplo de diseño en cuadricula">Tutorial</button>
+            <h1>Blocks<span>It</span>.js</h1>
+            <p class="subtitles">Dynamic Grid Layout jQuery Plugin</p>
+        </header>
+
+        <div id="addPhotos">
+          <input type="file" id="files" class="selectFiles" name="files[]" multiple="multiple"/>
+          <div id="dropFiles" class="selectFiles">Arrastra los archivos</div>
+        </div>
+
+        <!-- IMAGENES
+        ******************************-->
+        <figure id="grid_images">
+            <article class="image_box">
+               <img alt="logo del framework javascript Grunt" src="img/grunt-logo.png" width="600" height="300"/>
+               <figcaption>Grunt JS</figcaption>
+               <p>Permite configurar tareas automáticas y así ahorrarnos tiempo en el desarrollo y despliegue de aplicaciones webs.</p>
+               <small class="meta">by <strong><a href="http://gruntjs.com/">Grunt JS</a></strong></small>
+            </article>
+            <article class="image_box" data-size="2">
+               <img alt="logo del framework javascript jquery" src="img/jquery-logo.jpg" width="640" height="400"/>
+               <figcaption>jQuery</figcaption>
+               <p>Permite acceder a javascript de una manera mas dinamica, enriquecida y compatible</p>
+               <small class="meta">by <strong><a href="http://api.jquery.com/">jQuery</a></strong></small>
+            </article>
+            <article class="image_box">
+               <img alt="logo del framework javascript mootools" src="img/mootools-logo.jpg" width="600" height="200"/>
+               <figcaption>Mootools</figcaption>
+               <p>Permite desarrollar JavaScript sin importar en qué navegador se ejecute de una manera elegante</p>
+               <small class="meta">by <strong><a href="http://mootools.net/">Mootools</a></strong></small>
+            </article>
+            <article class="image_box">
+               <img alt="logo del framework javascript backbone" src="img/backbone-logo.png" width="512" height="512"/>
+               <figcaption>Backbone</figcaption>
+               <p>Permite incorporar el paradigma MVC a la logica de nuestro cliente</p>
+               <small class="meta">by <strong><a href="http://backbonejs.org/">Backbone JS</a></strong></small>
+            </article>
+            <article class="image_box" data-size="3">
+               <img alt="logo del framework javascript node" src="img/nodejs-logo.png" width="800" height="250"/>
+               <figcaption>Node JS</figcaption>
+               <p>servidor de eventos que interpreta javascript, con inplementacion de sockets</p>
+               <small class="meta">by <strong><a href="http://nodejs.org/">Node JS</a></strong></small>
+            </article>
+            <article class="image_box">
+               <img alt="logo del framework javascript Angular" src="img/angular-logo.png" width="500" height="500"/>
+               <figcaption>Angular</figcaption>
+               <p>utiliza el patrón MVC , extiende la sintaxis de HTML para darle más funcionalidad</p>
+               <small class="meta">by <strong><a href="http://angularjs.org/">Angular JS</a></strong></small>
+            </article>
+            <article class="image_box">
+               <img alt="logo del framework javascript Ember" src="img/emberjs-logo.png" width="400" height="381"/>
+               <figcaption>Ember</figcaption>
+               <p>Permite definir templates o plantillas semánticas con las cuales podemos representar data en nuestras vistas de manera sencilla.</p>
+               <small class="meta">by <strong><a href="http://emberjs.com/">EmberJS</a></strong></small>
+            </article>
+            <article class="image_box">
+               <img alt="logo del framework javascript kendo" src="img/kendoui-logo.png" width="300" height="300"/>
+               <figcaption>KendoUI</figcaption>
+               <p>KendoUI es un paquete de librerías listas para usar por los desarrolladores en páginas web dinámicas, enteramente realizadas con Javascript y basadas en jQuery.</p>
+               <small class="meta">by <strong><a href="http://www.kendoui.com/">Kendo JS</a></strong></small>
+            </article>
+            <article class="image_box">
+               <img alt="logo del framework javascript agility" src="img/agility-logo.png" width="338" height="53"/>
+               <figcaption>Agility</figcaption>
+               <p>Permite programar a traves sentencias sencillas como querys, funciona con el paradigma MVC</p>
+               <small class="meta">by <strong><a href="http://agilityjs.com/">AgilityJS</a></strong></small>
+            </article>
+            <article class="image_box">
+               <img alt="logo del framework javascript knockout" src="img/knockout-logo.png" width="478" height="168"/>
+               <figcaption>Knockout</figcaption>
+               <p>Realiza Binding Declarativos, resfresco automático de los elementos del UI, detecta los cambios realizados en la vista o en el modelo y es capaz de propagarlos, permite generar plantillas.</p>
+               <small class="meta">by <strong><a href="http://knockoutjs.com/">Knockout</a></strong></small>
+            </article>
+        </figure>
+
+        <!-- FOOTER
+        ******************************-->
+        <footer id="footer">
+            <div id="autor-footer">
+                <h3>Acerca del Autor</h3>
+                <address>
+                    Escrita por: <a rel="author" href="mailto:fernandopalacioslandi@gmail.com">Mail Nando</a> - <a href="http://www.cruzalosdedos.es/cv-nando/index.html">Curriculum</a><br/>
+                    Pagina Web: <a rel="author" href="http://www.cruzalosdedos.es/">Web Nando</a><br/>
+                    Repositorio Web: <a rel="author" href="https://github.com/fernandoPalaciosGit/">Github Nando</a><br/>
+                    Direccion Local: <q>C/ Mateo Fiol n&ordm;68 - Baleares - <abbr title="españa">ES</abbr></q>
+                </address>
+            </div>
+            <small>&copy; <a rel="licence" href="http://creativecommons.org/licenses/by/2.0/">copyleft</a> 2013</small>
+        </footer>
+    </main>
+    <!-- carga jQuery desde el CDN de google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- si el CDN falla, se carga desde el servidor cliente -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="js/vendor/blocksit.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

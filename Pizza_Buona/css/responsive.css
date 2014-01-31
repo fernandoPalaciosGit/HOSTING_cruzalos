@@ -1,0 +1,69 @@
+@media screen and (min-width: 2301px) {
+	#pizza_individual div.panel.rotacion
+	{
+		width: 18%;
+		height: 115%;
+	}
+}
+@media screen and (max-width: 2300px) {
+	#pizza_individual div.panel.rotacion
+	{
+		width: 19%;
+		height: 100%;
+	}
+}
+@media screen and (max-width: 1900px) {
+	#pizza_individual div.panel.rotacion
+	{
+		width: 22%;
+		height: 90%;
+	}
+}
+@media screen and (max-width: 1560px) {
+	#pizza_individual div.panel.rotacion
+	{
+		width: 27%;
+		height: 100%;
+	}
+}
+@media screen and (max-width: 1420px) {
+	#pizza_individual div.panel.rotacion
+	{
+		width: 31%;
+		height: 110%;
+	}
+}
+@media screen and (max-width: 1280px) {
+	#pizza_individual div.panel.rotacion
+	{
+		width: 37%;
+		height: 100%;
+	}
+}
+@media screen and (max-width: 1125px) {
+	body
+	{
+		overflow: scroll !important;
+		background-size: inherit !important;
+	}
+	html, body, #wrap_page
+	{
+		width: 1024px !important;
+	}
+	#encabezado h1
+	{
+		position: relative;
+		top: -250px;
+		left: 180px;
+	}
+	#form_individuales {
+		top: 4rem;
+	}
+}
+@media screen and (max-width: 1024px) {
+	#pizza_individual div.panel.rotacion
+	{
+		width: 35%;
+		height: 100%;
+	}
+}

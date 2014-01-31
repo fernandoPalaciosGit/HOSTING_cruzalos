@@ -1,0 +1,110 @@
+<section class="section_apis" id="speechHTML5">
+	<header>
+		<h2>speech html5</h2>
+		<button class="ejm checkSpeech">ejemplo</button>
+	</header>
+	<article class="intro">
+		<header>
+			<p class="subtitles">control traves del microfono</p>
+		</header>
+		<ul class="list">
+			<li>el reconocimiento de voz solo esta <em><a href="">disponible por ahora en chrome</a></em></li>
+			<li>el control de speech lo puedes utilizar en cualquier control de formulario excepto en el textarea</li>
+			<li>los navegadores que no reconozcan el <em>atributo speech</em> por el que se activa la funcionalidad de <em>control de voz</em>, simplemente lo ignorarán y contiuarán con su capacidad html5</li>
+			<li>con el evento <em><code> onspeechchange</code></em>, se dispara despues de reconocer la voz</li>
+			<li>en este caso el objeto en JS, al que se fija la funcionalidad de reconocimiento por voz, <em>NO es un elemento del DOM</em>, sino que es el <strong><code>new speechRecognition</code>, no estandarizado por la W3C, y que por ahora solo se usa a traves de chrome con sus prefijos</strong></li>
+			<p><small>En este ejemplo lo creamos con <code>new webkitSpeechRecognition()</code></small></p>
+		</ul>
+
+	</article>
+
+	<article class="example">
+		<p><strong>control de texto</strong></p>
+		<input type="text" placeholder="Di lo que te apetezca" speech x-webkit-speech />
+		<hr/>
+		<p><strong>control de video</strong></p>
+		<ul>
+			<li>reproducir</li>
+			<li>pausar</li>
+			<li>silenciar</li>
+			<li>escuchar</li>
+			<li>detener</li>
+			<button id="stopVideo">Finalizar control de voz</button>
+		</ul>
+		<button id="startVideo">Iniciar control de voz</button>
+		<video id="videoSpeechHTML5" width="424" poster="videos/BGvideoSpeech.png" controls>
+			<!-- codecs / tipos MIME: Ogg(video/ogg), MP4(video/mp4), WebM(video/webm) -->
+			<source src="videos/videoSpeech.mp4" type="video/mp4" codecs="avc1.4D401E, mp4a.40.2"></source>
+			<source src="videos/videoSpeech.webm" type="video/webm" codecs="vp8.0, vorbis"></source>
+			Tu navegador NO soporta los videos
+		</video>
+	</article>
+</section>
+<script>
+	var initSpeech = function(){
+		/*objeto speechRecognition*/
+		window.sr = new webkitSpeechRecognition();
+		console.log(window.sr);
+
+		/*evento de captura de resultados*/
+		window.sr.onresult = function(e_speech){
+			/*iteramos sobre los resultados del reconocimiento, mientras halla resultados*/
+			console.log(e_speech.results);
+			/*capturamos la ultima palabra*/
+			for (var i = e_speech.resultIndex; i < e_speech.results.length; ++i) {
+				// e_speech[i][j].transcript == i:palabra, j:alternativa, transcript:string
+				// elliminamos los espacos en blanco de la transcription (pattern)
+				if( e_speech.results[i].isFinal ){
+					var valor = e_speech[0][0].transcript.replace(/\s/g, "");
+					if( valor === "reproducir" ) playVideo();
+					if( valor === "pausar" ) pausaVideo();
+					if( valor === "silenciar" ) muteVideo(true);
+					if( valor === "escuchar" ) muteVideo(false);
+					if( valor === "detener" ) stopVideo();
+				}
+			}
+		};
+
+		window.sr.onstart = function(e_speech){
+			console.log("empezo la lectura de voz");
+		};
+
+		window.sr.onend = function(e_speech){
+			console.log("finalizo la lectura de voz");
+		};
+
+		$("#startVideo").on("click", function(){
+			$(this).fadeOut();
+			$("#speechHTML5 .example ul, #stopVideo").fadeIn();
+			//si el reconocimiento de voz es constante, periodos de tiempo largos de dictado
+			window.sr.continuous = true;
+			//definir si tenemos acceso al contenido (voz) durante el dialogo del user (en el momento que se reconozca una palabra), si esta en falso se procesarta el texto despues del reconocimineto por voz
+			window.sr.interimResults = true;
+			//idioma de habla
+			window.sr.lang = "es-ES";
+			window.sr.start();
+		});
+
+		$("#stopVideo").on('click', function(event) {
+			$("#speechHTML5 .example ul, #stopVideo").fadeOut();
+			$("#videoSpeechHTML5").css("margin-left", "0");
+			window.sr.stop();
+		});
+	} //INIT
+
+	var playVideo = function(){
+		$("#videoSpeechHTML5")[0].play();
+	}
+
+	var pausaVideo = function(){
+		$("#videoSpeechHTML5")[0].pause();
+	}
+
+	var muteVideo = function(opt){
+		$("#videoSpeechHTML5")[0].volume = 0.0; //silencio
+	}
+
+	var stopVideo = function(){
+		$("#videoSpeechHTML5")[0].load();
+	}
+</script>

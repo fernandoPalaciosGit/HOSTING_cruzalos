@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Peticiones Youtube</title>
+<meta name="description" content="peticiones asincronas a traves de Ajax, sirviendonos del API de youtube" />
+<meta name="author" content="Fernando Palacios Landi" />
+<link type="text/css" href="css/normalize.css" />
+<link href='http://fonts.googleapis.com/css?family=Wallpoet' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<link type="text/css" rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+<section id="contenedor-ppal">
+
+	<header id="encabezado" class="groupFloat">
+		<figure id="avatar">
+			<a href="http://www.youtube.com/" class="logoTube" target="_blank">enlace a youtube</a>
+		</figure>
+		<figure id="logo">
+			<a href="http://www.cruzalosdedos.es/" target="_blank">proyectos de fernando palacios</a>
+		</figure>
+		<hgroup>
+			<h1>Youtube Search!</h1>
+			<h2>videos a traves del API de Youtube</h2>
+		</hgroup>
+	</header>
+
+	<section id="search">
+		<input type="text" id="search_query" autofocus placeholder="Buscar video..." />
+		<input type="button" id="search_button" value="BUSCAR"/>
+	</section>
+
+	<aside id="search-wizard">
+		<section id="activity">
+			<h3>Me gustaria:</h3>
+			<!-- peticion ajax a last-FM
+			h3 - nombre del artista
+			img.alt - "foto postada de + artista"
+			li.img - ultimos discos de artista
+			#biografia - biografia artista -->
+			<article>
+				<input type="button" value="richie hawtin"/>
+				<!-- <figure>
+					<img src="" alt="foto portada de richie hawtin">
+					<figcaption>
+						<ul class="discos">
+							<li><img src="" alt="nombre del disco"></li>
+							<li><img src="" alt="nombre del disco"></li>
+							<li><img src="" alt="nombre del disco"></li>
+						</ul>
+						<div class="biografia"></div>
+					</figcaption>
+				</figure> -->
+			</article>
+			<article>
+				<input type="button" value="david guetta"/>
+			</article>
+			<article>
+				<input type="button" value="daft phunk"/>
+			</article>
+			<article>
+				<input type="button" value="katy perry"/>
+			</article>
+			<article>
+				<input type="button" value="carl cox"/>
+			</article>
+			<article>
+				<input type="button" value="bruno mars"/>
+			</article>
+		</section>
+	</aside>
+
+	<section id="result-youtube">
+	</section>
+
+	<aside>
+		<div id="sinBusqueda">No hay videos</div>
+	</aside>
+
+	<footer id="footer">
+		<div id="autor-footer">
+			<h3>Acerca del Autor</h3>
+			<address>
+				Escrita por: <a rel="author" href="mailto:fernandopalacioslandi@gmail.com">Mail Nando</a><br/>
+				Pagina Web: <a rel="author" href="http://www.cruzalosdedos.es/">Web Nando</a><br/>
+				Repositorio Web: <a rel="author" href="https://github.com/fernandoPalaciosGit/">Github Nando</a><br/>
+				Direccion Local: <q>C/ Mateo Fiol n&ordm;68 - Baleares - <abbr title="españa">ES</abbr></q>
+			</address>
+		</div>
+		<small>&copy; <a rel="licence" href="http://creativecommons.org/licenses/by/2.0/">copyleft</a> 2013</small>
+	</footer>
+</section>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../font/icomoon/icomoon.eot');
+	src:url('../font/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../font/icomoon/icomoon.woff') format('woff'),
+		url('../font/icomoon/icomoon.ttf') format('truetype'),
+		url('../font/icomoon/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* usammos las siguientes clases mpara añadir los iconos */
+.icon-arrow-right, .icon-arrow-down {
+	font-family: 'icomoon';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	margin-left: 5%;
+	font-size: 1.5em;
+	position: relative;
+	top: 5px;
+	color: rgb(0, 102, 255);
+   -webkit-transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+}
+.icon-arrow-down
+{
+	color: red;
+}
+.icon-arrow-right:hover, .icon-arrow-down:hover
+{
+	font-size: 32px;
+  	font-size: 2em;
+}
+/*caracteres de escape especiales, reconocidos por la fuente @font-face*/
+.icon-arrow-right:before {
+	content: "\e000";
+}
+.icon-arrow-down:before {
+	content: "\e001";
+}

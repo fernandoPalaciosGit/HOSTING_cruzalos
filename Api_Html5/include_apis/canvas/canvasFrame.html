@@ -1,0 +1,58 @@
+<section class="section_apis" id="canvasFrameHTML5">
+	<header>
+		<h2>canvas Frame html5</h2>
+	</header>
+	<article class="intro">
+		<canvas id="canvasframe" class="layerCanvas" width="470" height="250"></canvas>
+		<p>se trata de crear una animación de algún elemento dibujado por canvas, recargando los frames a partir de <code>window.requestAnimationFrame()</code></p>
+	</article>
+
+</section>
+<script>
+	//HACK de compatibilidad con navegadores y los que no lo soportan
+	//MODULO, funcion que se auto ejecuta
+	window.requestAnimationFrame = (function(){
+		return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function(f){
+			//render del fraeme en el caso en el que no se recupere el metodo requestAnimationFrame(f)
+			window.setTimeout(f, 1000/60);
+		}
+	})();
+
+	var initCanvasFrame = function(){
+		var canvas = document.getElementById("canvasframe");
+		var ctx = canvas.getContext("2d");
+		console.log(ctx); //CanvasRenderingContext2D
+		var ctxProp = {x:50, y:50, v_x:5, v_y:5, rad:50};
+		drawBallFrame(ctx, ctxProp);
+	}
+
+	var drawBallFrame = function(ctx, prop){
+		//limpiamos el lienzo cada vez que se ejecuta el canvas
+		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+		//dibujamos la bola
+		ctx.beginPath();
+		ctx.arc(prop.x, prop.y, prop.rad, 0, toRad(360));
+		ctx.fillStyle = "rgb(255, 0, 0)";
+		ctx.fill();
+		ctx.closePath();
+
+		//el desplazamiento corresponde a la velocidad en su direccion
+		prop.x += prop.v_x;
+		prop.y += prop.v_x;
+
+		//evitamos que se salga del lienzo
+		if( prop.x < prop.rad || prop.x > (ctx.canvas.width-prop.rad)) prop.v_x = -prop.v_x;
+		if( prop.y < prop.rad || prop.y > (ctx.canvas.height-prop.rad)) prop.v_y = -prop.v_y;
+
+		//funcion recursiva, reiniciamos el frame
+		//hay que pasarle la declaracion de una funcion...entonces creamos un nuevo scope para pasarles los atributos
+		requestAnimationFrame(function(){
+			drawBallFrame(ctx, prop);
+		});
+	}
+</script>

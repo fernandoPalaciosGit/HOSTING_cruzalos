@@ -1,0 +1,97 @@
+<section class="section_apis" id="blobHTML5">
+	<header>
+		<h2>Lecura de archivos de tipo BLOB</h2>
+	</header>
+	<article class="intro">
+		<p><abbr title="Binary Large Object">BLOB</abbr>, se refieren a archivos binarios de gran atmaño</p>
+		<p>una de las cosa interesantes , como tenemos el blob (archivo) cargdo por fragmentos, podemos mostrar la carga del archivo a traves de una barra de preloader</p>
+
+		<hr/>
+		<input type="file" id="fileBlob" name="fileBlob[]"/>
+		<button id="abortRead">Cancelar Lectura</button>
+		<div id="progress_bar"><div class="percent">0%</div></div>
+		<div id="renderFile"><strong>SOLO ESTAMOS LEYENDO LOS PRIMEROS 1000 BYTES</strong></div>
+		<hr/>
+
+		<aside>hemos ignorado el acceso a <code>multiple</code> archivos</aside>
+		<aside style="font-size: 0.7em;">
+			<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader?redirectlocale=en-US&redirectslug=DOM%2FFileReader">guia mozilla desarrolladores</a></p>
+			<p><a href="http://www.html5rocks.com/es/tutorials/file/dndfiles/">tuto htmnl5Rock</a></p>
+			<p><a href="http://caniuse.com/#feat=filereader">Compatibilidad</a></p>
+		</aside>
+	</article>
+</section>
+<script>
+var initFileBlob = function(){
+	document.getElementById("fileBlob").addEventListener("change", readFilesBlob, false)
+};
+
+var readFilesBlob = function(e_read){
+	var progress = document.querySelector('.percent');
+   progress.style.width = '0%';
+   progress.textContent = '0%';
+
+	//lectura de datos de archivo
+	var arr_files = e_read.target.files;
+	//lectura de contenido del primer archivo, el único que leemos
+	var file = arr_files[0];
+	//manejamos el archivo en trozos de bytes, lo seccionamos de 1000 en 1000
+	var blob = file.slice(0, 1000);
+
+	var reader = new FileReader();
+	reader.onerror = errorHandler;
+   reader.onprogress = updateProgress;
+   reader.onabort = function(e) {
+      alert('La lectura del archivo ha sido cancelada');
+   };
+   reader.onloadstart = function(e) {
+   	document.getElementById("renderFile").innerText = "";
+      document.getElementById('progress_bar').className = 'loading';
+   };
+	reader.addEventListener("load", readContentFile, false);
+
+	//leemos el blob como un array de strings
+	reader.readAsBinaryString(blob);//se lanzara el evento: FileReader.onload()
+}
+
+var readContentFile = function(e_contentBlob){
+	//file = e_contentBlob.target
+	var lectura = e_contentBlob.target.result;//contenido del archivo leido
+	document.getElementById("renderFile").innerText = lectura;
+
+   // Ensure that the progress bar displays 100% at the end.
+   var progress = document.querySelector('.percent');
+   progress.style.width = '100%';
+   progress.textContent = '100%';
+   setTimeout("document.getElementById('progress_bar').className='';", 2000);
+}
+
+var updateProgress = function(evt){
+	// ahora el evento esta en progreso...
+	var progress = document.querySelector('.percent');
+	 if (evt.lengthComputable) {
+	   var percentLoaded = Math.round((evt.loaded / evt.total) * 100);
+	   // Increase the progress bar length.
+	   if (percentLoaded < 100) {
+	     progress.style.width = percentLoaded + '%';
+	     progress.textContent = percentLoaded + '%';
+	   }
+	 }
+}
+
+var errorHandler = function(evt){
+ switch(evt.target.error.code) {
+   case evt.target.error.NOT_FOUND_ERR:
+     alert('EL Arhivo no ha sido encontrado!');
+     break;
+   case evt.target.error.NOT_READABLE_ERR:
+     alert('No se puede leer el archivo');
+     break;
+   case evt.target.error.ABORT_ERR:
+     break; // noop
+   default:
+     alert('???Algun error???...undefined');
+ };
+}
+
+</script>

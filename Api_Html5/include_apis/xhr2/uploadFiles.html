@@ -1,0 +1,105 @@
+<section class="section_apis" id="uploadFilesHTML5">
+	<header>
+		<h2>subir archivos XHR-2</h2>
+	</header>
+	<article class="intro">
+		<p>vamos a combinar las apis de <em>Drag&amp;Drop</em>, y la de <em>XMLHttpRequest avanzado</em>, para configurar una interfaz en la que podamos subir archivos al servidor, arrastrandolos, y almacenandolos en una carpeta</p>
+		<hr/>
+		1.<input type="file" id="inputUploadFiles" class="selectFiles" name="files[]" multiple="multiple" /><br/>
+		2.<div id="boxUploadFiles">
+			Arrastra aqui para subir al servidor :)
+		</div>
+		<div class="barFileLoad">
+			<div id="progressFileLoad"></div>
+		</div>
+		<div id="filesUpload">
+			<p><strong>archivos subidos...</strong></p>
+			<ul id="listFilesUpload" class="list_ord">
+				<!-- programar -->
+			</ul>
+		</div>
+	</article>
+</section>
+<script>
+/*eventos para capturar archivos*/
+var inputUploadFiles = document.getElementById("inputUploadFiles");
+var boxUploadFiles = document.getElementById("boxUploadFiles");
+var uploadFiles = function(){
+	inputUploadFiles.addEventListener("change", uploadArchivos, false);
+	boxUploadFiles.addEventListener("drop", uploadArchivos, false)
+	boxUploadFiles.addEventListener("dragover", function(evt){
+		evt.stopPropagation();
+		evt.preventDefault();
+		event.target.classList.add("classDragover");
+	}, false);
+	boxUploadFiles.addEventListener("dragleave", function(evt){
+		evt.stopPropagation();
+		evt.preventDefault();
+		event.target.classList.remove("classDragover");
+	}, false);
+};
+
+var uploadArchivos = function(evt){
+	evt.stopPropagation();
+	evt.preventDefault();
+	event.target.classList.remove("classDragover");
+
+	//recuperamos los archivos ya sean por el evento #inputUploadFiles(change)
+	//boxUploadFiles o por el (drop)
+	var arr_files = evt.target.files || evt.dataTransfer.files;
+
+	//reorremos los archivos y los enviamos al servidor
+	for (var i = 0, len = arr_files.length; i < len; i++) {
+		var file = arr_files[i];
+
+		//creamos un archivo de peticion ajax
+		var FD = new FormData();
+		FD.append('user_file',file);
+
+		//una peticion xhr2 por cada archivo
+		//createCORSRequest(method, url) return xhr
+		var ajax = createCORSRequest("POST", "include_apis/xhr2/upload.php");
+
+		//evento onload, solo si la peticion es exitosa
+		//evento onload: e_ajax.target.status = 200;
+		ajax.onload = function(e_ajax){
+			//el servidor es el que se encarga de almacenar el archivo en la carpeta adecuada
+			//solo mostramos en una capa el archivo que se ha cargado exitosamente
+			getPropUploadFiles(file, true);
+		};
+		ajax.onerror = function(){
+			getPropUploadFiles(file, false);
+		}
+		ajax.onloadstart = function(){
+			boxUploadFiles.innerHTML = 'Subiendo el archivo...';
+		};
+		ajax.onloadend = function(){
+			boxUploadFiles.innerHTML = 'Arrastra aqui para subir al servidor :)';
+			document.querySelector('#progressFileLoad').style.width = "0%";
+		};
+		//procesamos la carga de los archivos con la barra de progreso
+		ajax.upload.onprogress = function(e){
+			if(e.lengthComputable){
+				document.querySelector('#progressFileLoad').style.width = ((e.loaded / e.total) * 100)+'%';
+			}
+		};
+		ajax.send(FD);
+	};
+}
+
+var getPropUploadFiles = function(file, opt){
+	//imprimir los archivos que se han subido correctamente
+	var li = document.createElement("li");
+	var fileURL = file.value;
+	var fileName = file.name;
+	var fileSize = file.size;
+	var fileDate = file.lastModifiedDate.toLocaleDateString();
+	if ( !opt ){
+		li.style.color = "red";
+		li.innerText = "NO - "+fileURL;
+	}else
+		li.innerHTML = fileName+"<br/>"+fileSize+" bytes<br/>"+fileDate+",  fecha de subida";
+
+	document.getElementById("listFilesUpload").appendChild(li);
+}
+</script>

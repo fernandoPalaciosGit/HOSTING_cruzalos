@@ -1,0 +1,20 @@
+<section class="section_apis" id="webSocketHTML5">
+	<header>
+		<h2>web sockets</h2>
+	</header>
+
+	<article class="intro">
+		<header>
+			<p><b class="lead subtitles">permitir que los usuarios se conecten a trave de sockets al servidor</b></p>
+		</header>
+		<p>Esto se consigue a traves de un <strong>servidor de eventos</strong>, el cual conecta a los usuarios por sockets a un servicio o aplicacion que esten consumiendo en ese momento, esto permite que generen un trafico asincriono y biridecional, en el que <em>el servidor notifica a todos los clientes conectados a un mismo puerto de socket</em>, los cambios que ellos realizan en la página.</p>
+		<p>neceitamos preparar el servidor web para que implemente los sockets, dependiendo del servidor que utilicemos se configuraran de manera diferente</p>
+		<p>hay servidores que los implementan de manera nativa como <em>Node JS</em>, este es un servidor de eventos <i class="idea">se basa en el motor interprete de javascript de google: <em>V8</em></i>, que a traves de librerias como <em>Socket IO</em>, permite implementar <em>Sockets en el servidor</em></p>
+		<p>La manera de implementar Sockets en el servidor Apache es a traves de PHP. En  <em>code.google / googleCode</em>, codigo para codigo para ello</p>
+		<footer>
+			<p><a href="https://code.google.com/p/phpwebsocket/">implementacion de websokets en PHP</a> <i class="idea">GOOGLECODE</i></p>
+			<p><a href="http://www.websocket.org/aboutwebsocket.html">websocket.org</a></p>
+			<p><a href="http://caniuse.com/#search=websocket">compatibilidad de websockets con clientes</a> <i class="idea">navegadores web</i></p>
+		</footer>
+	</article>
+</section>

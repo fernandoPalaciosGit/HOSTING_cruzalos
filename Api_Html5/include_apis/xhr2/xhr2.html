@@ -1,0 +1,74 @@
+<section class="section_apis" id="xhr2HTML5">
+	<header>
+		<h2>XMLHTTPRequest 2</h2>
+		<button class="ejm">ejemplo</button>
+	</header>
+	<article class="intro">
+		<p>se trata de una nueva api de javascript para controlar las peticiones asincronas al server, <strong>peticiones que no recargan la página del navegador y trabajan en el mismo proceso que la ejecucion de la pagina que ese encuentra cargada en ese momento en el navegador</strong></i>, peticiones más sencillas y powerfull que la original de microsoft, y que resulta mas competitiva con la propuesta de jQuery</p>
+		<p>la peticion se complementa con el objeto <code>FD = new FormData(fom);</code> .</p>
+		<p>para añadir nuevos pares de valores de peticion es a traves de <code>FD.append("nombre", "valor")</code> .</p>
+		<footer>
+			<p><a href="http://caniuse.com/xhr2">Compatibilidad <i class="idea">Can I Use</i></a></p>
+			<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Using_FormData_Objects?redirectlocale=en-US&amp;redirectslug=Web%2FAPI%2FFormData%2FUsing_FormData_Objects">Ejemplo XMLHttpRequest <i class="idea">Mozilla developers</i></a></p>
+			<p><a href="http://docs.webplatform.org/wiki/apis/xhr/XMLHttpRequest">Ejemplo XMLHttpRequest <i class="idea">webplatform</i></a></p>
+			<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Using_FormData_Objects?redirectlocale=en-US&redirectslug=Web%2FAPI%2FFormData%2FUsing_FormData_Objects">Ejemplo FormData <i class="idea">Mozilla developers</i></a></p>
+		</footer>
+	</article>
+
+	<article class="example">
+		<form name="formUsers" action="include_apis/xhr2/searchUsers.php" method="post">
+			<input type="text" id="usuario" name="user" placeholder="Coloca tu usuario"
+			required="required"/>
+			<input type="submit" value="Enviar Datos">
+		</form>
+		<p>
+			Respuesta Ajax: <span id="layerRequestForm"></span>
+		</p>
+	</article>
+</section>
+<script>
+var initXHR2 = function(){
+	document.forms.formUsers.addEventListener("submit", sendForm, false);
+};
+
+var sendForm = function(e_formSubmit){
+	e_formSubmit.preventDefault(); //evitamos hacer la peticion habitual (sincrona)
+	var form = e_formSubmit.target;
+	var FD = new FormData(form); //pasamos el formulario
+
+	var ajax = createCORSRequest("POST", "include_apis/xhr2/searchUsers.php");
+	if ( !ajax ) {
+		document.getElementById("layerRequestForm").innerHTML = "CORS no esta soportado";
+		form.elements.usuario.value = "";
+		form.elements.usuario.disabled = true;
+		return;
+	}
+
+	ajax.responseType = "text";//tipo de valores devueltos por el callback
+	ajax.addEventListener("load", function(e_ajax){
+		var callback = e_ajax.target;
+		if ( callback.status = 200 ) //success request
+			document.getElementById("layerRequestForm").innerHTML = callback.response;
+	}, false);
+	ajax.send(FD);
+
+	form.elements.usuario.value = "";
+}
+
+// Create the XHR object.
+var createCORSRequest = function(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+</script>

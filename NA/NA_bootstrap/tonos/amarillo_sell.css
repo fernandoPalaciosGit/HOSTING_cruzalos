@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+body, html
+{
+    background-color: rgb(240, 223, 79) !important;
+}
+h2, .actual
+{
+	color: rgb(0, 92, 255) !important;
+}
+#nav_select .actual
+{
+	text-decoration: underline;
+}
+.select
+{
+	border: 5px solid rgb(166, 122, 0) !important;/*1*/
+	box-shadow: 1px 1px 3px rgb(255, 187, 0) , 2px 2px 6px rgb(166, 122, 0) !important; /*2*/ /*1*/
+}
+.vista_figcaption, .vista_fotos
+{
+	color: rgb(255, 255, 255) !important;
+	border: 3px solid rgb(255, 187, 0) !important; /*3*/
+}
+.vista_figcaption
+{
+	box-shadow: 0px 2px 6px rgb(255, 255, 255) !important;
+	background-color: rgb(166, 122, 0) !important; /*tono_claro*/
+}
+.vista_fotos
+{
+	box-shadow: 3px 1px 6px rgb(0, 0, 0) !important;
+	background-color: rgb(166, 122, 0) !important; /*tono oscuro*/
+}
+.fotos, .precio
+{
+	box-shadow: 3px 1px 6px rgb(0, 0, 0) !important;
+	background-color: rgb(255, 187, 0) !important; /*2*/
+	border: 3px solid  rgb(255, 140, 0) !important; /*3*/
+}
+.features li, #menu_aqui li
+{
+	color: rgb(97, 82, 9) !important;
+}
+#nav_select ul li
+{
+	text-shadow: none;
+	color: rgb(0, 92, 255);
+}
+#group_barcos>article:nth-child(odd) .image_barco
+{
+	border: 5px solid rgb(166, 122, 0) ;/*1*/
+}
+#group_barcos>article:nth-child(even) .image_barco
+{
+	border: 5px solid rgb(255, 187, 0); /*2*/
+}
+#menu_web li
+{
+	color: rgb(97, 82, 9) !important;/*1*/
+	border: 3px solid rgb(166, 122, 0) !important; /*3*/
+	background-color: rgba(255, 255, 255, 0.7) !important;
+}

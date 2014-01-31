@@ -1,0 +1,108 @@
+<section class="section_apis" id="readFilesHTML5">
+	<header>
+		<h2>Lecura de archivos</h2>
+		<button class="ejm">ejemplo</button>
+	</header>
+	<article class="intro">
+		<p>usos de <strong>api file read</strong></p>
+		<ul class="list">
+			<li>validacion previo envio al servidor: podemos leer los <em>campos de nombre, tamaño y tipo MIME del archivo</em>, para ver si son compatibles con las condiciones que luego se validarán tambien en el server, y así evitamos al cliente tener que esperar que las valiide el server y devuelva un mensaje de error</li>
+			<li>crear una vista previa en miniatura de lo que se almacenaa en el servidor</li>
+		</ul>
+		<p>Javascript devuelve la lista de objetos <code>new File</code> <i class="idea">seleccionados a traves de <code>&lt;input type="file" multiple="multiple"/&gt;</code></i>, como una secuencia <code>FileList</code></p>
+		<aside style="font-size: 0.7em;">
+			<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader?redirectlocale=en-US&redirectslug=DOM%2FFileReader">guia mozilla desarrolladores</a></p>
+			<p><a href="http://www.html5rocks.com/es/tutorials/file/dndfiles/">tuto htmnl5Rock</a></p>
+			<p><a href="http://caniuse.com/#feat=filereader">Compatibilidad</a></p>
+		</aside>
+	</article>
+
+	<article class="example">
+		1.<input type="file" id="files" class="selectFiles" name="files[]" multiple="multiple" />
+		2.<div id="dropFiles" class="selectFiles">Arrastra los archivos</div>
+		<dl id="listFiles" class="layerFiles">
+			datos de archivos
+			<!-- programar datos de archivos-->
+		</dl>
+		<div id="contentFiles" class="layerFiles">
+			contenido de archivos
+			<!-- programar contenido de archivos-->
+		</div>
+	</article>
+</section>
+<script>
+var initFileReader = function(){
+	/*recibir archivos por seleccion de directorios*/
+	document.getElementById("files").addEventListener("change", capturarArchivos, false);
+
+	/*recibir archivos por drag&drop*/
+	document.getElementById("dropFiles").addEventListener('dragover', function(event){
+		event.stopPropagation();
+	   event.preventDefault();
+	   event.target.classList.add("classDragover");
+	   event.dataTransfer.dropEffect = 'copy'; // Explicitamente muestra que es una copia.
+	}, false);
+	document.getElementById("dropFiles").addEventListener('dragleave', function(event){
+		event.target.classList.remove("classDragover");
+	}, false);
+	document.getElementById("dropFiles").addEventListener('drop', capturarArchivos, false);
+};
+
+var capturarArchivos = function(event){
+	event.stopPropagation();
+	event.preventDefault();
+	event.target.classList.remove("classDragover");
+
+	//los valores devueltos por 'Fletype' son un array
+	var arr_files = event.target.files || event.dataTransfer.files;
+	var listFiles = document.getElementById("listFiles");
+	listFiles.innerHTML = "";
+	document.getElementById("contentFiles").innerHTML = "";
+
+	//objeto de lectura d archivos
+	//new FileReader().readAsText(Blob|File, opt_encoding): devolvera el texto plano del contenido del archivo
+	//new FileReader().readAsDataURL(Blob|File): devuelve una url que podremos asignar a una capa de imagen que renderizara el contenido
+
+	for (var i = 0, len = arr_files.length; i < len; i++) {
+		var file = arr_files[i];
+		var dl_files = getPropFiles(file);
+		listFiles.innerHTML += dl_files;
+
+		var reader = new FileReader(); //debemos crear un lector por cada archivo que leamos
+		reader.addEventListener("load", displayInfo, false); //se ejecutara cuando lea un archivo
+
+		if( file.type.match(/image.*/i) )
+			reader.readAsDataURL(file); //leemos el contenido de FILE cono una url
+		else reader.readAsText(file); //leemos el contenido como texto
+	}
+};
+
+var displayInfo = function(e_read){
+	var contenedor = document.getElementById("contentFiles");
+	var lectura = e_read.target.result;
+	// en general, si lo que se lee del archivo NO contiene espacios, se trata de una URL
+	if( lectura.indexOf(" ") < 1){
+		var imagen = document.createElement("img");
+		imagen.src = lectura;
+		contenedor.appendChild(imagen);//se le añade imagenes
+	}else{
+		var p = document.createElement("p");
+		p.innerText = lectura;
+		p.style.borderBottom = "2px solid blue";
+		contenedor.appendChild(p);//se le añade texto
+	}
+}
+
+var getPropFiles = function(file){
+	var fileName = file.name;
+	var fileSize = file.size;
+	var fileDate = file.lastModifiedDate.toLocaleDateString();
+
+	var html = "";
+	html += "<dt>"+fileName+"</dt>";
+	html += "<dd>"+fileSize+" bytes</dd>";
+	html += "<dd>"+fileDate+", última modificación</dd>";
+
+	return html;
+};
+</script>

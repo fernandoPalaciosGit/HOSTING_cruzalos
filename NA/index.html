@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta name="description" content="pagina principal de nautica amiga" />
+	<meta name="author" content="Fernando Palacios Landi" />
+	<title>pagina principal</title>
+
+	<!-- ENLACES EXTERNOS -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="stylesheet" href="css/principal_barcos_style.css" />
+	<link rel="stylesheet" href="css/style_fonts.css" />
+</head>
+<body>
+	<section id="contenedor-ppal" class="tono_bgd">
+		<header id="presentacion"><!-- z-index: 1 -->
+			<div id="titulo">
+				<h1>Nautica amiga</h1>
+				<div id="logo"></div><!-- imagenes logo -->
+			</div>
+
+			<div id="login">
+				<form id="acceso" method="POST" action="javascript:void(0)">
+					<p>
+						<label for="user_name">Nombre de Usuario</label>
+						<input type="text" id="user_name" title="Nombre de Usuario registrado" name="userName" placeholder="Email - Usuario" autofocus="autofocus" /><br/>
+						<label for="user_pass">Password de Usuario</label>
+						<input type="password" id="user_pass" title="Contraseña de Usuario registrado" name="userPass" placeholder="Password" />
+					</p>
+					<p>
+						<input type="submit" value="">
+					</p>
+				</form>
+				<ul id="settings">
+					<li>Quiero hacerme socio</li>
+					<li>Ayuda</li>
+				</ul>
+			</div>
+
+			<div id="slide_left" class="icon-arrow-left tono_slide"></div>
+			<div id="slide_right" class="icon-arrow-right tono_slide"></div>
+
+			<nav class="tono_navegacion">
+				<ul id="link_ventas">
+					<li><a href="web_ventas/index.html">Barcos ocasion</a></li>
+					<li><a href="web_ventas/index.html">Barcos novedades</a></li>
+					<li><a href="web_ventas/index.html">Motores</a></li>
+					<li><a href="web_ventas/index.html">Amarres</a></li>
+					<li><a href="web_ventas/index.html">Salvamento</a></li>
+					<li><a href="web_ventas/index.html">Seguros</a></li>
+					<li><a href="web_ventas/index.html">Segunda mano</a> </li>
+				</ul>
+				<ul id="idiomas" class="tono_idiomas">
+					<li id="esp"></li>
+					<li id="ita"></li>
+					<li id="fra"></li>
+					<li id="eng"></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- IMPLEMENTAR -->
+		<div class="implementar" id="nav_venta">
+			<header><h2>VENTA DE BARCOS</h2></header>
+		</div>
+		<div class="implementar" id="anuncios">
+			<header><h2>EVENTOS ANUNCIOS Y NOTICIAS</h2></header>
+		</div>
+		<div class="implementar" id="buscador">
+			<header><h2>ENCUENTRA TU BARCO</h2></header>
+		</div>
+		<footer class="implementar">
+			<div id="difuminar_footer">
+				<h2>SOCIAL - CONTACTO - RELACIONADOS</h2>
+			</div>
+		</footer>
+		<div id="difuminar"></div>
+		<div id="estilos">
+			<input type="button" class="tonos" id="azul" title="cambiar a estilo azul" value="azul"/><br/>
+			<input type="button" class="tonos" id="amarillo" title="cambiar a estilo amarillo" value="amarillo"/><br/>
+			<input type="button" class="tonos" id="verde" title="cambiar a estilo verde" value="verde"/>
+			<span class="icon-image tonos" title="mostrar disenyo web" onclick="document.location.href='mostrar_imagen.html'"></span>
+		</div>
+	</section>
+	<script>
+		var src_estilos = ["azul_main.css", "verde_main.css", "amarillo_main.css"], ruta = "tonos/";
+	</script>
+	<script src="cargar_estilos.js"></script>
+</body>
+</html>

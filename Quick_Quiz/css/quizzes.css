@@ -1,0 +1,427 @@
+@CHARSET "UTF-8";
+/* ==========================================================================
+   MAIN & NAV ==>> server/main.php
+   ========================================================================== */
+#help_quiz, #nav_quiz
+{
+  height: 50%;
+}
+#help_quiz
+{
+  position: relative;
+  width: 75%;
+  height: 100%;
+}
+#nav_quiz
+{
+  width: 25%;
+  height: 100%;
+}
+#nav_quiz li
+{
+  margin-top: 10%;
+  padding: 7% 12px;
+  border-radius: 10% / 45%;
+  /*border: 2px solid rgb(255, 0, 0);*/
+}
+#nav_quiz a, #otros_quiz>ul a
+{
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: "3d";
+  text-transform: lowercase;
+  color: rgb(169, 226, 226)
+}
+#nav_quiz a
+{
+  font-family: "2d";
+}
+#nav_quiz a:hover
+{
+  color: rgb(7, 37, 37);
+  font-family: "3d";
+  display: block;
+  width: 100%;
+  height: 90%;
+}
+#otros_quiz
+{
+  position: relative;
+  top: 5%;
+  left: -5%;
+}
+#otros_quiz nav, #otros_quiz nav ul li
+{
+  margin-top: 22px;
+  margin-top: 1.5em;
+}
+#otros_quiz nav ul li
+{
+  position: relative;
+}
+#otros_quiz nav ul li span
+{
+  position: absolute;
+  top: 0;
+  right: 20%;
+  right: calc(50% - 168px);
+}
+/*enlaces a descargas de quizes en la red*/
+#otros_quiz>ul
+{
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 225px;
+  top: calc(10% + 180px);
+  left: 0;
+  margin-left: 25%;
+  border-top: 1px dashed rgb(0, 0, 0);
+}
+#otros_quiz>ul a
+{
+  font-size: 1.2em;
+  color: rgb(23, 83, 83);
+}
+#otros_quiz>ul a:hover
+{
+  border-bottom: 1px dotted rgb(0,0,0);
+}
+#reglas_quiz
+{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: -225px;
+  word-spacing: 20px;
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(180deg);
+
+  -moz-transform-origin: -45% 0;
+  -webkit-transform-origin: -45% 0;
+  -o-transform-origin: -45% 0;
+}
+/* ==========================================================================
+   ERRORES
+   ========================================================================== */
+.error
+{
+  display: none;
+  position: fixed;
+  width: 20%;
+  height: auto;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: black;
+  top: 0;
+  right: 0;
+  margin: 2% 6.2% 0 0;
+}
+.error p
+{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: monospace;
+  padding-top: 2%;
+  font-size: 1.2em;
+  font-size: 17px;
+  font-weight: bold;
+}
+.error ul li
+{
+  display:  inline-block;
+  font-family: monospace;
+}
+.err_quizzes
+{
+  width: 25%;
+  margin: 6% 6.2% 0 0;
+}
+/* ==========================================================================
+   ESTILO PARA LA AGRUPACION DE QUIZZES ==>> server/group_quizzes.php
+   ========================================================================== */
+.group_quizzes
+{
+  height: 55%;
+  width: 100%;
+  font-size: 0.9em;
+}
+.pistas_actores
+{
+  background-color: rgba(255, 214, 0, 0.5);
+  width: 100%;
+  height: 10%;
+  overflow: hidden;
+  -webkit-transition: height 0.3s ease-out 0s;
+  -moz-transition: height 0.3s ease-out 0s;
+  transition: height 0.3s ease-out 0s;
+}
+.pistas_actores:hover
+{
+  height: 20%;
+}
+.pistas_actores nav ul
+{
+  width: 960px;
+  margin: 0 auto;
+}
+.pistas_actores nav ul li
+{
+  display: inline-block;
+  width: 200px;
+  text-decoration: underline;
+  padding: 10px 12px 6px 12px;
+}
+.pistas_actores nav ul li a
+{
+  font-size: 21px;
+  font-size: 1.5em;
+}
+/*GRUPO DE FLOTABILIDAD*/
+.content_quizzes
+{
+  background-color: rgba(0, 204, 255, 0.5);
+  width: 100%;
+  height: 80%;
+}
+.content_quizzes article h1
+{
+  font-size: 28px;
+  font-size: 2em;
+  padding: 15px;
+  padding: 0.5em 0;
+}
+.content_quizzes:before,
+.content_quizzes:after,
+.content_quizzes form:before,
+.content_quizzes form:after
+{
+  /*propiedades ara la flotabilidad de los articles contenidos en él*/
+  content: "";
+  display: table;
+}
+.content_quizzes:after,
+.content_quizzes form:after
+{
+  clear: both;
+}
+.content_quizzes .flotarL
+{
+  float: left;
+  /*BORDER RADIUS**************************************/
+  width: 70%;
+  height: 100%;
+}
+.content_quizzes .flotarR
+{
+  float: right;
+  background-color: rgba(241, 255, 136, 0.5);
+  width: 30%;
+  height: 100%;
+}
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+.btn_quizz
+{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgb(62, 135, 204);
+  border-radius: 0.5em/0.7em;
+  cursor: pointer;
+  border: 0;
+  -webkit-transition: background-color 0.3s linear 0s, color 0.3s linear 0s, font-size 0.3s linear 0s;
+  -moz-transition: background-color 0.3s linear 0s, color 0.3s linear 0s, font-size 0.3s linear 0s;
+  transition: background-color 0.3s linear 0s, color 0.3s linear 0s, font-size 0.3s linear 0s;
+}
+.btn_quizz:hover
+{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgb(54, 56, 58);
+  border: 0.2em solid rgb(62, 135, 204);
+}
+.btn_quizz:active
+{
+  border: 0.2em solid rgb(247, 109, 109);
+}
+.btn_sol
+{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  font-size: 21px;
+  font-size: 1.5em;
+  font-weight: lighter;
+  font-style: oblique;
+  height: 70px;
+  height: 1.6em;
+  letter-spacing: 5px;
+}
+.trick_oculto
+{
+  display: none;
+  text-align: justify;
+  padding: 0 5% 5% 5%;
+  line-height: 1.5em;
+}
+.trick_oculto img
+{
+  display: block;
+  width: 100%;
+  padding: 2em 0 1em 0;
+}
+.trick_oculto figcaption
+{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+/* ==========================================================================
+   QUIZZ DE AUDIO ==>> server/quiz_audio.php
+   ========================================================================== */
+#quizz_audio audio
+{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+#quizz_audio p
+{
+  width: 300px;
+  margin: 30px auto;
+  margin: 2em auto;
+}
+#quizz_audio p input
+{
+  width: 100%;
+  margin: 0 auto;
+  height: 42px;
+  height: 3em;
+  font-size: 21px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center
+}
+/* ==========================================================================
+   QUIZZ DE IMAGENES ==>> server/quiz_image.php
+   ========================================================================== */
+#quizz_imagenes,
+#quizz_video
+{
+  position: relative;
+}
+#quizz_imagenes figure
+{
+  width: 100%;
+  height: 70%;
+}
+#quizz_imagenes figure img
+{
+  margin-left: 4%;
+}
+#quizz_imagenes figure img:nth-child(1),
+#quizz_imagenes figure img:nth-child(2),
+#quizz_imagenes figure img:nth-child(3),
+#quizz_imagenes figure img:nth-child(5)
+{
+  width: 18%;
+  height: 50%;
+}
+#quizz_imagenes figure img:nth-child(4)
+{
+  width: 40%;
+  height: 50%;
+}
+#quizz_imagenes p,
+#quizz_video p
+{
+  position: absolute;
+  top: 25%;
+  left: 67%;
+  width: 25%;
+  height: 10%;
+  margin-left: 4%;
+}
+#quizz_imagenes p:nth-of-type(2),
+#quizz_video p:nth-of-type(2)
+{
+  top: 45%;
+}
+#quizz_imagenes p input,
+#quizz_video p input
+{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+/* ==========================================================================
+   QUIZZ DE VIDEO ==>> server/quiz_video.php
+   ========================================================================== */
+#quizz_video video
+{
+  margin-left: 5%;
+}
+/* ==========================================================================
+   QUIZZ DE JACK NICOLSON ==>> server/quiz_nic.php,
+   QUIZZ DE PENELOPE CRUZ ==>> server/quiz_pen.php
+   QUIZZ DE JAVIER BARDEM ==>> server/quiz_bar.php,
+   ========================================================================== */
+#quizz_nicolson, #quizz_nicolson form,
+#quizz_penelope, #quizz_penelope form,
+#quizz_bardem, #quizz_bardem form
+{
+  width: 100%;
+  height: 100%;
+}
+.content_quizzes form>p, .content_quizzes form fieldset:nth-of-type(1)
+{
+  float: left;
+  width: 60%;
+  height: auto;
+  margin-top: 3%;
+}
+.content_quizzes form
+{
+  position: relative;
+}
+.content_quizzes form fieldset:nth-of-type(2)
+{
+  position: absolute;
+  top: 0;
+  right: 5%;
+  float: right;
+  width: 30%;
+  height: auto;
+}
+.content_quizzes form fieldset:nth-of-type(2) p
+{
+  border: 1px solid rgb(62, 157, 229);
+  border-radius: 10% / 45%;
+  display: inline-block;
+  width: auto;
+}
+.content_quizzes form fieldset:nth-of-type(2) p:nth-of-type(2)
+{
+  margin: 0 1%;
+}
+.content_quizzes form fieldset:nth-of-type(2) p input
+{
+  margin: 0;
+}
+.content_quizzes form>p label,
+.content_quizzes form legend
+{
+  padding-left: 20%;
+  font-size: 16px;
+  font-size: 1.4em;
+  font-family: "2d";
+  font-weight: bold;
+  color: rgb(24, 79, 148)!important;
+}
+.content_quizzes form fieldset input
+{
+  margin: 2% 0 0 20%;
+}

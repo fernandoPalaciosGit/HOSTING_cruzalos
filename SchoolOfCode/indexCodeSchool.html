@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<!-- fuerza IE a utilizar el motor de renderizado más actual que esté disponible (incluso en intranets) & Chrome Frame (plugin para IE 6, 7 y 8)-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="description" content="ScchoolOfCode es una plataforma educativa online, en la que el desarrollador aprende a traves de la practica de codigo y videotutoriales, las nuevas tecnologias de front-end y back-end"/>
+	<meta name="author" content="Fernando Palacios Landi" />
+	<title>educación de tecnologias de backend y frontend</title>
+
+	<!-- ENLACES EXTERNOS -->
+	<link rel="shortcut icon" href="media/img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="media/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+	<link rel="stylesheet" href="css/vendors/font-awesome.css">
+	<link rel="stylesheet" href="css/mainCodeSchool.css" />
+</head>
+<body>
+	<section id="contenedor-web" class="container">
+		<aside id="checkUser">
+			<p>Bienvenido <span class="title"></span>
+			<button id="erraseLogin" type="button" class="btn btn-danger btn-sm">Borrar registro</button>
+			</p>
+		</aside>
+		<!-- HEADER
+		******************************-->
+		<header id="encabezado">
+			<div class="page-header row">
+				<div class="col-sm-12 col-md-12">
+					<h1>school<span>of</span>code</h1>
+				</div>
+			</div>
+
+			<!-- NAVEGACION A TRAVES DE LOS CURSOS
+			******************************-->
+			<nav id="nav-cursos" class="row">
+				<div class="btn-group btn-group-justified">
+					<div class="btn-group">
+					 <a class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+					 	Front-End
+					 	<span class="fa-stack">
+						  <i class="fa fa-square fa-stack-2x"></i>
+						  <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+						</span>
+					 </a>
+					 <ul class="dropdown-menu" data-tipocurso="frontEnd" role="menu">
+		            <li data-curso="html5"><a href="#">HTML5</a></li>
+		            <li class="divider"></li>
+		            <li data-curso="js"><a href="#">JAVASCRIPT</a></li>
+		            <li class="divider"></li>
+		            <li data-curso="css3"><a href="#">CSS3</a></li>
+		          </ul>
+					</div>
+
+					<div class="btn-group">
+					 <a class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+					 	Back-End
+					 	<span class="fa-stack">
+						  <i class="fa fa-square fa-stack-2x"></i>
+						  <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+						</span>
+					 </a>
+					 <ul class="dropdown-menu" data-tipocurso="backEnd" role="menu">
+		            <li data-curso="php"><a href="#">PHP</a></li>
+		            <li class="divider"></li>
+		            <li data-curso="asp"><a href="#">ASP</a></li>
+		            <li class="divider"></li>
+		            <li data-curso="jsp"><a href="#">JSP</a></li>
+		          </ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- IMAGENES DE CURSOS ONLINE
+		******************************-->
+      <section id="contenedor-img" class="row">
+      	<!-- programar , libreria BLOCKSIT-->
+      </section>
+
+
+     <!-- CARRUSEL DE CURSOS ONLINE
+     ******************************-->
+		<section id="seleccion-cursos" class="wrapSlider row">
+			<!-- programar -->
+		</section>
+
+     <!-- FORMULARIO DE INVITADO Y REGISTRADOS
+     ******************************-->
+      <aside id="link-form" class="row">
+	      <div class="col-sm-12 col-md-12 col-lg-12">
+	            <span class="fa-stack fa-5x" data-typeform="registro">
+	              <i class="fa fa-circle-o fa-stack-2x"></i>
+	              <i class="fa fa-user fa-stack-1x"></i>
+	            </span>
+	         <h2>USUARIO INVITADO</h2>
+	    		<p>Registrate como uno más de los usuarios del servicio</p>
+	  		</div>
+
+	  		<div class="col-sm-12 col-md-12 col-lg-12">
+	    		<span class="fa-stack fa-5x" data-typeform="compras">
+				  <i class="fa fa-circle-o fa-stack-2x"></i>
+				  <i class="fa fa-code fa-stack-1x"></i>
+				</span>
+	    		<h2>USUARIO REGISTRADO</h2>
+	         <p>Si ya estas registrado compra cualquier curso</p>
+	  		</div>
+		</aside>
+
+	<!-- FOOTER ACERCA DEL AUTOR
+	******************************-->
+		<footer id="footer">
+			<div id="autor-footer">
+				<h3>Acerca del Autor</h3>
+				<address>
+					Escrita por: <a rel="author" href="mailto:fernandopalacioslandi@gmail.com">Mail Nando</a> -
+					<a href="http://www.cruzalosdedos.es/curriculum/nando-cv/index.html" rel="author">Curriculum</a><br/>
+					Pagina Web: <a rel="author" href="http://www.cruzalosdedos.es/">Web Nando</a><br/>
+					Repositorio Web: <a rel="author" href="https://github.com/fernandoPalaciosGit/">Github Nando</a><br/>
+				</address>
+			</div>
+			<div id="wrapCC">
+				<!-- <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> -->
+				<br />
+				<div id="licenseCC">
+					<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/StillImage" property="dct:title" rel="dct:type">proyecto school of rock</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.cruzalosdedos.es" property="cc:attributionName" rel="cc:attributionURL">fernando palacios landi</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.<br />Creado a partir de la obra en <a xmlns:dct="http://purl.org/dc/terms/" href="https://www.google.com/search?as_q=code+school+banner&amp;tbs=sur:fm&amp;tbm=isch#q=logos+programming&amp;safe=active&amp;tbm=isch&amp;tbs=sur:fm" rel="dct:source">https://www.google.com/search?as_q=code+school+banner&amp;tbs=sur:fm&amp;tbm=isch#q=logos+programming&amp;safe=active&amp;tbm=isch&amp;tbs=sur:fm</a>.
+				</div>
+			</div>
+		</footer>
+	</section>
+	<!-- carga jQuery desde el CDN de google -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- si el CDN falla, se carga desde el servidor cliente -->
+	<script>window.jQuery || document.write('<script src="js/vendors/jquery-2.0.3.min.js"><\/script>')</script>
+	<script src="js/vendors/blocksit.js"></script>
+	<script src="js/mainCodeSchool.js"></script>
+</body>
+</html>

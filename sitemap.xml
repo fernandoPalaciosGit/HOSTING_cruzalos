@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <url>
+    <loc>http://cruzalosdedos.es/cruzalosdedos/index.html</loc>
+    <lastmod>2014-01-05T23:31:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+
+    <video:video>
+       <video:content_loc>http://cruzalosdedos.es/media/zeitgeist_2013.mp4</video:content_loc>
+       <video:title>Zeigeist here´s to 2013</video:title>
+       <video:thumbnail_loc>http://cruzalosdedos.es/media/zeitgeist_2013.png</video:thumbnail_loc>
+       <video:description>resumen de los acontecimientos mas buscados a traves del motor de busqueda googleBot en todo el mundo</video:description>
+       <video:duration>90</video:duration>
+    </video:video>
+
+  </url>
+  <url>
+    <loc>http://cruzalosdedos.es/naves/index.html</loc>
+    <lastmod>2013-10-31T09:36:54+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://cruzalosdedos.es/astronauta/index.html</loc>
+    <lastmod>2014-01-05T21:21:58+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://cruzalosdedos.es/ibiza/index.html</loc>
+    <lastmod>2013-10-31T09:36:21+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://cruzalosdedos.es/Hotel%20Cometa/index.html</loc>
+    <lastmod>2013-10-31T09:18:39+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://cruzalosdedos.es/youtube/index.html</loc>
+    <lastmod>2013-10-31T09:37:51+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>http://www.cruzalosdedos.es/NA/index.html</loc>
+    <lastmod>2013-12-22T09:37:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>http://www.cruzalosdedos.es/Quick_Quiz/index.php</loc>
+    <lastmod>2013-12-22T09:37:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>http://www.cruzalosdedos.es/Pizza_Buona/index.html#D-1</loc>
+    <lastmod>2013-12-22T09:37:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>http://www.cruzalosdedos.es/Mi_phone/index.html</loc>
+    <lastmod>2013-12-22T09:37:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>http://www.cruzalosdedos.es//Gym_Fit/gym_index.html</loc>
+    <lastmod>2013-12-22T09:37:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>http://www.cruzalosdedos.es/Space_css/index.html</loc>
+    <lastmod>2013-12-22T09:37:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>http://www.cruzalosdedos.es/Api_Html5/index.php</loc>
+    <lastmod>2013-12-22T09:37:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>http://cruzalosdedos.es/miniPinterest/index.html</loc>
+    <lastmod>2013-12-22T09:37:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+</urlset>

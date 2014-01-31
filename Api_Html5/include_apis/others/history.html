@@ -1,0 +1,56 @@
+<section class="section_apis" id="historyHTML5">
+	<header>
+		<h2>history html5</h2>
+		<button class="ejm">ejemplo</button>
+	</header>
+	<article class="intro">
+		<header>
+			<p class="subtitles">historial de navegacion</p>
+		</header>
+		<p>la <em>API de HTML5 history</em>. te permite acceder al historial de navegacion y manipularlo, a traves del objeto <code>window.history</code></p>
+		<p>el método <code> history.pushState()</code>, modifica el encabezado http, y por lo tanto la url reconocida por el navegador<br/>
+			Esto provocara que cambie la direccion we, pero que no se acceda a ella</p>
+
+	</article>
+
+	<article class="example">
+		<p><strong>navegando por el historial</strong></p>
+		<p><a class="changeHist" href="javascript:window.history.back();">Regresar</a></p>
+		<p><a class="changeHist" href="javascript:window.history.forward();">Avanzar</a></p>
+		<p><a class="changeHist" href="javascript:window.history.go(-2);">Dos paginas atras</a></p>
+		<p>Numero de pagina en el stack del historial: <span id="numHist"></span></p>
+		<p>Cambiar la url: <a class="changeHist"
+			href="javascript:window.history.pushState({cambioHist: 'cambioHTTP'}, 'cambio1 url', 'cambioHTTP.html')">/cambioHTTP</a></p>
+		<p>Cambiar la url: <a class="changeHist"
+			href="javascript:window.history.pushState({cambioHist: 'docJSON'}, 'cambio2 url', 'documento.json')">/documento.json</a></p>
+		<p style="color: red;">(evento de click sobre cada enlace); compromamos que la url siempre cambia:<br/><span id="chgURL">...</span></p>
+
+		<footer>
+			<p>si algun enlace no funciona, es porque <em>NO existe ese punto de acceso al historial de navegación</em></small></p>
+			<p>si hemos creado un cambio con <code>pushState()</code>. aunque podamos acceder a esa url a traves del historial, <strong>no podemos recargar la pagina con esa peticion</strong>, ya que no existe fisicamente, pero para el navegador SI, ya que lo lee desde el encabezado HTTP que hemos ido manipulando</p>
+			<p><strong>el evento <code>onpopstate</code> se lanza cuendo el navegador lee una nueva url o hay cambios en el historial</strong>, por lo tanto solo se activa:
+				<ul>
+					<li>con un refresco de pagina</li>
+					<li>cuando leemos una entarda en el historial de navegación con <code>history.back() / history.forward()</code></li>
+				</ul>
+			</p>
+		</footer>
+		<aside style="font-size: 0.7em;">
+			<p>consola javascript: leer salida de <code>onpopstate: event.state</code></p>
+			<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history">guia mozilla desarrolladores</a></p>
+		</aside>
+	</article>
+</section>
+<script>
+	var initHistory = function(){
+		var numHist = window.history.length;
+		$("#numHist").text(numHist);
+		$(".changeHist").on("click", function(){
+			var chgURL = document.location.pathname;
+			$("#chgURL").text(chgURL);
+		});
+		window.onpopstate = function(ev_state){
+			console.log(ev_state.state);
+		}
+	}
+</script>

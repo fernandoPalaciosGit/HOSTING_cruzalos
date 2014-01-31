@@ -1,0 +1,87 @@
+<section class="section_apis" id="localStorage">
+	<header>
+		<h2>local storage HTML5</h2>
+		<button class="ejm">ejemplo</button>
+	</header>
+	<article class="intro">
+		<p><strong>LocalStorage</strong> es una API que te permite almacenar información en forma variables en el navegador</p>
+		<p>estas variables solamente pueden contener texto, es decir, son de tipo <code>String</code></p>
+		<p>no hay que abusar de ellas porque tienen un limite (5-10)MBdependiendo del navegador</p>
+		<p>otra ventaja es la seguridad, un pequeño paso ya que a diferencia de las cookies, estas <em>NO se envian en el encabezado http de la peticion</em>, sino que se len en el cliente</p>
+		<ul class="list">
+			<li>este ejemplo usa la API de LocalStorage con una POO</li>
+			<li>usamos <strong>eventos de LocalStoge</strong></li>
+		</ul>
+		<li>el evento <code>onstorage</code>, se aplica sobre el objeto global <code>window</code>, y este se lanza en el momento en el que hay algun cambio en las listas de arrays almacenadas en lopcalstorage del navegador <i class="idea">ya sea porque eliminamos o añadimos una nueva lista al stoage o una nueva variable a alguna de ellas</i></li>
+		<footer>Las variables de LocalSorage intentan imitar la funcionalidad de las cookies, que en php se usan para la misma función <i class="idea">es un array asociativo de variables que se almacenan en el navegador a petición del servidor para hacer interactiva la experiencia de usuario con la aplicación, leyendo parámetros útiles para el Script del lado del servidor</i></footer>
+	</article>
+
+	<article class="example">
+		<button rel="codeExample">código</button>
+		<div class="codeExample">
+			<pre class="brush: js; gutter: true">
+		//declaracion de la clase de storage
+		var Lista = function(clave){
+			this.clave = clave;
+
+			this.obtenerActividades = function(){
+				//LocalStorage almacena la lista de actividades como objetos, y necesitamos recuperarla en en formato de array de strings
+				var objetoStorage = JSON.parse(window.localStorage.getItem(this.clave));
+				//ALTERNATIVA: var objetoStorage = JSON.parse(window.localStorage[this.clave]);
+				if( objetoStorage !== "undefined") return objetoStorage; //array de strings
+				else return null;
+			}
+
+			this.agregarActividad = function(actividad){
+				if( this.validarNavegador() ){
+					var actividades;
+					//comprobamos si existe contenido en localstorage para nuestra clave y
+					if( (actividades = this.obtenerActividades()) !== null ) ;
+					//si no hay objetos em LocalStorage, creamos un array de strings
+					else actividades = [] ;
+
+					actividades.push(actividad);
+
+					//la actividad llega como un string (input) y hay que parsearlo en un objeto de JSON para que localstorage lo pueda recibir/manipular
+					//JSON.stringify: convertimos el aray de strings en un objeto JSON
+					window.localStorage.setItem(this.clave, JSON.stringify(actividades));
+					//ALTERNATIVA: window.localStorage[this.clave] = JSON.stringify(actividades);
+					return true;
+				}
+				return false;
+			}
+
+			this.eliminarLista = function(){
+				window.localStorage.removeItem(this.clave);
+			}
+
+			//comprobamos la functionalidad de LocalStorage en el navegador
+			this.validarNavegador = function(){
+				if( typeof window.Storage === "function") return true;
+				else return false;
+			}
+		}</pre>
+		</div>
+		<div class="split">
+			<h3>cosas por hacer</h3>
+			<form id="todo_form" method="post" action="http://www.cruzalosdedos.es">
+				<label for="todo">Actividad: </label>
+				<input type="text" placeholder="Hacer las compras..." autocomplete="autocomplete" required="required" id="todo" pattern="^[^-\s][\w\s-.]+$"/>
+				<!-- que no empieze por un pattern [-\s]
+				que continue y termine con un pattern [\w\s-] -->
+				<input type="submit" value="Registrar actividad" id="create_act">
+			</form>
+		</div>
+
+		<div class="split">
+			<h3>cosas por hacer</h3>
+			<ol id="todo_list" class="list_ord">
+				<!-- programar -->
+			</ol>
+			<button id="remove_act">Vaciar actividades</button>
+		</div>
+
+	</article>
+</section>
+<script src="include_apis/localStorage/storage.js"></script>
+<script src="include_apis/localStorage/main.js" defer onload="initLocalStorage()"></script>

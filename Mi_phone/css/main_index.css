@@ -1,0 +1,770 @@
+@CHARSET "UTF-8";
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+#contenedor_ppal
+{
+    width: 95%;
+    height: 100%;
+    margin: 0px auto;
+    font-size: 16px;
+    font-size: 1rem;
+}
+/*********************
+	GRUPOS FLOTANTES
+**********************/
+#head_web, #wrap_web
+{
+	position: relative;
+}
+#wrap_web:before,
+#wrap_web:after,
+#head_web:before,
+#head_web:after
+{
+	content: "";
+	display: table;
+}
+#wrap_web:after,
+#head_web:after
+{
+	clear: both;
+}
+#wrap_web article,
+#head_web #logo,
+#head_web #clientes,
+#head_web .grupo
+{
+	float: left;
+	height: 100%;
+}
+/* ==========================================================================
+	HEADER
+   ========================================================================== */
+#head_web
+{
+	width: 100%;
+	height: 20%;
+	background: rgb(68, 68, 68);
+	box-shadow: 0 5px 0 rgba(0,0,0,0.2);
+	z-index: 100;
+	color: rgb(255, 255, 255) !important;
+}
+/*********************
+HEADER > #logo
+**********************/
+#head_web #logo
+{
+	position: relative;
+	width: 20%;
+}
+#head_web #logo h1
+{
+	text-indent:-9999px;
+}
+#head_web #logo>span
+{
+	display: block;
+	position: absolute;
+	height: 80%;
+	width: 100%;
+	top: 10%;
+	margin-left: 10%;
+	text-transform: capitalize;
+
+}
+#logo #logo_movil
+{
+	position: absolute;
+	top: 2%;
+	left: 20%;
+	display: block;
+	background: transparent url(../img/logo_movil.png) no-repeat top left;
+	-webkit-background-size: 100% 99%;
+	background-size: 100% 99%;
+	height: 100%;
+	width: 35%;
+	background-position: center;
+	transition: -webkit-background-size 0.5s ease-in 0s,
+					background-position 0.5s ease-in 0s;
+}
+#logo #logo_movil:hover
+{
+	background-size: 170%;
+	background-position: center;
+	cursor: pointer;
+	color: black;
+}
+#logo #logo_movil:active
+{
+	-webkit-background-size: 100% 99%;
+	background-size: 100% 99%;
+	transition: -webkit-background-size 0.15s ease-in 0s,
+					background-position 0.15s ease-in 0s;
+}
+#logo #logo_movil:before
+{
+	position: absolute;
+	content: "m";
+	text-transform: capitalize;
+	transform: scaleY(2.5);
+	-webkit-transform: scaleY(2.5);
+	top: 40%;
+	left: -55%;
+	font-size: 1.7em;
+	font-family: "20_dbregular";
+	font-weight: 600;
+	color: rgb(232, 232, 232);
+}
+#logo #logo_movil:after
+{
+	position: absolute;
+	content: "phone";
+	text-transform: lowercase;
+	transform: scaleY(1.5);
+	-webkit-transform: scaleY(1.5);
+	top: 60%;
+	left: 105%;
+	font-size: 1em;
+	font-family: "20_dbregular";
+	color: rgb(232, 232, 232);
+}
+#logo #logo_onda
+{
+	position: absolute;
+	top: -10%;
+	left: 58%;
+	display: block;
+	background: rgba(0, 0, 0, 0) url(../img/logo_onda.png) no-repeat top left;
+	-webkit-background-size: 80% 95%;
+	background-size: 80% 95%;
+	height: 50%;
+	width: 25%;
+	-webkit-animation: frame_logo_onda 3s ease-out 0s infinite normal;
+	animation: frame_logo_onda 3s ease-out 0s infinite normal;
+}
+@-webkit-keyframes frame_logo_onda
+{
+	from /*AL PRINCIPIO: 0seg*/
+	{
+		transform: scaleY(0.5);
+		-webkit-transform: scale(1.0);
+	}
+	50% /*A LA MITAD: 5seg*/
+	{
+		transform: scaleY(1.5);
+		-webkit-transform: scale(1.5);
+	}
+	to /*AL FINAL: 10seg*/
+	{
+		transform: scaleY(0.5);
+		-webkit-transform: scale(1.0);
+	}
+}
+@keyframes frame_logo_onda{
+	from{transform: scaleY(0.5);-webkit-transform: scale(1.0);}
+	50%{transform: scaleY(1.5);-webkit-transform: scale(1.5);}
+	to{transform: scaleY(0.5);-webkit-transform: scale(1.0);}
+}
+/*********************
+HEADER > #clientes
+**********************/
+#head_web #clientes
+{
+	width: 60%;
+	padding-top: 0.5em;
+	height: 90%;
+}
+#clientes #clientes_type
+{
+	margin-bottom: 0.5em;
+}
+#clientes #clientes_type>ul
+{
+	position: relative;
+	width: 480px;
+	width: calc(1em + 463px);
+	margin: 0 auto;
+}
+#clientes #clientes_type>ul>li
+{
+	width: 150px;
+	height: 15px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: blue;
+}
+#clientes #clientes_type>ul>li:nth-of-type(2),
+#clientes #clientes_type>ul>li:nth-of-type(3)
+{
+	margin-left: -6px;/*anulamos el espaciado del letter-spacing entre <li>*/
+	margin-left: 0.5em;
+}
+#clientes #clientes_type>ul>li>input[type='button']
+{
+	border: 0;
+	outline: 0;
+	width: 100%;
+	height: 125%;
+	padding: 0;
+	letter-spacing: 2px;
+	font-family: serif;
+	vertical-align: bottom;
+}
+#clientes #clientes_datos
+{
+	position: relative;
+	height: 75%;
+	width: 19.2em;
+	margin: 0 auto;
+}
+#clientes #clientes_datos p
+{
+	top: 0;
+	left: 0;
+	position: absolute;
+	font-size: 0.8em;
+	height: 20px;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+#clientes #clientes_datos p:nth-of-type(1)
+{
+	top: 5px;
+}
+#clientes #clientes_datos p:nth-of-type(2)
+{
+	top: 30px;
+}
+#clientes #clientes_datos p:nth-of-type(3)
+{
+	top: 55px;
+}
+#clientes #clientes_datos p:nth-of-type(4)
+{
+	top: 80px;
+}
+#clientes #clientes_datos label{cursor: default;}
+#clientes #clientes_datos input
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 12em;
+	text-align: center;
+}
+#login_new_user
+{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+#login_new_user a.deslogueo/*deslogueo*/
+{
+	color: rgb(232, 232, 232);
+	text-decoration: underline;
+	display: block;
+	top: 0;
+	right: 30%;
+	margin: 0 auto;
+}
+#login_new_user ol
+{
+    margin-top: 7%;
+    position: relative;
+    font-size: 0.75em;
+}
+#login_new_user ol li{
+    padding: 0;
+    left: 0;
+    display: block;
+    margin-left: -61%;
+}
+#login_new_user ol li:last-child
+{
+	margin-left: -64%;
+}
+#login_new_user ol li a
+{
+color: rgb(232, 232, 232);
+	text-decoration: underline;
+}
+#login_new_user div
+{
+	position: absolute;
+	width: 100%;
+	height: 50%;
+}
+#login_new_user ol li:last-child a
+{top: 90%;}
+h2.name_user
+{font-size: 1.7em;}
+/*********************
+HEADER > .grupo
+**********************/
+#head_web .grupo
+{
+	width: 20%;
+}
+#titular,
+.comprar
+{
+	position: relative;
+	width: 75%;
+	margin: 0 auto;
+}
+#titular
+{
+	height: 75%;
+	width: 75%;
+	margin: 0 auto;
+	background-color: rgb(34, 188, 224);
+}
+.comprar
+{
+	height: 25%;
+}
+#titular>*,
+.comprar>*
+{
+	position: absolute;
+}
+#titular .nombre_titular
+{
+	display: block;
+	position: absolute;
+	top: 80%;
+	width: 100%;
+	text-align: center;
+	font-family: "20_dbregular";
+	letter-spacing: 2px;
+	font-weight: lighter;
+}
+.comprar .icon-comprar:before,
+.comprar .titulo_comprar
+{
+	display: block;
+	position: absolute;
+	z-index: 100;
+	top: 0.2em;
+	left: 0.5em;
+	font-size: 1.6em;
+	color: rgb(68, 68, 68);
+}
+.comprar:hover .icon-comprar:before,
+.comprar:hover .titulo_comprar{color: white;}
+.comprar .titulo_comprar
+{
+	left: 2.2em;
+	font-weight: bold;
+	font-family: serif;
+	font-size: 1.3em;
+	letter-spacing: 2px;
+}
+.comprar input[type='submit']
+{
+	position: relative;
+	width: 100%;
+	z-index: 50;
+	height: 100% !important;
+}
+.comprar input[type='submit']:hover
+{
+	opacity: 0.5;
+	z-index: 150;
+}
+/* ==========================================================================
+	NAVEGACION
+   ========================================================================== */
+#nav_web
+{
+	width: 100%;
+	height: 5%;
+	white-space: nowrap;
+	background-color: white;
+	padding: 6px 0;
+}
+#nav_web a
+{
+	font-family: serif;
+	font-style: oblique;
+	font-weight: bold;
+	font-size: 1.3em;
+	color: white;
+	display: block;
+	margin: 0 0.5em;
+	padding: 0 0.5em;/*para mejorar la zona clicleable*/
+}
+#nav_web>ul
+{
+	width: 52.5em;
+	margin: 0 auto;
+	height: 100%;
+}
+#nav_web>ul>li
+{
+	position: relative;
+	display: inline-block;
+	background: rgb(34, 188, 224);
+	margin-left: -15px;
+	border-right: 5px solid rgb(0, 0, 255);
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	transition: all 0.2s ease-in 0s,
+					all 0.2s ease-in 0s;
+	position: relative;
+}
+#nav_web>ul>li:hover
+{
+	transform: scaleX(1.15);
+	-webkit-transform: scaleX(1.15);
+	z-index: 100 !important;
+	margin: 0 25px 0 10px;
+}
+#nav_web>ul>li:nth-of-type(1)
+{
+	z-index: 5; margin-left: 0;
+	padding-left: 10px;
+}
+#nav_web>ul>li:nth-of-type(1):before,
+#nav_web>ul>li:nth-of-type(2):before,
+#nav_web>ul>li:nth-of-type(3):before,
+#nav_web>ul>li:nth-of-type(4):before,
+#nav_web>ul>li:nth-of-type(5):before
+{
+	content: "";
+	border-top: 20px solid transparent;
+	border-left: 13px solid white;
+	border-bottom: 20px solid transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#nav_web>ul>li:nth-of-type(2){z-index: 4;}
+#nav_web>ul>li:nth-of-type(3){z-index: 3;}
+#nav_web>ul>li:nth-of-type(4){z-index: 2;}
+#nav_web>ul>li:nth-of-type(5){z-index: 1;}
+#nav_web>ul ul
+{
+	display: none;
+	position: absolute;
+	top: 100%;
+	width: 400px;
+	height: 100%;
+}
+#nav_web>ul>li:first-child ul{left: -5%;}
+#nav_web>ul>li:nth-child(2) ul{left: -65%;}
+#nav_web>ul>li:nth-child(3) ul{left: -80%;}
+#nav_web>ul>li:nth-child(4) ul{left: -60%;}
+#nav_web>ul>li:last-child ul{left: -180%;}
+#nav_web>ul>li ul li
+{
+	background-color: rgba(0, 0, 255, 0.7);
+	height: 45%;
+}
+#nav_web>ul ul li a
+{line-height: 15px !important;}
+#nav_web>ul ul li a:hover
+{
+	border-bottom: 2px dotted white;
+}
+#nav_web>ul>li:hover ul
+{
+	transform: scaleX(0.9) !important;
+	-webkit-transform: scaleX(0.9) !important;
+}
+/* ==========================================================================
+	WRAPPER MOVILES DE VENTA
+   ========================================================================== */
+#wrap_web
+{
+	width: 100%;
+	height: 55%;
+}
+#wrap_web .mobile
+{
+	display: none;/*ocultamos todos*/
+	position: relative;
+	width: 50%;
+	margin-left: -2.5%;
+}
+#wrap_web .mobile:nth-child(1),
+#wrap_web .mobile:nth-child(2){display: block;}/*mostramos solo dos primeros*/
+#wrap_web .mobile ol
+{
+	position: absolute;
+	bottom: 27%;
+	width: 100%;
+}
+#wrap_web .mobile ol li{display: block;}
+#wrap_web .mobile>div
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 80%;
+	top: 10%;
+	background: rgb(255, 255, 255);
+	border-radius: 0 0 .5em .5em;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	color: rgb(122, 122, 122);
+}
+#wrap_web .mobile>div:first-child
+{
+	width: 30%;
+	left: 5%;
+}
+#wrap_web .mobile>div:last-child
+{
+	width: 60%;
+	left: 35%;
+}
+#wrap_web .mobile .mobile_oferta
+{
+	position: absolute;
+	bottom: 5%;
+}
+#wrap_web .mobile h2
+{
+	font-size: 1.5em;
+	margin: 1em 0 1.5em 0;
+	font-family: monospace;
+	color: black;
+}
+#wrap_web .mobile .mobile_oferta
+{
+	font-size: 0.8em;
+	font-weight: bold;
+	padding-left: 1.5em;
+}
+#wrap_web .mobile .mobile_precio,
+#wrap_web .mobile .icon-cart
+{
+	position: absolute;
+	bottom: 7%;
+	left: 10%;
+	font-size: 1.2em;
+}
+#wrap_web .mobile .icon-cart
+{
+	display: block;
+	left: 60%;
+	font-size: 1.5em;
+	cursor: pointer;
+	transition: all 0.2s ease-in 0s;
+}
+#wrap_web .mobile .icon-cart:hover,
+#foot_web #carrusel li>.icon-remove:hover,
+.icon2-plus:hover,
+.icon2-plus2:hover
+{
+	transform: scale(1.3);
+	-webkit-transform: scale(1.3);
+	color: rgb(221, 79, 36);
+}
+#wrap_web .mobile .icon-cart:active,
+#foot_web #carrusel li>.icon-remove:active,
+.icon2-plus:active,
+.icon2-plus2:active
+{
+	transition: all 0.05s ease-in 0s;
+	transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+}
+#presentacion
+{
+	width: 100%;
+	height: 80%;
+	margin-top: 3%;
+	background: transparent url(../img/background.png) no-repeat center center;
+	background-size: 100%;
+}
+.img_mobile
+{position: absolute; width: 100%; max-height: 100%;}
+/* ==========================================================================
+	FOOTER
+========================================================================== */
+#foot_web
+{
+	width: 100%;
+	height: 20%;
+	position: relative;
+	bottom: 2%;
+}
+#foot_web>div:first-child h2{
+	font-size: 1.1em; letter-spacing: 2px; word-spacing: 3px;
+	margin-top: 1%;
+}
+#foot_web h2{font-size: 1.5em; font-family: "20_dbregular"; margin-top: 7.5%; color: rgb(232, 232, 232);}
+#foot_web h3{font-size: 1.5em; color: rgb(232, 232, 232);}
+#foot_web>div{position: absolute; top: 0; height: 100%; background-color: rgb(221, 79, 36);}
+#foot_web>div:first-child{ left: 0; width: 75%;}
+#foot_web>div:last-child{ right: 0; width: 20%;}
+#foot_web .comprar
+{
+	position: absolute;
+	margin: 0 auto;
+	left: 12.5%;
+	bottom: 5%;
+}
+#foot_web #carrusel
+{
+	width: 90%;
+	height: 65%;
+	margin-left: 5%;
+	margin-top: 0.5%;
+	background-color: rgb(232, 232, 232);
+	border: 1px solid black;
+	border-radius: 0 0 .5em .5em;
+	box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+	color: rgb(122, 122, 122);
+	overflow-x: auto;
+	white-space: nowrap;
+}
+#foot_web #carrusel li
+{
+	width: 100px;
+	height: 70%;
+	border: 2px solid rgb(34, 188, 224);
+	position: relative;
+}
+#foot_web #carrusel li>*{position: absolute; bottom: 0; right: 0;}
+#foot_web #carrusel li>.mobile_img
+{
+	position: absolute;
+	background-color: rgb(232, 232, 232);
+	width: 50%;
+	height: 100%;
+	left: 25%;
+}
+#foot_web #carrusel li>.icon-remove
+{
+	font-size: 1.5em;
+	background-color: rgb(68, 68, 68);
+	color: white;
+	border-radius: 20%;
+	padding: 3% 0;
+	cursor: pointer;
+	transition: all 0.2s ease-in 0s;
+}
+#foot_web #carrusel .mobile_precio
+{
+	left: -50%;
+	bottom: 7%;
+	width: 50%;
+	margin-left: 50%;
+}
+
+.mobile .mobile_precio,
+#carrusel .mobile_precio
+{
+	color: rgb(0, 0, 0);
+	font-weight: bolder;
+	text-shadow: 1px 1px 2px white,
+					2px 2px 4px rgb(200, 200, 200);
+}
+#alertas
+{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border: 1px solid rgb(255, 0, 0);
+	background-color: rgba(255, 121, 121, 0.8);
+	z-index: 100;
+	width: 35%;
+	height: 15%;
+	top: 50%;
+	margin-top: -5%;
+	margin-left: 32%;
+}
+#alertas h3
+{
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	font-size: 1.2em;
+}
+#alertas small
+{
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+	font-size: 0.7em;
+	color: black;
+}
+#pedido{
+	display: none;
+	position: relative;
+	width: 50%;
+	min-width: 500px;
+	height: 80%;
+	margin: 0 auto;
+	top: 10%;
+	color: rgb(0, 0, 0);
+	background-color: rgba(34, 188, 224, 0.8);
+	border-radius: 5px;
+	font-size: 1em;
+	padding: 1em 2em 0 2em;
+}
+#articulos_compra
+{
+width: 90%;
+margin: 3% auto;
+margin-bottom: 0;
+}
+#articulos_compra dl
+{
+	overflow-y: scroll;
+	height: 200px;
+	background-color: rgb(232, 232, 232);
+	width: auto;
+	margin: 0 auto;
+	text-align: center;
+}
+#pedido dd{
+margin: 0 0 3% 5%;
+font-size: 0.9em;
+}
+#pedido p
+{
+	margin-top: 3%;
+}
+#pedido input
+{
+	position: absolute;
+	left: 35%;
+	text-indent: 3%;
+}
+#pedido article
+{
+	padding: 1em;
+}
+#pedido article:nth-of-type(1)
+{
+	border-bottom: 0.5em solid rgb(232, 232, 232);
+}
+#pedido_cliente
+{
+	position: relative;
+}
+#pedido_cliente input[type="submit"]
+{
+	position: absolute;
+	left: 50%;
+	top: 10%;
+}
+.bloqueado{
+	border: 0;
+	background-color: rgb(232, 232, 232) !important;
+}
+/* ==========================================================================
+	RESPONSIVE - DISEÑO FIJO
+========================================================================== */
+@media screen and (max-width: 990px) {/*900PX = contenedor-ppal*/
+	html, body, #contenedor_ppal {
+		width: 1024px;
+	}
+}

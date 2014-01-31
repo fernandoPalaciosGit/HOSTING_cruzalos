@@ -1,0 +1,40 @@
+<section class="section_apis" id="classListHTML5">
+	<header>
+		<h2>class list html5</h2>
+	</header>
+	<article class="intro">
+		<p><b class="lead">es una propiedad de todo elemento reconocido por el DOM, y por lo tanto por nuestras etiquetas html</b></p>
+		<p><strong><code>element.classList</code></strong></p>
+		<ul class="list">
+			<li><code>el.classList.remove("class")</code></li>
+			<li><code>el.classList.add("class" [, "class"])</code></li>
+			<li><code>el.classList.toggle("class")</code><br/>
+				<i class="idea">se puede añadir a un evento para que cadavez que se se dispare, intercambie la clase</i></li>
+			<li><code>el.classList.contains("class")</code></li>
+		</ul>
+		<div id="ejemClassList1">CLICK</div>
+		<div id="ejemClassList2">CLICK</div>
+		<footer>
+			<p>se puede añadir varias clases a la vez: <i class="idea"><code>el.classList.add("circulo", "contains", "marco")</code></i>, pero solo se puede remover una: <i class="idea"><code>el.classList.remove("circulo")</code></i></p>
+		</footer>
+	</article>
+
+</section>
+<script>
+	var initClassList = function(){
+		var el = document.querySelector("#ejemClassList1");
+		el.addEventListener("click", toogleClassList, false);
+
+		var el = document.querySelector("#ejemClassList2");
+		el.addEventListener("click", changeClassList, false);
+	};
+
+	var  toogleClassList = function(e_click){
+		e_click.target.classList.toggle("circuloRojo");
+	}
+
+	var changeClassList = function(e_click){
+		if( !e_click.target.classList.contains("rectanguloVerde") ) e_click.target.classList.add("rectanguloVerde");
+		else e_click.target.classList.remove("rectanguloVerde");
+	}
+</script>

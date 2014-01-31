@@ -1,0 +1,13 @@
+FERNANDO PALACIOS LANDI - DAW 2º
+
+
+COMPRA D'UNA PIZZA PER TELÈFON
+Càlcul del preu final d'una comanda de pizzes que es fa per telèfon
+
+PARTS DEL EXERCICI
+- Formulari o formularis d'entrada de daes
+- Realitzar càlculs
+- Mostrar resultats
+
+L’ADREÇA DEL TEU WEB (la del hosting)
+http://www.cruzalosdedos.es/Pizza_Buona/index.html#D-1

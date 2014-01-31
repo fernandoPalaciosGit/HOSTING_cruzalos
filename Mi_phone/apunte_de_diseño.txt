@@ -1,0 +1,51 @@
+- LOGICA DE PROTOTIPOS
+prototipo Usuario {
+tipoUsuario
+nombreUsuario
+password
+nombre
+apellidos
+dni
+edad
+cargar_carrito
+carrito
+}
+
+prototipo Tienda {
+nom art
+precio art
+img art //src
+titulo art
+especificaciones art
+}
+
+var Invitado = function(){
+}
+
+var Registrado = function(){
+}
+
+var Admin = function(){
+	//a�adir nuevos articulos (func)
+	//cambiar precios (func)
+}
+
+
+Invitado.prototype = new Usuario;
+Registrado.prototype = new Usuario;
+Admin.prototype = new Usuario;
+
+- DOCTYPE de HTML:5
+
+- carger NORMALIZE en el "preload" (header) de la pagina: hoja de estilos que formatea los estilos por defecto del navegador a las etiquetas html.
+
+- cargar MODERNIZER en el "preload" (header) de la pagina: libreria de javascript que arregla los problemas de compatibilidad entre HTML5 e IE9
+
+- MOVILE FIRST (patron de diseño): *2 resoluciones responsive: primnero resoluciones para moviles(<768px), otro par tablets y desktops(>768px).
+
+- RETINA DISPLAY: los moviles mas modernos lleva mayor densidad e pixeles pòr resolucionde pantalla, asi que duplicaremos el diseño responsivo tanto para moviles como para desktop:
+		--moviles: screen max-width(1024px)
+		--dektop: screen min-width(1024px)
+/*ESTA ES LA MANERA MAS SENCILLA DE HACER RESPONSIVE DESIGN*/
+
+- utililzar GITHUB (repositorio de versiones del codigo de nuestro proyecto), para tener una version del codigo tanto en un repositorio local (en nuestro HDD), como un repositorio en la nube (en nuestra cuenta del dominio github).

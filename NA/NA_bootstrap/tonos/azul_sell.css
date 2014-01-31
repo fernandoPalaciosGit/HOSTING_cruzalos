@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+body, html
+{
+    background-color: rgb(34, 94, 136) !important;
+}
+#nav_select ul li
+{
+	color: rgb(255, 255, 255);
+}
+h2, .actual
+{
+	color: rgb(221, 69, 69) !important;
+	text-shadow: 2px 2px 4px rgb(0, 0, 0), 1px 1px 4px rgb(0, 0, 0);
+}
+#nav_select ul li, #menu_aqui li
+{
+	text-shadow: none;
+}
+.select
+{
+	border: 5px solid rgb(0, 92, 255) !important;/*1*/
+	box-shadow: 1px 1px 3px rgb(0, 235, 255), 2px 2px 6px rgb(0, 92, 255) !important; /*2*/ /*1*/
+}
+.vista_figcaption, .vista_fotos
+{
+	color: rgb(255, 255, 255) !important;
+	border: 3px solid rgb(37, 161, 209) !important; /*3*/
+}
+.vista_figcaption
+{
+	box-shadow: 0px 2px 6px rgb(255, 255, 255) !important;
+	background-color: rgb(71, 133, 156) !important; /*tono_claro*/
+}
+.vista_fotos
+{
+	box-shadow: 3px 1px 6px rgb(0, 0, 0) !important;
+	background-color: rgba(122, 192, 219, 1) !important; /*tono oscuro*/
+}
+.fotos, .precio
+{
+	background-color: rgb(0, 235, 255) !important; /*2*/
+	border: 3px solid rgb(37, 161, 209) !important; /*3*/
+}
+.features li
+{
+	color: rgb(34, 94, 136) !important;
+}
+#group_barcos>article:nth-child(odd) .image_barco
+{
+	border: 5px solid rgb(0, 92, 255);/*1*/
+}
+#group_barcos>article:nth-child(even) .image_barco
+{
+	border: 5px solid rgb(0, 235, 255); /*2*/
+}
+#menu_aqui li
+{
+	color: rgb(0, 92, 255);
+}
+#menu_web li
+{
+	color: rgb(0, 92, 255) !important;/*1*/
+	border: 3px solid rgb(37, 161, 209) !important; /*3*/
+	background-color: rgba(255, 255, 255, 0.7) !important;
+}
